@@ -41,22 +41,24 @@
         <div class="card">
           <div class="card-body job-filter">
             <div class="row g-3">
-              <div class="col-xxl-3 col-lg-3">
+              <div class="col-xxl-2 col-lg-3">
                 <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
                   [placeholder]="'Search Details'"></ng-select>
               </div>
-              <div class="col-xxl-3 col-lg-3">
+              <div class="col-xxl-2 col-lg-3">
                 <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
               </div>
               <div class="col-xxl-3 col-lg-3">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary w-50 ">
                     <i class="bx bx-search-alt align-middle"></i> Search
                   </button>
               </div>
-              <div class="col-xxl-3 col-lg-3 text-sm-end">
-                <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
-                    <i class="mdi mdi-plus mr-1"></i> Add Employee
-                  </button>
+              <div class="col-xxl-5 col-lg-3 ">
+                <div class="text-sm-end">
+                    <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
+                        <i class="mdi mdi-plus mr-1"></i> Add Employee
+                      </button>
+                </div>
               </div>
               <!-- <div class="col-xxl-3 col-lg-6">
                 <div class="position-relative hstack gap-3">
