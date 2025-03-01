@@ -1,0 +1,346 @@
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 font-size-18">Tour Plan</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tour</a></li>
+                            <li class="breadcrumb-item active">Tour Plan</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-6">
+                            <div class="row g-4">
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="card interactive-card p-2"
+                                        [ngClass]="{'active-primary': activeCard === 'primary'}"
+                                        (click)="setActive('primary')">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-circle icon-primary me-3">
+                                                <i class="mdi mdi-stethoscope text-primary"></i>
+                                            </div>
+                                            <h5 class="card-title">Doctors</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="card interactive-card p-2"
+                                        [ngClass]="{'active-success': activeCard === 'success'}"
+                                        (click)="setActive('success')">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-circle icon-success me-3">
+                                                <i class="mdi mdi-account-group text-success"></i>
+                                            </div>
+                                            <h5 class="card-title">Groups</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="card interactive-card p-2"
+                                        [ngClass]="{'active-warning': activeCard === 'warning'}"
+                                        (click)="setActive('warning')">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-circle icon-warning me-3">
+                                                <i class="mdi mdi-calendar text-warning"></i>
+                                            </div>
+                                            <h5 class="card-title">NW Days</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-12">
+                                    <div class="card interactive-card p-2"
+                                        [ngClass]="{'active-danger': activeCard === 'danger'}"
+                                        (click)="setActive('danger')">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon-circle icon-danger me-3">
+                                                <i class="mdi mdi-calendar-remove text-danger"></i>
+                                            </div>
+                                            <h5 class="card-title">Leaves</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div *ngIf="activeCard === 'primary'" class="content-pane">
+                                        <div class="mb-3">
+                                            <label class="d-block mb-3">Preferred Day :</label>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="mon" value="Mon">
+                                                <label class="form-check-label" for="mon">Mon</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="tue" value="Tue">
+                                                <label class="form-check-label" for="tue">Tue</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="wed" value="Wed">
+                                                <label class="form-check-label" for="wed">Wed</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="thu" value="Thu">
+                                                <label class="form-check-label" for="thu">Thu</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="fri" value="Fri">
+                                                <label class="form-check-label" for="fri">Fri</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="sat" value="Sat">
+                                                <label class="form-check-label" for="sat">Sat</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="sun" value="Sun">
+                                                <label class="form-check-label" for="sun">Sun</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="preferredDay"
+                                                    id="all" value="All" checked>
+                                                <label class="form-check-label" for="all">All</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="missedDrs">Missed Dr.s in Last Days</label>
+                                            <input type="number" class="form-control w-50" id="missedDrs"
+                                                placeholder="">
+                                        </div>
+
+                                    </div>
+                                    <div *ngIf="activeCard === 'success'" class="content-pane">
+                                        <div class="mb-3">
+                                            <label for="searchBox">Select Groups:</label>
+                                            <input type="text" class="form-control" id="searchBox"
+                                                placeholder="Search groups..." (input)="onSearch($event)">
+                                            <div class="dropdown-menu mt-2 w-100" *ngIf="filteredItems.length > 0">
+                                                <div *ngFor="let item of filteredItems" class="dropdown-item"
+                                                    (click)="addItem(item)">
+                                                    {{ item }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="badge-container" id="selectedItems">
+                                            <span *ngFor="let item of selectedItems; let i = index" class="badge"
+                                                [ngClass]="getBadgeClass(i)">
+                                                {{ item }}
+                                                <button class="btn-close btn-close-white ms-2"
+                                                    (click)="removeItem(item)"></button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="activeCard === 'warning'" class="content-pane">
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="ad">
+                                                    <label class="form-check-label" for="ad">AD - Admin Day</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="mt">
+                                                    <label class="form-check-label" for="mt">MT - Meeting</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="tt">
+                                                    <label class="form-check-label" for="tt">TT - In Transit</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="ncn">
+                                                    <label class="form-check-label" for="ncn">NCN - Conference
+                                                        (Non-Residential)</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="edv">
+                                                    <label class="form-check-label" for="edv">EDV - Extra Visit</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="a67">
+                                                    <label class="form-check-label" for="a67">A67 - Meeting with
+                                                        Hospital</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="cd">
+                                                    <label class="form-check-label" for="cd">CD - Chemist Booking
+                                                        Day</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="tg">
+                                                    <label class="form-check-label" for="tg">TG - On Training</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="rcn">
+                                                    <label class="form-check-label" for="rcn">RCN - Conference
+                                                        (Residential)</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="od">
+                                                    <label class="form-check-label" for="od">OD - Other Day</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-check mb-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="nwd">
+                                                    <label class="form-check-label" for="nwd">NWD - No Working
+                                                        Day</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div *ngIf="activeCard === 'danger'" class="content-pane">
+                                        <p>Leaves-related content here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <full-calendar [options]="calendarOptions" cdkDropList
+                                (cdkDropListDropped)="handleDrop($event)"></full-calendar>
+                        </div>
+                    </div>
+
+                    <!-- Display content based on active card -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Add New Event MODAL -->
+<ng-template #modalShow let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Add New Event</h5>
+        <button type="button" class="btn-close" (click)="closeEventModal()"></button>
+    </div>
+    <div class="modal-body p-4">
+        <form (ngSubmit)="saveEvent()" [formGroup]="formData">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="control-label">Event Name</label>
+                        <input class="form-control" placeholder="Insert Event Name" type="text" name="title"
+                            formControlName="title" [ngClass]="{'is-invalid': submitted && form.title.errors}" />
+                        @if(submitted && form.title.errors){
+                        <div class="invalid-feedback">
+                            @if(form.title.errors.required){
+                            <span>This value is required.</span>}
+                        </div>}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="control-label">Category</label>
+                        <select class="form-control" name="category" formControlName="category"
+                            [ngClass]="{'is-invalid': submitted && form.category.errors }">
+                            @for (option of category; track $index) {
+                            <option value="{{ option.value }}">
+                                {{ option.name }}
+                            </option>
+                            }
+                        </select>
+                        @if(submitted && form.category.errors){
+                        <div class="invalid-feedback">
+                            @if(form.category.errors.required){
+                            <div>This value is required</div>}
+                        </div>}
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-end mt-2">
+                <button type="button" class="btn btn-light me-1" (click)="closeEventModal()">
+                    Close
+                </button>
+                <button type="submit" class="btn btn-success" id="btn-save-event">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- end modal dialog-->
+</ng-template>
+<!-- end modal-->
+
+<!-- Edit event modal -->
+<ng-template #editmodalShow let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title">Edit Event</h5>
+        <button type="button" class="btn-close" aria-hidden="true" (click)="modalRef?.hide()"></button>
+    </div>
+    <div class="modal-body p-4">
+        <form [formGroup]="formEditData" (ngSubmit)="editEventSave()">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="control-label">Event name</label>
+                        <input class="form-control" placeholder="Insert Event Name" type="text" name="editTitle"
+                            formControlName="editTitle">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="control-label">Event category</label>
+                        <select class="form-control" name="ecategory" formControlName="editCategory" required>
+                            @for (option of category; track $index) {
+                            <option value="{{ option.value }}"> {{ option.name }}
+                            </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger delete-event ms-1" (click)="confirm()">Delete</button>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="btn btn-light" (click)="modalRef?.hide()">Close</button>
+                    <button type="submit" class="btn btn-success ms-1">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</ng-template>

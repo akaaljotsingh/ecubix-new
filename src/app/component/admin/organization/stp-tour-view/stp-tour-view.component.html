@@ -1,0 +1,441 @@
+<div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">STP View</h4>
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                <li class="breadcrumb-item active">STP Tour Plan</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row mb-2">
+              <div class="col-12 col-md-6">
+                <label for="recordsPerPage" class="d-inline-flex align-items-center">
+                  Show
+                  <select class="form-select form-select-sm ms-1 me-1" id="recordsPerPage" (change)="changePageSize($event)">
+                    <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+                  </select>
+                  entries
+                </label>
+              </div>
+  
+              <div class="col-12 col-md-6">
+                <div class="d-flex justify-content-end align-items-center">
+                  <label class="d-inline-flex align-items-center mb-0 me-2">
+                    Search:
+                    <input type="text" class="form-control form-control-sm ms-2" placeholder="Search" (input)="applyFilter($event)" />
+                  </label>
+                  <div class="btn-group me-2" dropdown>
+                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" dropdownToggle>
+                      <i class="mdi mdi-filter-menu"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end p-2" *dropdownMenu>
+                      <div *ngFor="let column of columns" class="form-check mb-1 d-flex align-items-center">
+                        <input
+                          type="checkbox"
+                          class="form-check-input me-2"
+                          [id]="column.key"
+                          [checked]="column.visible"
+                          (change)="toggleColumn(column.key)"
+                        />
+                        <label class="form-check-label mb-0" [for]="column.key">{{ column.display }}</label>
+                      </div>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-muted text-center" href="javascript:void(0);" (click)="resetColumns()">Reset Columns</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-success btn-sm waves-effect waves-light">
+                    <i class="mdi mdi-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+  
+            <div class="table-responsive mb-2">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th
+                      class="table-success sortable-column"
+                      *ngFor="let column of columns"
+                      [hidden]="!column.visible"
+                      (click)="sortData(column.key)"
+                    >
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span>{{ column.display }}</span>
+  
+                        <!-- Sorting icons always visible -->
+                        <span class="d-inline-flex">
+                          <i *ngIf="currentSortColumn === column.key && isSortAscending" class="mdi mdi-sort-ascending"></i>
+                          <i *ngIf="currentSortColumn === column.key && !isSortAscending" class="mdi mdi-sort-descending"></i>
+                          <i *ngIf="currentSortColumn !== column.key" class="mdi mdi-sort"></i> <!-- Default sort icon when no sorting applied -->
+                        </span>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="" *ngFor="let column of columns" [hidden]="!column.visible">
+                      <input
+                        class="form-control form-control-sm"
+                        *ngIf="column.filterable"
+                        [type]="'text'"
+                        [placeholder]="'Filter ' + column.display"
+                        (input)="applyColumnFilter(column.key, $event)"
+                      />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of pagedData">
+                    <td *ngFor="let column of columns" [hidden]="!column.visible">
+                      <ng-container *ngIf="column.key === 'Plan Status'; else defaultCell">
+                        <span
+                          *ngIf="item[column.key] === 'Pending'"
+                          class="badge badge-soft-danger me-1"
+                        >
+                          Pending
+                        </span>
+                        <span
+                          *ngIf="item[column.key] === 'Approved'"
+                          class="badge badge-soft-success me-1"
+                        >
+                          Approved
+                        </span>
+                      </ng-container>
+  
+                      <ng-template #defaultCell>
+                        <ng-container *ngIf="column.key === 'Edit Plan'; else normalCell">
+                          <button
+                            class="btn btn-link p-0"
+                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" (click)="extraLarge(exlargeModal1)"
+                            title="Edit Plan"
+                          >
+                            <i class="mdi mdi-file-edit-outline text-success mdi-16px"></i>
+                          </button>
+                          <ng-template #exlargeModal1 let-modal>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="myExtraLargeModalLabel">Edit Tour</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalRef?.hide()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="mrName" class="form-label">MR Name <span class="text-danger">*</span></label>
+                                                <select id="mrName" class="form-select form-select-sm">
+                                                    <option selected>Anoop Mishra</option>
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="planDate" class="form-label">Plan Date <span class="text-danger">*</span></label>
+                                                <select class="form-select form-select-sm" id="company-type">
+                                                    <option>First Day</option>
+                                                      
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="planRemarks" class="form-label">Plan Remarks</label>
+                                                <input type="text" id="planRemarks" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <h5>Available Doctors</h5>
+                                            
+                                            <div class="table-responsive mb-2">
+                                                <table class="table table-striped table-sm">
+                                                    <thead class="table-success">
+                                                        <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">Dr. Code</th>
+                                                            <th scope="col">Dr. Name</th>
+                                                            <th scope="col">Category</th>
+                                                            <th scope="col">Specialization</th>
+                                                            <th scope="col">City</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Dr. Code">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Dr. Name">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Category">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Specialization">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search City">
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><input type="checkbox"></td>
+                                                            <td>00008438</td>
+                                                            <td>Dr. James Wilson</td>
+                                                            <td>A</td>
+                                                            <td>Cardiologist</td>
+                                                            <td>New York</td>
+                                                        </tr>
+                                                        <!-- Add more rows as needed -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                            <div class="d-flex flex-column">
+                                                <button type="button" class="btn btn-primary mb-2">&gt;</button>
+                                                <button type="button" class="btn btn-primary">&lt;</button>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-md-5">
+                                            <h5>Selected Doctors</h5>
+                                            <div class="table-responsive mb-2">
+                                                <table class="table table-striped table-sm">
+                                                    <thead class="table-success">
+                                                        <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col">Dr. Code</th>
+                                                            <th scope="col">Dr. Name</th>
+                                                            <th scope="col">Category</th>
+                                                            <th scope="col">Specialization</th>
+                                                            <th scope="col">City</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Dr. Code">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Dr. Name">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Category">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search Specialization">
+                                                            </th>
+                                                            <th>
+                                                                <input type="text" class="form-control form-control-sm" placeholder="Search City">
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><input type="checkbox"></td>
+                                                            <td>00008439</td>
+                                                            <td>Dr. Emily Brown</td>
+                                                            <td>B</td>
+                                                            <td>Neurologist</td>
+                                                            <td>Boston</td>
+                                                        </tr>
+                                                        <!-- Add more rows as needed -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                                  (click)="modalRef.hide()">Cancel</button>
+                                <button type="button" class="btn btn-primary waves-effect waves-light">Save
+                                </button>
+                            </div>
+                        </ng-template><!-- /.modal -->
+                        </ng-container>
+                        <ng-template #normalCell>
+                          <ng-container *ngIf="column.key === 'Approved Dr.s'; else normalContent">
+                            <button
+                              class="btn btn-link p-0 text-primary"
+                              data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl" (click)="extraLarge(exlargeModal)"
+                            >
+                              {{ item[column.key] }}
+                            </button>
+                            <ng-template #exlargeModal let-modal>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="myExtraLargeModalLabel">STP Detail View</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalRef?.hide()"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="table-responsive mb-2">
+                                                <table class="table table-striped table-sm">
+                                                    <thead class="table-success">
+                                                        <tr>
+                                                            <th>Day</th>
+                                                            <th>Planned City</th>
+                                                            <th>Employee Name</th>
+                                                            <th>Doctor Code</th>
+                                                            <th>Planned Doctor Name</th>
+                                                            <th>Category</th>
+                                                            <th>Speciality</th>
+                                                            <th>Plan Status</th>
+                                                            <th>Planned Remarks</th>
+                                                            <th>Senior Remarks</th>
+                                                            <!-- <th>Edit Plan</th> -->
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Agra</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC001</td>
+                                                            <td>Sunita Gaur</td>
+                                                            <td>B</td>
+                                                            <td>Obstetrics and Gynecology</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Agra</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC002</td>
+                                                            <td>U C Goal</td>
+                                                            <td>A</td>
+                                                            <td>General Surgeon</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Agra</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC003</td>
+                                                            <td>U.B Yadav</td>
+                                                            <td>A</td>
+                                                            <td>Orthopaedic Surgeon</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Agra</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC004</td>
+                                                            <td>Varun Kumar Tripathi</td>
+                                                            <td>A</td>
+                                                            <td>Consulting Physician</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Allahabad</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC005</td>
+                                                            <td>T B Singh</td>
+                                                            <td>B</td>
+                                                            <td>Cardiologist</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <td>firstday</td>
+                                                            <td>Allahabad</td>
+                                                            <td>Anoop Mishra</td>
+                                                            <td>DC006</td>
+                                                            <td>Vinay Swaroop</td>
+                                                            <td>B</td>
+                                                            <td>Cardiologist</td>
+                                                            <td>Approved</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <!-- <td>Edit Plan</td> -->
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template><!-- /.modal -->
+                          </ng-container>
+                          <ng-template #normalContent>
+                            {{ item[column.key] }}
+                          </ng-template>
+                        </ng-template>
+                      </ng-template>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <div class="row">
+              <div class="col-12 col-md-5">
+                <div class="dataTables_info" role="status" aria-live="polite">
+                  Showing {{ startEntry }} to {{ endEntry }} of {{ totalEntries }} entries
+                </div>
+              </div>
+  
+              <div class="col-12 col-md-7">
+                <nav aria-label="Pagination Navigation">
+                  <ul class="pagination pagination-rounded justify-content-end">
+                    <li class="page-item" [class.disabled]="currentPage === 1">
+                      <a class="page-link" href="javascript:void(0);" (click)="previousPage()" aria-label="Previous">
+                        <i class="mdi mdi-chevron-left"></i>
+                      </a>
+                    </li>
+                    <li *ngFor="let page of pages" class="page-item" [class.active]="page === currentPage">
+                      <a class="page-link" href="javascript:void(0);" (click)="goToPage(page)">{{ page }}</a>
+                    </li>
+                    <li class="page-item" [class.disabled]="currentPage === totalPages">
+                      <a class="page-link" href="javascript:void(0);" (click)="nextPage()" aria-label="Next">
+                        <i class="mdi mdi-chevron-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

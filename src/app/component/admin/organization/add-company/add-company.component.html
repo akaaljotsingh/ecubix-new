@@ -1,0 +1,277 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Add Company</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/company">Manage Companies</a></li>
+                        <li class="breadcrumb-item active">Add Company</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-12">
+                <!-- Client Information -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-office-building me-2"></i>Client Information
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Code</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-custom" placeholder="Client Code">
+                                    <button class="btn btn-primary" type="button" id="Code">Auto Generate</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control form-control-custom" placeholder="Client Full Name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Short Name</label>
+                                <input type="text" class="form-control form-control-custom" placeholder="Client Short Name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Website</label>
+                                <input type="text" class="form-control form-control-custom" placeholder="Website">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Upload Logo</label>
+                                <input class="form-control" type="file" placeholder="logo.jpg">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Description</label>
+                                <input type="text" class="form-control form-control-custom" placeholder="description">
+                            </div>
+                            <div class="col-md-3 mb-3 ">
+                                <label>Status</label>
+                                <div class="form-switch form-switch-md">
+                                    <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                    <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Information -->
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <i class="mdi mdi-map-marker me-2"></i>Location Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-2 mb-3">
+                                <label for="address-type" class="form-label">Address Type</label>
+                                <select class="form-select" id="address-type">
+                                    <option>Select Type</option>
+                                    <option>Communication</option>
+                                    <option>Permanent</option>
+                                    <option>Billing</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label>Address</label>
+                                <textarea class="form-control form-control-custom" placeholder="Address" rows="1"></textarea>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label for="country" class="form-label">Country </label>
+                                <select class="form-select" id="country">
+                                    <option>Select Country</option>
+                                    <option>India</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state">
+                                    <option>Select State</option>
+                                    <option>Maharashtra</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <select class="form-select" id="city">
+                                    <option>Select City</option>
+                                    <option>Mumbai</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Button column -->
+                            <div class="col-md-2 mb-3 d-flex align-items-end">
+                                <button type="submit" class="btn btn-warning w-50">Add</button>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <div class="table-responsive">
+                                    <table class="table table-sm align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
+                                        <thead class="table-warning">
+                                            <tr>
+                                                <th scope="col">Address Type</th>
+                                                <th scope="col">Address</th>
+                                                <th scope="col">Country</th>
+                                                <th scope="col">State</th>
+                                                <th scope="col">City</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Communication</td>
+                                                <td>139, Karav Marg, 40001</td>
+                                                <td>India</td>
+                                                <td>Maharashtra</td>
+                                                <td>Mumbai</td>
+                                                <td>
+                                                    <ul class="list-unstyled hstack gap-1 mb-0">
+                                                        <li data-bs-toggle="tooltip" title="Edit">
+                                                            <a href="" class="btn btn-sm btn-soft-info"><i
+                                                                    class="mdi mdi-pencil-outline"></i></a>
+                                                        </li>
+                                                        <li data-bs-toggle="tooltip" title="Delete">
+                                                            <a href="" class="btn btn-sm btn-soft-danger"><i
+                                                                    class="mdi mdi-delete-outline"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Billing</td>
+                                                <td>140, Palli Hill, 40002</td>
+                                                <td>India</td>
+                                                <td>Maharashtra</td>
+                                                <td>Mumbai</td>
+                                                <td>
+                                                    <ul class="list-unstyled hstack gap-1 mb-0">
+                                                        <li data-bs-toggle="tooltip" title="Edit">
+                                                            <a href="" class="btn btn-sm btn-soft-info"><i
+                                                                    class="mdi mdi-pencil-outline"></i></a>
+                                                        </li>
+                                                        <li data-bs-toggle="tooltip" title="Delete">
+                                                            <a href="" class="btn btn-sm btn-soft-danger"><i
+                                                                    class="mdi mdi-delete-outline"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- User & Business Details -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-account-group me-2"></i>User & Business Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Total Expected Users</label>
+                                <input type="text" class="form-control" placeholder="Total Expected Users">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Expected Users (1st Launch)</label>
+                                <input type="text" class="form-control" placeholder="Expected Users (1st Launch)">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Business Type</label>
+                                <input type="text" class="form-control" placeholder="Business Type">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Industry/Vertical</label>
+                                <input type="text" class="form-control" placeholder="Industry/Vertical">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Annual Turnover</label>
+                                <input type="text" class="form-control" placeholder="Annual Turnover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPOC Details -->
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <i class="mdi mdi-account-tie me-2"></i>SPOC Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="SPOC Name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Email ID</label>
+                                <input type="text" class="form-control" placeholder="SPOC Email ID">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Mobile No. 1</label>
+                                <input type="text" class="form-control" placeholder="SPOC Mobile No. 1">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Mobile No. 2</label>
+                                <input type="text" class="form-control" placeholder="SPOC Mobile No. 2">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Designation</label>
+                                <input type="text" class="form-control" placeholder="SPOC Designation">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>D-O-B</label>
+                                <input class="form-control" type="date" id="date-input-b">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>D-O-A</label>
+                                <input class="form-control" type="date" id="example-date-a">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stakeholder Details -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-account-multiple me-2"></i>Stakeholder Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Stakeholder Name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Email ID</label>
+                                <input type="text" class="form-control" placeholder="Stakeholder Email ID">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Mobile No. 1</label>
+                                <input type="text" class="form-control" placeholder="Stakeholder Mobile No. 1">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Mobile No. 2</label>
+                                <input type="text" class="form-control" placeholder="Stakeholder Mobile No. 2">
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

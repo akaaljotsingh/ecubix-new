@@ -1,0 +1,199 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Edit Company Detail</h4>
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/company">Manage Companies</a></li>
+                    <li class="breadcrumb-item active">Edit Company</li>
+                  </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <!-- Client Information -->
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h4 class="card-title card-header-custom">
+                        <i class="mdi mdi-office-building me-2"></i>Client Information
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label>Code</label>
+                            <input type="text" class="form-control form-control-custom" placeholder="Client Code" value="PH001" disabled>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control form-control-custom" placeholder="Client Full Name" value="Loreum Pharmaceutical Industries Ltd.">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Short Name</label>
+                            <input type="text" class="form-control form-control-custom" placeholder="Client Short Name" value="Loreum Pharma">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Website</label>
+                            <input type="text" class="form-control form-control-custom" placeholder="Website" value="www.loreum.com">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Upload Logo</label>
+                            <input class="form-control" placeholder="logo.jpg" type="file">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Description</label>
+                            <input type="text" class="form-control form-control-custom" placeholder="Description" value="Leading global pharmaceutical company manufacturing and marketing pharmaceutical formulations and active pharmaceutical ingredients (APIs).">
+                        </div>
+                        <div class="col-md-3 mb-3 ">
+                            <label>Status</label>
+                            <div class="form-switch form-switch-md">
+                                <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Information -->
+            <div class="card card-custom-alternate">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <i class="mdi mdi-map-marker me-2"></i>Location Details
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="Address" value="Plot No. 16, Akurli Road, Kandivali East">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="country" class="form-label">Country </label>
+                                <select class="form-select" id="company-type">
+                                      <option>Select Country</option>
+                                      <option selected>India</option>
+                                </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="company-type">
+                                <option>Select State</option>
+                                <option selected>Maharashtra</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <select class="form-select" id="company-type">
+                                <option>Select City</option>
+                                <option selected>Mumbai</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- User & Business Details -->
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h4 class="card-title card-header-custom">
+                        <i class="mdi mdi-account-group me-2"></i>User & Business Details
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label>Total Expected Users</label>
+                            <input type="text" class="form-control" placeholder="Total Expected Users" value="5000">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Expected Users (1st Launch)</label>
+                            <input type="text" class="form-control" placeholder="Expected Users (1st Launch)" value="1200">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Business Type</label>
+                            <input type="text" class="form-control" placeholder="Business Type" value="Pharmaceutical Manufacturing">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Industry/Vertical</label>
+                            <input type="text" class="form-control" placeholder="Industry/Vertical" value="Pharmaceuticals">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Annual Turnover</label>
+                            <input type="text" class="form-control" placeholder="Annual Turnover" value="35,000 Crores INR">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SPOC Details -->
+            <div class="card card-custom-alternate">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <i class="mdi mdi-account-tie me-2"></i>SPOC Details
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="SPOC Name" value="Ravi Kumar Sharma">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Email ID</label>
+                            <input type="text" class="form-control" placeholder="SPOC Email ID" value="ravi.sharma@lorpharma.com">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Mobile No. 1</label>
+                            <input type="text" class="form-control" placeholder="SPOC Mobile No. 1" value="9876543210">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Mobile No. 2</label>
+                            <input type="text" class="form-control" placeholder="SPOC Mobile No. 2" value="9123456789">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Designation</label>
+                            <input type="text" class="form-control" placeholder="SPOC Designation" value="Manager, Operations">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>D-O-B</label>
+                            <input type="text" class="form-control" placeholder="SPOC D-O-B" value="15-08-1985">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>D-O-A</label>
+                            <input type="text" class="form-control" placeholder="SPOC D-O-A" value="10-06-2010">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stakeholder Details -->
+            <div class="card card-custom">
+                <div class="card-body">
+                    <h4 class="card-title card-header-custom">
+                        <i class="mdi mdi-account-multiple me-2"></i>Stakeholder Details
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Stakeholder Name" value="Anand Prakash Singh">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Email ID</label>
+                            <input type="text" class="form-control" placeholder="Stakeholder Email ID" value="anand.singh@lorpharma.com">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Mobile No. 1</label>
+                            <input type="text" class="form-control" placeholder="Stakeholder Mobile No. 1" value="9876123456">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label>Mobile No. 2</label>
+                            <input type="text" class="form-control" placeholder="Stakeholder Mobile No. 2" value="9123451234">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,495 @@
+<div class="container-fluid">
+    <!-- <app-page-title title="Orders" [breadcrumbItems]="breadCrumbItems"></app-page-title> -->
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 font-size-18">Family Details</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Family Details</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-xxl-2 col-lg-6">
+                        <select id="companySelect" class="form-select" (change)="onCompanySelect($event.target.value)">
+                          <option value="" selected disabled>Select a company</option>
+                          <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col-xxl-2 col-lg-6">
+                        <select id="employeeSelect" class="form-select" (change)="onEmployeeSelect($event.target.value)">
+                            <option value="" selected disabled>Select an employee</option>
+                            <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col-xxl-1 col-lg-6">
+                      <div class="position-relative hstack gap-3">
+                        <button type="submit" class="btn btn-primary w-100" (click)="onApply()">
+                          <i class="bx bx-check-double align-middle"></i> Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card" *ngIf="showCard">
+                <div class="card-body job-filter">
+                    <div class="row g-3">
+                        <div class="col-xxl-2 col-lg-6">
+                            <select class="form-select" id="address-type">
+                                <option>Select Relation</option>
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Wife</option>
+                            </select>
+                        </div>
+                        <div class="col-xxl-2 col-lg-6">
+                            <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+                        </div>
+                        <div class="col-xxl-3 col-lg-6">
+                            <div class="position-relative hstack gap-3">
+                                <button type="submit" class="btn btn-primary w-50"><i
+                                        class="bx bx-search-alt align-middle"></i> Search</button>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-lg-6">
+                            <div class="text-sm-end">
+                                <button type="button" class="btn btn-success mb-2 me-2"
+                                data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-plus mr-1"></i>
+                                    Add Family
+                                </button>
+                            </div>
+                        </div><!-- end col-->
+                    </div>
+                    <!-- Table data -->
+
+                </div>
+
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Relationship</th>
+                                    <th scope="col">D-o-B</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Next Steps</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rakesh Kumar</td>
+                                    <td>Father</td>
+                                    <td>12-12-1954</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-primary" data-bs-target="#myModal" (click)="openModalView(contentview)"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a  href="javascript:void(0);" class="btn btn-sm btn-soft-info" data-bs-target="#myModal" (click)="openModalEdit(contentedit)"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Krishna Devi</td>
+                                    <td>Mother</td>
+                                    <td>10-11-1958</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch2" (change)="checkValue($event)" unchecked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a  href="javascript:void(0);" class="btn btn-sm btn-soft-primary" data-bs-target="#myModal" (click)="openModalView(contentview)"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a  href="javascript:void(0);" class="btn btn-sm btn-soft-info" data-bs-target="#myModal" (click)="openModalEdit(contentedit)"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sunita Kumari</td>
+                                    <td>Wife</td>
+                                    <td>04-05-1978</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-primary" data-bs-target="#myModal" (click)="openModalView(contentview)"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a  href="javascript:void(0);" class="btn btn-sm btn-soft-info" data-bs-target="#myModal" (click)="openModalEdit(contentedit)"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="row justify-content-between align-items-center g-3">
+                        <div class="col-auto">
+                            <label class="d-inline-flex align-items-center mb-0">
+                                Show
+                                <select class="form-select form-select-sm mx-2" style="width: auto;">
+                                    <option value="10" selected>10 entries</option>
+                                    <option value="50">50 entries</option>
+                                    <option value="100">100 entries</option>
+                                </select>
+
+                            </label>
+                        </div>
+                        <div class="col-auto me-auto">
+                            <p class="text-muted mb-0">Showing <b>3</b> of <b>3</b> results</p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="text-md-right float-md-end pagination-rounded">
+                                <ul class="pagination pagination-rounded justify-content-end mb-2">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                            <i class="mdi mdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                            <i class="mdi mdi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+
+                </div>
+
+                <ng-template #content role="document" let-modal>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Add Family Detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                          (click)="modalRef.hide()"></button>
+                    </div>
+                    <div class="modal-body">
+                          <form>
+                            <div class="row p-1 card-neo-drop">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Relationship <span class="text-danger">*</span></label>
+                                        <select class="form-select">
+                                          <option>Select Relation</option>
+                                          <option>Father</option>
+                                          <option>Mother</option>
+                                          <option>Wife</option>
+                                          <option>Child</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="company-name" class="form-label">First Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" placeholder="Enter first name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="company-name" class="form-label">Middle Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" placeholder="Enter middle name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="company-name" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" placeholder="Enter last name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-select">
+                                          <option>Select Gender</option>
+                                          <option>Male</option>
+                                          <option>Female</option>
+                                        </select>
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">D-o-B <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="date" required />
+                                        
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Upload Aadhar Card</label>
+                                        <input class="form-control" type="file" placeholder="logo.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Upload Photo</label>
+                                        <input class="form-control" type="file" placeholder="logo.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="assets/images/uidai.png" alt="" class="rounded avatar-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="assets/images/users/avatar-3.jpg" alt="" class="rounded avatar-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Include</label>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                            HO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Status</label>
+                                        <div class="form-switch form-switch-md">
+                                            <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                            <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                            (click)="modalRef.hide()">Cancel</button>
+                          <button type="button" class="btn btn-primary waves-effect waves-light">Save
+                          </button>
+                          
+                        </div>
+                </ng-template><!-- /.modal -->
+
+                <ng-template #contentedit role="document" let-modal>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Edit Family Detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                          (click)="modalRef.hide()"></button>
+                    </div>
+                    <div class="modal-body">
+                          <form>
+                            <div class="row p-1 card-neo-drop">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Relationship <span class="text-danger">*</span></label>
+                                        <select class="form-select" name="relationship" id="relationship">
+                                            <option value="Father" selected>Father</option>
+                                            <option value="Mother">Mother</option>
+                                            <option value="Wife">Wife</option>
+                                            <option value="Child">Child</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="first-name" class="form-label">First Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="first-name" id="first-name" value="John" placeholder="Enter first name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="middle-name" class="form-label">Middle Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="middle-name" id="middle-name" value="Doe" placeholder="Enter middle name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="last-name" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" name="last-name" id="last-name" value="Smith" placeholder="Enter last name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-select" name="gender" id="gender">
+                                            <option value="Male" selected>Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">D-o-B <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="date" name="dob" id="dob" value="1990-01-01" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Upload Aadhar Card</label>
+                                        <input class="form-control" type="file" name="aadhar-card" id="aadhar-card" value="logo.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Upload Photo</label>
+                                        <input class="form-control" type="file" name="photo" id="photo" value="logo.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="assets/images/uidai.png" alt="Aadhar Image" class="rounded avatar-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="assets/images/users/avatar-3.jpg" alt="User Photo" class="rounded avatar-sm">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Include</label>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="include" id="include" checked>
+                                        <label class="form-check-label" for="include"> HO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label>Status</label>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="statusSwitch" checked />
+                                            <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                            (click)="modalRef.hide()">Close</button>
+                          <button type="button" class="btn btn-primary waves-effect waves-light">Save Changes
+                          </button>
+                          
+                        </div>
+                </ng-template><!-- /.modal -->
+
+                <ng-template #contentview role="document" let-modal>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">View Family Detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                          (click)="modalRef.hide()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row p-1 card-neo-drop">
+                            <div class="col-md-12 card-custom-edit mb-3">
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-shrink-0 me-3">
+                                        <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-md rounded-circle img-thumbnail">
+                                    </div>
+                                    <div class="flex-grow-1 align-self-center">
+                                        <div class="text-muted">
+                                            <h6>Rakesh Kumar Sharma</h6>
+                                            <p class="mb-1"><span class="fw-bold">Relationship :</span> Father</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-nowrap mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Gender :</th>
+                                            <td>Male</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">D-o-B :</th>
+                                            <td>1990-01-01</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Aadhar Card :</th>
+                                            <td><img src="assets/images/uidai.png" alt="Aadhar Image" class="rounded avatar-sm"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Include :</th>
+                                            <td>
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" name="include" id="include" checked disabled>
+                                                    <label class="form-check-label" for="include"> HO</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Status :</th>
+                                            <td>
+                                                <div class="form-switch form-switch-md">
+                                                    <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked disabled>
+                                                    <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                            (click)="modalRef.hide()">Close</button>
+                    </div>
+                </ng-template><!-- /.modal -->
+            </div>
+
+            
+        </div>
+    </div>
+</div>

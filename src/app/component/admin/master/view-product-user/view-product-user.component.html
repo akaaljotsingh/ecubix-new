@@ -1,0 +1,105 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">View Product User</h4>
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/productuser">Product Users</a></li>
+                    <li class="breadcrumb-item active">View Product User</li>
+                  </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-custom-edit">
+                <div class="card-body">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0 me-3">
+                            <img src="assets/images/companies/13.png" alt="" class="avatar-md rounded-circle img-thumbnail">
+                        </div>
+                        <div class="flex-grow-1 align-self-center">
+                            <div class="text-muted">
+                                <h5>Ram Naresh Sharma</h5>
+                                <p class="mb-1"><span class="fw-bold">Mobile No :</span> 9999999999</p>
+                                <p class="mb-0"><span class="fw-bold">Employee Code :</span> PH001</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-info mb-2 me-2" [routerLink]="'/admin/edit-product-user'"><i class="mdi mdi-pencil-outline mr-1"></i>
+                            Edit Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-2"><i class="mdi mdi-account me-2"></i>Personal Information</h4>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Employee Code :</th>
+                                    <td>PH001</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">First Name :</th>
+                                    <td>Ram</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Middle Name :</th>
+                                    <td>Naresh</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Last Name :</th>
+                                    <td>Sharma</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Gender :</th>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Birth Date :</th>
+                                    <td>25-12-1970</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <i class="mdi mdi-phone me-2"></i>Contact Information
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Mobile No :</th>
+                                    <td>9999999999</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone No :</th>
+                                    <td>000-8888888</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email :</th>
+                                    <td>ram.naresh&#64;example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

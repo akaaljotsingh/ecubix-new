@@ -1,0 +1,517 @@
+<div class="container-fluid">
+  <!-- <app-page-title title="Basic Tables" [breadcrumbItems]="breadCrumbItems"></app-page-title> -->
+  <div class="page-title">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+          <h4 class="mb-0 font-size-18">Regional Management</h4>
+          <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item"><a href="javascript: void(0);">Onboarding</a></li>
+              <li class="breadcrumb-item active">Regional Management</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-10"></div>
+    <div class="col-md-2">
+      <form>
+        <div class="">
+          <!-- <label class="form-label">Select State</label> -->
+          <select class="form-control select2">
+            <option>All States</option>
+            <option value="AP">Andhra Pradesh</option>
+            <option value="AR">Arunachal Pradesh</option>
+            <option value="AS">Assam</option>
+            <option value="BR">Bihar</option>
+            <option value="CT">Chhattisgarh</option>
+            <option value="GA">Gujarat</option>
+            <option value="HR">Haryana</option>
+            <option value="HP">Himachal Pradesh</option>
+            <option value="JK">Jammu and Kashmir</option>
+            <option value="GA">Goa</option>
+            <option value="JH">Jharkhand</option>
+            <option value="KA">Karnataka</option>
+            <option value="KL">Kerala</option>
+            <option value="MP">Madhya Pradesh</option>
+            <option value="MH">Maharashtra</option>
+            <option value="MN">Manipur</option>
+            <option value="ML">Meghalaya</option>
+            <option value="MZ">Mizoram</option>
+            <option value="NL">Nagaland</option>
+            <option value="OR">Odisha</option>
+            <option value="PB">Punjab</option>
+            <option value="RJ">Rajasthan</option>
+            <option value="SK">Sikkim</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="TG">Telangana</option>
+            <option value="TR">Tripura</option>
+            <option value="UT">Uttarakhand</option>
+            <option value="UP">Uttar Pradesh</option>
+            <option value="WB">West Bengal</option>
+            <option value="AN">Andaman and Nicobar Islands</option>
+            <option value="CH">Chandigarh</option>
+            <option value="DN">Dadra and Nagar Haveli</option>
+            <option value="DD">Daman and Diu</option>
+            <option value="DL">Delhi</option>
+            <option value="LD">Lakshadweep</option>
+            <option value="PY">Puducherry</option>
+          </select>
+
+      </div>
+      </form>
+    </div>
+  </div>
+          
+
+  <div class="row">
+    <!-- Zone Card (Default Active) -->
+    <div class="col-md-4">
+      <div class="card mini-stats-wid bg-success-subtle active custom-hover" (click)="updateTable('zone')">
+          <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Zone</p>
+                        <h4 class="mb-0">8</h4>
+                    </div>
+                    <div class="flex-shrink-0 align-self-center">
+                        <div class="avatar-sm rounded-circle mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-success">
+                                <i class="bx bx-compass font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Region Card -->
+    <div class="col-md-4">
+      <div class="card mini-stats-wid bg-info-subtle custom-hover" (click)="updateTable('region')">
+
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Region</p>
+                        <h4 class="mb-0">16</h4>
+                    </div>
+                    <div class="flex-shrink-0 align-self-center">
+                        <div class="avatar-sm rounded-circle mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-info">
+                                <i class="bx bx-map font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Headquarter Card -->
+    <div class="col-md-4">
+      <div class="card mini-stats-wid bg-warning-subtle custom-hover" (click)="updateTable('headquarter')">
+
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <p class="text-muted fw-medium">Headquarter</p>
+                        <h4 class="mb-0">32</h4>
+                    </div>
+                    <div class="flex-shrink-0 align-self-center">
+                        <div class="avatar-sm rounded-circle mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-warning">
+                                <i class="bx bx-home-circle font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>  
+
+
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body job-filter">
+                <div class="row g-3">
+                    <div class="col-xxl-2 col-lg-6">
+                        <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
+                            [placeholder]="'Search Details'"></ng-select>
+                    </div>
+                    <div class="col-xxl-2 col-lg-6">
+                        <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+                    </div>
+                    <div class="col-xxl-3 col-lg-6">
+                        <div class="position-relative hstack gap-3">
+                            <button type="submit" class="btn btn-primary w-100"><i
+                                    class="bx bx-search-alt align-middle"></i> Search</button>
+                            <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
+                                    class="mdi mdi-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="col-xxl-5 col-lg-6">
+                        <div class="text-sm-end">
+                            <button type="button" class="btn btn-success mb-2 me-2" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-plus mr-1"></i>
+                                Add
+                            </button>
+                            <ng-template #content role="document" let-modal>
+                              <div class="modal-header">
+                                    <h5 class="modal-title" id="myModalLabel">Add Regioal Detail</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                      (click)="modalRef.hide()"></button>
+                              </div>
+                              <div class="modal-body">
+                                    <form>
+                                        <div class="row p-1 card-neo-drop">
+                                            <div class="col-md-6">
+                                              <div class="mb-3">
+                                                <label class="form-label">Division</label>
+                                                <select class="form-select" formControlName="division">
+                                                  <option>Select Division</option>
+                                                  <option>North</option>
+                                                  <option>South</option>
+                                                  <option>East</option>
+                                                  <option>West</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          
+                                            <div class="col-md-6">
+                                              <div class="mb-3">
+                                                <label class="form-label">Geo Type</label>
+                                                <select class="form-select" formControlName="geoType" (change)="onGeoTypeChange($event)">
+                                                  <option>Select Geo</option>
+                                                  <option>Zone</option>
+                                                  <option>Region</option>
+                                                  <option>HQ</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          
+                                            <div class="col-md-12" *ngIf="selectedGeoType !== 'Region' && selectedGeoType !== 'HQ' && selectedGeoType === 'Zone'">
+                                              <div class="mb-3">
+                                                <label class="form-label">Zone Code</label>
+                                                <input class="form-control" type="text" placeholder="Enter code" formControlName="code" />
+                                              </div>
+                                            </div>
+                                          
+                                            <div class="col-md-12" *ngIf="selectedGeoType !== 'Region' && selectedGeoType !== 'HQ' && selectedGeoType === 'Zone' ">
+                                              <div class="mb-3">
+                                                <label class="form-label">Zone Name</label>
+                                                <input class="form-control" type="text" placeholder="Enter name" formControlName="name" />
+                                              </div>
+                                            </div>
+                                          
+                                            <div *ngIf="selectedGeoType === 'Region'">
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">Zone</label>
+                                                  <select class="form-select" formControlName="zone">
+                                                    <option>Select Zone</option>
+                                                    <option>Zone 1</option>
+                                                    <option>Zone 2</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">Region Code</label>
+                                                  <input class="form-control" type="text" placeholder="Enter Region Code" formControlName="regionCode" />
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">Region Name</label>
+                                                  <input class="form-control" type="text" placeholder="Enter Region Name" formControlName="regionName" />
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">Short Code</label>
+                                                  <input class="form-control" type="text" placeholder="Enter Short Code" formControlName="shortCode" />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          
+                                            <div *ngIf="selectedGeoType === 'HQ'">
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">HQ Type</label>
+                                                  <select class="form-select" formControlName="hqType">
+                                                    <option>Select HQ Type</option>
+                                                    <option>Type 1</option>
+                                                    <option>Type 2</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">Region</label>
+                                                  <select class="form-select" formControlName="hqRegion">
+                                                    <option>Select Region</option>
+                                                    <option>Region 1</option>
+                                                    <option>Region 2</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">State</label>
+                                                  <select class="form-select" formControlName="hqState">
+                                                    <option>Select State</option>
+                                                    <option>State 1</option>
+                                                    <option>State 2</option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">HQ Code</label>
+                                                  <input class="form-control" type="text" placeholder="Enter HQ Code" formControlName="hqCode" />
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">HQ Name</label>
+                                                  <input class="form-control" type="text" placeholder="Enter HQ Name" formControlName="hqName" />
+                                                </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <div class="mb-3">
+                                                  <label class="form-label">SMS Code</label>
+                                                  <input class="form-control" type="text" placeholder="Enter SMS Code" formControlName="smsCode" />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          
+                                            <div class="col-md-6">
+                                              <div class="mb-3">
+                                                <label class="form-label">Date</label>
+                                                <input class="form-control" type="date" formControlName="date" />
+                                              </div>
+                                            </div>
+                                          
+                                            <div class="col-md-6">
+                                              <div class="mb-3">
+                                                <label>Status</label>
+                                                <div class="form-switch form-switch-md">
+                                                    <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                        </div>
+                                          
+                                          
+                                          
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                                      (click)="modalRef.hide()">Close</button>
+                                    <button type="button" class="btn btn-primary waves-effect waves-light">Save
+                                    </button>
+                                  </div>
+                            </ng-template><!-- /.modal -->
+                        </div>
+                    </div><!-- end col-->
+                </div>
+                <!-- Table data -->
+
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
+                  <thead [ngClass]="selectedTableClass">
+                    <tr>
+                      <th *ngFor="let header of tableHeaders">{{ header }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of tableData; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td *ngIf="item.division">{{ item.division }}</td>
+                      <td *ngIf="item.geoType">{{ item.geoType }}</td>
+                      <td *ngIf="item.zone">{{ item.zone }}</td>
+                      <td *ngIf="item.hqType">{{ item.hqType }}</td>
+                      <td *ngIf="item.region">{{ item.region }}</td>
+                      <td *ngIf="item.state">{{ item.state }}</td>
+                      <td *ngIf="item.code">{{ item.code }}</td>
+                      <td *ngIf="item.name">{{ item.name }}</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" [checked]="item.status" />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a class="btn btn-sm btn-soft-primary" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModalView(contentview)"><i class="mdi mdi-eye-outline"></i></a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a class="btn btn-sm btn-soft-info" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModalEdit(contentedit)"><i class="mdi mdi-pencil-outline"></i></a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/employees" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <ng-template #contentedit role="document" let-modal>
+              <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Edit Regioal Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                      (click)="modalRef.hide()"></button>
+              </div>
+              <div class="modal-body">
+                    <form>
+                      <div class="row p-1 card-neo-drop">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Division</label>
+                                <select class="form-select">
+                                    <option>Select Division</option>
+                                    <option value="North" selected>North</option>
+                                    <option value="South">South</option>
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Geo Type</label>
+                                <select class="form-select">
+                                    <option>Select Geo</option>
+                                    <option value="Zone" selected>Zone</option>
+                                    <option value="Region">Region</option>
+                                    <option value="HQ">HQ</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <!-- Zone fields, shown only when Geo Type is "Zone" -->
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">Zone Code</label>
+                                <input class="form-control" type="text" placeholder="Enter code" formControlName="code" value="Z001" />
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">Zone Name</label>
+                                <input class="form-control" type="text" placeholder="Enter name" formControlName="name" value="North Zone" />
+                            </div>
+                        </div>
+                    
+                                        
+                        <!-- Date -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Date</label>
+                                <input class="form-control" type="date" formControlName="date" value="2025-02-26" />
+                            </div>
+                        </div>
+                    
+                        <!-- Status Toggle -->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label>Status</label>
+                                <div class="form-switch form-switch-md">
+                                    <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                    <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                      (click)="modalRef.hide()">Close</button>
+                    <button type="button" class="btn btn-primary waves-effect waves-light">Save Changes
+                    </button>
+                  </div>
+            </ng-template><!-- /.modal -->
+
+            <ng-template #contentview role="document" let-modal>
+              <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">View Regioal Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                      (click)="modalRef.hide()"></button>
+              </div>
+              <div class="modal-body">
+                <div class="table-responsive">
+                  <table class="table table-nowrap mb-0">
+                      <tbody>
+                          <!-- Division -->
+                          <tr>
+                              <th scope="row">Division:</th>
+                              <td>North</td>
+                          </tr>
+              
+                          <!-- Geo Type -->
+                          <tr>
+                              <th scope="row">Geo Type:</th>
+                              <td>Zone</td>
+                          </tr>
+              
+                          <!-- Zone Code -->
+                          <tr>
+                              <th scope="row">Zone Code:</th>
+                              <td>Z001</td>
+                          </tr>
+              
+                          <!-- Zone Name -->
+                          <tr>
+                              <th scope="row">Zone Name:</th>
+                              <td>North Zone</td>
+                          </tr>
+              
+                          <!-- Date -->
+                          <tr>
+                              <th scope="row">Date:</th>
+                              <td>2025-02-26</td>
+                          </tr>
+              
+                          <!-- Status -->
+                          <tr>
+                              <th scope="row">Status:</th>
+                              <td>
+                                  <div class="form-switch form-switch-md">
+                                      <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked disabled>
+                                      <label class="form-check-label" for="SwitchCheckSizemd">Active</label>
+                                  </div>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                      (click)="modalRef.hide()">Close</button>
+              </div>
+            </ng-template><!-- /.modal -->
+            
+        </div>
+      </div>
+  </div>
+</div>

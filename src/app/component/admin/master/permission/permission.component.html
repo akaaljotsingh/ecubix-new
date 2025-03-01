@@ -1,0 +1,340 @@
+<div class="container-fluid">
+    <!-- <app-page-title title="Orders" [breadcrumbItems]="breadCrumbItems"></app-page-title> -->
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 font-size-18">Permissions</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/permissioncategory">Permission Category</a></li>
+                            <li class="breadcrumb-item active">Permissions</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body job-filter">
+                    <div class="row g-3">
+                        <div class="col-xxl-2 col-lg-6">
+                           
+                                <select class="form-select" id="address-type">
+                                    <option>Select Category</option>
+                                    <option>Category 1</option>
+                                    <option>Category 2</option>
+                                    <option>Category 3</option>
+                                </select>
+                        </div>
+                        <div class="col-xxl-2 col-lg-6">
+                            <input type="search" class="form-control" id="searchInput" placeholder="Search permission">
+                        </div>
+                        <div class="col-xxl-3 col-lg-6">
+                            <div class="position-relative hstack gap-3">
+                                <button type="submit" class="btn btn-primary w-50"><i
+                                        class="bx bx-search-alt align-middle"></i> Search</button>
+                                
+                            </div>
+                        </div>
+                        <div class="col-xxl-5 col-lg-6">
+                            <div class="text-sm-end">
+                                <button type="button" class="btn btn-success mb-2 me-2"
+                                data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-plus mr-1"></i>
+                                    Add Permission
+                                </button>
+                            </div>
+                        </div><!-- end col-->
+                    </div>
+                    <!-- Table data -->
+
+                </div>
+
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th scope="col">Sl No</th>
+                                    <th scope="col">Permission Name</th>
+                                    <th scope="col">Permission Category</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Next Steps</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Full Permission</td>
+                                    <td>Category 1</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/tasks" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Partial Permission</td>
+                                    <td>Category 2</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch2" (change)="checkValue($event)" unchecked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/tasks" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>No Permission</td>
+                                    <td>Category 3</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/tasks" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="row justify-content-between align-items-center g-3">
+                        <div class="col-auto">
+                            <label class="d-inline-flex align-items-center mb-0">
+                                Show
+                                <select class="form-select form-select-sm mx-2" style="width: auto;">
+                                    <option value="10" selected>10 entries</option>
+                                    <option value="50">50 entries</option>
+                                    <option value="100">100 entries</option>
+                                </select>
+
+                            </label>
+                        </div>
+                        <div class="col-auto me-auto">
+                            <p class="text-muted mb-0">Showing <b>3</b> of <b>3</b> results</p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="text-md-right float-md-end pagination-rounded">
+                                <ul class="pagination pagination-rounded justify-content-end mb-2">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                            <i class="mdi mdi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                            <i class="mdi mdi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+
+                </div>
+            </div>
+
+            <ng-template #content role="document" let-modal>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Add Permission Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                      (click)="modalRef.hide()"></button>
+                </div>
+                <div class="modal-body">
+                      <form>
+                        <div class="row p-1 card-neo-drop">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Permission Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter permission name" id="company-name" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Permission Category</label>
+                                    <select class="form-select">
+                                      <option>Select Category</option>
+                                      <option>Category 1</option>
+                                      <option>Category 2</option>
+                                      <option>Category 3</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="division-code" class="form-label">Permission Description</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter description" id="permission-description"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label>Status</label>
+                                    <div class="form-switch form-switch-md">
+                                        <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                        <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                        (click)="modalRef.hide()">Close</button>
+                      <button type="button" class="btn btn-primary waves-effect waves-light">Save
+                      </button>
+                    </div>
+            </ng-template><!-- /.modal -->
+
+            <ng-template #contentedit role="document" let-modal>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Edit Permission Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                      (click)="modalRef.hide()"></button>
+                </div>
+                <div class="modal-body">
+                      <form>
+                        <div class="row p-1 card-neo-drop">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Permission Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter permission name" id="permission-name" value="Full Permission" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Permission Category</label>
+                                    <select class="form-select">
+                                      <option>Select Category</option>
+                                      <option selected>Category 1</option>
+                                      <option>Category 2</option>
+                                      <option>Category 3</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="division-code" class="form-label">Permission Description</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter description" id="permission-description">This is dummy permission</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label>Status</label>
+                                    <div class="form-switch form-switch-md">
+                                        <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                        <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                        (click)="modalRef.hide()">Close</button>
+                      <button type="button" class="btn btn-primary waves-effect waves-light">Save Changes
+                      </button>
+                    </div>
+            </ng-template><!-- /.modal -->
+
+            <ng-template #contentview role="document" let-modal>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">View Permission Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                      (click)="modalRef.hide()"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Permission Name</th>
+                                    <td>Full Permission</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Category Name</th>
+                                    <td>Category 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Category Description</th>
+                                    <td>This is dummy text</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Status</th>
+                                    <td>
+                                        
+                                        <div class="form-switch form-switch-md">
+                                            <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked disabled>
+                                            <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal"
+                        (click)="modalRef.hide()">Close</button>
+                    
+                </div>
+            </ng-template><!-- /.modal -->
+
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Edit Menu</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/create-menu">Menus</a></li>
+                        <li class="breadcrumb-item active">Edit Menu</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-12">
+                <!-- Task Information -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-menu me-2"></i>Menu Detail
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Menu Name <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" value="Menu 1" id="nameu-name" required />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Menu Order <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" value="1" id="nameu-order" required />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Menu URL <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" value="menu-1" id="menu-url" required />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Menu Icon <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" value="fa fa-clog" id="menu-icon" required />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="company-name" class="form-label">Sub Menu Order Name</label>
+                                    <input class="form-control" type="text" value="1" id="sub-menu-name" required />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="division-code" class="form-label">Menu Description</label>
+                                    <textarea class="form-control" rows="1" placeholder="Enter menu description" id="company-description">dummy description</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label>Visible</label>
+                                    <div class="form-switch form-switch-md">
+                                        <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                        <label class="form-check-label" for="SwitchCheckSizemd"> Yes</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label>Status</label>
+                                    <div class="form-switch form-switch-md">
+                                        <input class="form-check-input me-1" type="checkbox" id="SwitchCheckSizemd" checked>
+                                        <label class="form-check-label" for="SwitchCheckSizemd"> Active</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Permission Information -->
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <i class="mdi mdi-checkbox-marked-circle me-2"></i>Tasks
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-12 mb-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Select All
+                                    </label>
+                                </div>
+                                <a routerLink="#" class="btn btn-sm btn-warning">
+                                    <i class="mdi mdi-content-save" title="save"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                      Task 1
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 2
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 3
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 4
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 5
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 6
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 7
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 8
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 9
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 10
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 11
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                                    <label class="form-check-label" for="gridCheck">
+                                        Task 12
+                                    </label>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                
+                
+
+                <!-- save Details -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

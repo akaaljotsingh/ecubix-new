@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Edit Broadcast</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/broadcast">Manage Broadcast</a></li>
+                        <li class="breadcrumb-item active">Edit Broadcast</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Select Company</label>
+                                <select class="form-control form-control-custom">
+                                    <option>Select Company</option>
+                                    <option value="Notification">All Companies</option>
+                                    <option value="Broadcast" selected>Loreum Pharma Pvt Ltd.</option>
+                                    <option value="Broadcast">Loreum Pharma</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Type</label>
+                                <select class="form-control form-control-custom" value="Broadcast">
+                                    <option>Select Type</option>
+                                    <option value="Notification">Notification</option>
+                                    <option value="Broadcast" selected>Broadcast</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Category</label>
+                                <select class="form-control form-control-custom" value="Urgent">
+                                  <option>Select Category</option>
+                                  <option value="Urgent" selected>Urgent</option>
+                                  <option value="Reminder">Reminder</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                              <label>Title</label>
+                              <input type="text" class="form-control form-control-custom" placeholder="Enter Title" value="Important Broadcast">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                              <label>Status</label>
+                              <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="statusSwitch" checked />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12 mb-3">
+                              <label>Description</label>
+                              <textarea class="form-control form-control-custom" rows="4" placeholder="Enter broadcast description">This is a description of the broadcast message that needs to be updated or edited.</textarea>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
