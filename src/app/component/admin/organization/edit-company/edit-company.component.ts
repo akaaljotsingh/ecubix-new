@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './edit-company.component.css'
 })
 export class EditCompanyComponent {
+  countries: string[] = ['India', 'USA', 'UK', 'Canada'];;
+  states: string[] =  ['California', 'Texas', 'Florida', 'New York'];
+  cities: string[] = ['New York City', 'Los Angeles', 'Chicago', 'Houston'];
+
 
 }

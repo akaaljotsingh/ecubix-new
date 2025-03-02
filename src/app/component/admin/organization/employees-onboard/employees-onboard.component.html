@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-0 font-size-18">Manage Employee</h4>
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Manage Employee</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="employeeForm" class="container mt-4 p-4 border rounded">
+
+        <!-- Step 1: Employee Type -->
+        <h2 class="mb-3">Employee Selection</h2>
+        <div class="mb-3">
+            <label class="form-label">Employee Type:</label>
+            <div class="form-check">
+                <input type="radio" formControlName="employeeType" value="newEmployee" class="form-check-input"
+                    (change)="onEmployeeTypeChange()">
+                <label class="form-check-label">New Joining</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" formControlName="employeeType" value="existingEmployee" class="form-check-input"
+                    (change)="onEmployeeTypeChange()">
+                <label class="form-check-label">Existing Employee</label>
+            </div>
+        </div>
+
+        <!-- Step 2: Joining Details (Existing Employee Only) -->
+        <ng-container *ngIf="showJoiningThrough">
+            <h2 class="mb-3">Joining Details</h2>
+            <div class="mb-3">
+                <label class="form-label">Joining through:</label>
+                <select formControlName="joiningThrough" class="form-select">
+                    <option value="transfer">Transfer</option>
+                    <option value="promotion">Promotion</option>
+                    <option value="demotion">Demotion</option>
+                </select>
+
+                <div class="form-check mt-2">
+                    <input type="checkbox" formControlName="createVacancy" class="form-check-input">
+                    <label class="form-check-label">Create Vacancy in case of Existing Employee</label>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Step 3: Vacancy Type -->
+        <ng-container *ngIf="showVacancyType">
+            <h2 class="mb-3">Vacancy Type</h2>
+            <div class="mb-3">
+                <label class="form-label">Vacancy Type:</label>
+                <div class="form-check">
+                    <input type="radio" formControlName="vacancyType" value="newVacancy" class="form-check-input"
+                        (change)="onVacancyTypeChange()">
+                    <label class="form-check-label">Against New Vacancy</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" formControlName="vacancyType" value="existingVacancy" class="form-check-input"
+                        (change)="onVacancyTypeChange()">
+                    <label class="form-check-label">Against Existing Vacancy</label>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Step 4: Vacancy Details -->
+        <ng-container *ngIf="showVacancyDetails">
+            <h2 class="mb-3">Vacancy Details</h2>
+            <div class="mb-3">
+                <label class="form-label">Enter Vacancy Details:</label>
+                <input type="text" formControlName="vacancyDetails" class="form-control" placeholder="Vacancy Details">
+            </div>
+        </ng-container>
+
+        <!-- Step 5: Division and Designation -->
+        <ng-container *ngIf="showDesignationSection">
+            <h2 class="mb-3">Division and Designation</h2>
+            <div class="mb-3">
+                <label class="form-label">Select Division:</label>
+                <select formControlName="division" class="form-select">
+                    <option value="division1">Division 1</option>
+                    <option value="division2">Division 2</option>
+                    <option value="division3">Division 3</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Select Designation:</label>
+                <select formControlName="designation" class="form-select" (change)="onDesignationChange()">
+                    <option value="ABM">ABM</option>
+                    <option value="ZBM">ZBM</option>
+                    <option value="RBM">RBM</option>
+                    <option value="MR">MR</option>
+                </select>
+            </div>
+        </ng-container>
+
+        <!-- Conditional Fields -->
+        <h3 *ngIf="!hideReportingOfficer">Reporting Officer</h3>
+        <div *ngIf="!hideReportingOfficer"><label>Select Reporting Officer:</label><ng-select formControlName="reportingOfficer"></ng-select></div>
+        
+        <h3 *ngIf="!hideZones || !hideRegions || !hideHeadquarters">Working Area</h3>
+        <div *ngIf="!hideZones"><label>Select Zones:</label><ng-select formControlName="zone" [multiple]="true"></ng-select></div>
+        <div *ngIf="!hideRegions"><label>Select Regions:</label><ng-select formControlName="region" [multiple]="true"></ng-select></div>
+        <div *ngIf="!hideHeadquarters"><label>Select Headquarters:</label><ng-select formControlName="headquarters" [multiple]="true"></ng-select></div>
+        
+        <h3 *ngIf="!hideReportingHQ">Reporting Station</h3>
+        <div *ngIf="!hideReportingHQ"><label>Select Reporting Headquarter:</label><ng-select formControlName="reportingHQ"></ng-select></div>
+
+    </form>
+</div>

@@ -1,0 +1,348 @@
+<div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">Retailers</h4>
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item active">Retailers</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- First Card -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body job-filter">
+            <div class="row g-3">
+              <div class="col-xxl-2 col-lg-3">
+                <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+              </div>
+              <div class="col-xxl-3 col-lg-3">
+                <button type="submit" class="btn btn-primary w-50 ">
+                    <i class="bx bx-search-alt align-middle"></i> Search
+                  </button>
+              </div>
+              <div class="col-xxl-7 col-lg-3 ">
+                <div class="text-sm-end">
+                    <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-retailer'">
+                        <i class="mdi mdi-plus mr-1"></i> Add Retailer
+                      </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Table Data -->
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
+                <thead class="table-primary">
+                  <tr>
+                    <th scope="col">Sl No</th>
+                    <th scope="col">Retailer Code</th>
+                    <th scope="col">Retailer Name</th>
+                    <th scope="col">Retailer Type</th>
+                    <th scope="col">State</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Contact Person</th>
+                    <th scope="col">Phone No.</th>
+                    <th scope="col">Associated Stockist</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>RT001</td>
+                        <td>ABC Retailers</td>
+                        <td>Wholesaler</td>
+                        <td>Delhi</td>
+                        <td>New Delhi</td>
+                        <td>Rajesh Kumar</td>
+                        <td>011-23456789</td>
+                        <td>XYZ Stockist</td>
+                        <td>
+                            <div class="form-check form-switch form-switch-md">
+                                <input class="form-check-input" type="checkbox" id="switch1" 
+                                checked />
+                            </div>
+                        </td>
+                        <td>
+                            <ul class="list-unstyled hstack gap-1 mb-0">
+                                <li data-bs-toggle="tooltip" title="View">
+                                    <a href="javascript:void(0);" routerLink="/admin/view-retailer"
+                                        class="btn btn-sm btn-soft-primary"><i
+                                            class="mdi mdi-eye-outline"></i></a>
+                                </li>
+                                <li data-bs-toggle="tooltip" title="Edit">
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-retailer" class="btn btn-sm btn-soft-info"><i
+                                            class="mdi mdi-pencil-outline"></i></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row justify-content-between align-items-center g-3">
+                <div class="col-auto">
+                    <label class="d-inline-flex align-items-center mb-0">
+                        Show
+                        <select class="form-select form-select-sm mx-2" style="width: auto;">
+                            <option value="10" selected>10 entries</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+
+                    </label>
+                </div>
+                <div class="col-auto me-auto">
+                    <p class="text-muted mb-0">Showing <b>10</b> of <b>10</b> results</p>
+                </div>
+                <div class="col-auto">
+                    <div class="text-md-right float-md-end pagination-rounded">
+                        <ul class="pagination pagination-rounded justify-content-end mb-2">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="javascript: void(0);" aria-label="Previous">
+                                    <i class="mdi mdi-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="javascript: void(0);" aria-label="Next">
+                                    <i class="mdi mdi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

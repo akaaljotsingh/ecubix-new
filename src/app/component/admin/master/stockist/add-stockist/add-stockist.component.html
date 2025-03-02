@@ -1,0 +1,123 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Add Stockist</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/admin/stockist">Stockist</a></li>
+                        <li class="breadcrumb-item active">Add Stockist</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <form class="needs-validation">
+        <div class="row">
+            <div class="col-12">
+                <!-- Stockist Information -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-account me-2"></i>Stockist Information
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Stockist Code <span class="text-danger">*</span></label>
+                                <input maxlength="50" type="text" class="form-control form-control-custom" placeholder="Stockist Code">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Stockist Name <span class="text-danger">*</span></label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Stockist Name">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Stockist Type <span class="text-danger">*</span></label>
+                                <select class="form-control form-control-custom">
+                                    <option>Type 1</option>
+                                    <option>Type 2</option>
+                                    <option>Type 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Place <span class="text-danger">*</span></label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Place">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Details -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <h4 class="card-title card-header-custom">
+                            <i class="mdi mdi-map-marker me-2"></i>Address Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Address 1</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 1">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Address 2</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 2">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Address 3</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 3">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Pin Code</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Pin Code">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>State</label>
+                                <ng-select [items]="states" bindLabel="name" bindValue="id" placeholder="Select State"></ng-select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>City</label>
+                                <ng-select [items]="cities" bindLabel="name" bindValue="id" placeholder="Select City"></ng-select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Person Details -->
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <i class="mdi mdi-briefcase me-2"></i>Contact Person Details
+                        </h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label>Contact Person</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Contact Person">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Phone No</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Phone No">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Mobile No</label>
+                                <input maxlength="150" type="text" class="form-control form-control-custom" placeholder="Mobile No">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Email</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-custom">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mt-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="cancel" class="btn btn-secondary" routerLink="/admin/stockist">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

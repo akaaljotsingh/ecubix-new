@@ -70,25 +70,31 @@
                             <input type="text" class="form-control" placeholder="Address" value="Plot No. 16, Akurli Road, Kandivali East">
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="country" class="form-label">Country </label>
-                                <select class="form-select" id="company-type">
-                                      <option>Select Country</option>
-                                      <option selected>India</option>
-                                </select>
+                            <label>Select Country</label>
+                            <ng-select 
+                                [items]="countries" 
+                                bindLabel="name" 
+                                bindValue="id" 
+                                placeholder="Select Country">
+                            </ng-select>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="state" class="form-label">State</label>
-                            <select class="form-select" id="company-type">
-                                <option>Select State</option>
-                                <option selected>Maharashtra</option>
-                            </select>
+                            <label>Select State</label>
+                            <ng-select 
+                                [items]="states" 
+                                bindLabel="name" 
+                                bindValue="id" 
+                                placeholder="Select State">
+                            </ng-select>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <select class="form-select" id="company-type">
-                                <option>Select City</option>
-                                <option selected>Mumbai</option>
-                            </select>
+                            <label>Select City</label>
+                            <ng-select 
+                                [items]="cities" 
+                                bindLabel="name" 
+                                bindValue="id" 
+                                placeholder="Select City">
+                            </ng-select>
                         </div>
                     </div>
                 </div>

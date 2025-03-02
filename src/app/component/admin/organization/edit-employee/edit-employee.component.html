@@ -124,14 +124,35 @@
                                 <input type="text" class="form-control form-control-custom" placeholder="110001" value="110001">
                             </div>
                             <div class="col-md-3 mb-3">
+                                <label>Communication Country</label>
+                                <ng-select 
+                                    [items]="countries" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select Country">
+                                </ng-select>
+                            </div>
+                            <div class="col-md-3 mb-3">
                                 <label>Communication State</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Delhi" value="Delhi">
+                                <ng-select 
+                                    [items]="states" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select State">
+                                </ng-select>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Communication City</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="New Delhi" value="New Delhi">
+                                <ng-select 
+                                    [items]="cities" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select City">
+                                </ng-select>
                             </div>
-                            <div class="col-md-6"></div>
+                        </div>
+                        <hr class="dashed">
+                        <div class="row">
                             <div class="col-md-3 mb-3">
                                 <label>Permanent Address</label>
                                 <input type="text" class="form-control form-control-custom" placeholder="456 Avenue, Town" value="456 Avenue, Town">
@@ -149,13 +170,33 @@
                                 <input type="text" class="form-control form-control-custom" placeholder="110002" value="110002">
                             </div>
                             <div class="col-md-3 mb-3">
+                                <label>Permanent Country</label>
+                                <ng-select 
+                                    [items]="countries" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select Country">
+                                </ng-select>
+                            </div>
+                            <div class="col-md-3 mb-3">
                                 <label>Permanent State</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Haryana" value="Haryana">
+                                <ng-select 
+                                    [items]="states" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select State">
+                                </ng-select>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Permanent City</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Gurgaon" value="Gurgaon">
+                                <ng-select 
+                                    [items]="cities" 
+                                    bindLabel="name" 
+                                    bindValue="id" 
+                                    placeholder="Select City">
+                                </ng-select>
                             </div>
+
                         </div>
                     </div>
                 </div>
