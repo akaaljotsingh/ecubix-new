@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { CommonModule } from '@angular/common';
 import { PagetitleComponent } from 'src/app/shared/ui/pagetitle/pagetitle.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -22,11 +22,6 @@ export class AddCompanyComponent  implements OnInit{
   typesubmit: boolean;
   rangesubmit: boolean;
   breadCrumbItems: Array<{}>;
-
-  countries: string[] = ['India', 'USA', 'UK', 'Canada'];;
-  states: string[] =  ['California', 'Texas', 'Florida', 'New York'];
-  cities: string[] = ['New York City', 'Los Angeles', 'Chicago', 'Houston'];
-
   constructor(public formBuilder: UntypedFormBuilder) { }
 
   ngOnInit() {

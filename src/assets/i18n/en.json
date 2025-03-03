@@ -85,7 +85,8 @@
       "SETTINGS": "Settings",
       "LOCK_SCREEN": "Lock screen",
       "LOGOUT": "Logout",
-      "PASSWORD": "Change Password"
+      "PASSWORD": "Change Password",
+      "ACTIVITY": "Today's Activity"
     }
   },
   "MENUITEMS": {
@@ -120,7 +121,7 @@
     "ONBOARDING": {
       "TEXT": "Onboarding",
       "LIST": {
-        "CLIENT": "Client",
+        "COMPANY": "Company",
         "DIVISON": "Divison",
         "GEOGRAPHY": "Geography",
         "COMPANY_ROLES": "Company Roles",
@@ -132,18 +133,6 @@
           "divisionlevelconfig": "Division Level Tour Config",
           "mtptourplan": "MTP Tour Plan",
           "EMPLOYEEFAMILYDETAILS": "Employee Family Detail"
-      }
-
-    },
-     
-    "MASTERS": {
-      "TEXT": "Masters",
-      "LIST": {
-        "CFA": "CFA",
-        "Doctor" : "Doctor",
-        "Chemist": "Chemist",
-        "Stokist": "Stokist",
-        "Retailer": "Retailer"
       }
 
     },

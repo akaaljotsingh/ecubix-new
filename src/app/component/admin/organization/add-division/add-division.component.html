@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-0 font-size-18">Manage Divison</h4>
+                    <h4 class="mb-0 font-size-18">Divison</h4>
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Manage Company</li>
+                            <li class="breadcrumb-item active">Division</li>
                         </ol>
                     </div>
                 </div>
@@ -21,22 +21,23 @@
             <div class="card">
                 <div class="card-body job-filter">
                     <div class="row g-3">
-                        <div class="col-xxl-2 col-lg-6">
-                            <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
-                                [placeholder]="'Search Details'"></ng-select>
+                        <div class="col-xxl-2 col-lg-3">
+                            <ng-select [items]="selectValue1" [multiple]="false" appendTo="body"
+                              [placeholder]="'Select Client'"></ng-select>
                         </div>
-                        <div class="col-xxl-2 col-lg-6">
-                            <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+                       
+                        <div class="col-xxl-2 col-lg-2">
+                            <input type="search" class="form-control" id="searchInput" placeholder="Search divison">
                         </div>
-                        <div class="col-xxl-3 col-lg-6">
+                        <div class="col-xxl-3 col-lg-2">
                             <div class="position-relative hstack gap-3">
-                                <button type="submit" class="btn btn-primary w-50"><i
+                                <button type="submit" class="btn btn-primary"><i
                                         class="bx bx-search-alt align-middle"></i> Search</button>
                                 <!-- <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
                                         class="mdi mdi-download"></i> Download</button> -->
                             </div>
                         </div>
-                        <div class="col-xxl-5 col-lg-6">
+                        <div class="col-xxl-5 col-lg-2">
                             <div class="text-sm-end">
                                 <button type="button" class="btn btn-success mb-2 me-2"
                                 data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-plus mr-1"></i>
@@ -55,14 +56,13 @@
                         <table class="table align-middle dt-responsive nowrap w-100 table-check table-striped table-hover">
                             <thead class="table-primary">
                                 <tr>
-                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Sl No</th>
                                     <th scope="col">Division Code</th>
+                                    <th scope="col">Client Name</th>
                                     <th scope="col">Division Name</th>
-                                    <th scope="col">Display Company Name - MES</th>
                                     <th scope="col">Date Of Formation</th>
                                     <th scope="col">Date Of Discontinuation</th>
-                                    <th scope="col">Latest Updated By (Emp Code)</th>
-                                    <th scope="col">Latest Updated By (Emp Name)</th>
+                                    <th scope="col">Latest Update By</th> 
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                     <th scope="col">Next Steps</th>
@@ -70,14 +70,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Veda Pvt Ltd</td>
+                                    <td>1</td>
                                     <td>DIV001</td>
+                                    <td>Veda Pvt Ltd</td>
                                     <td>Pharmaceuticals</td>
-                                    <td>Veda Pvt Ltd - MES</td>
-                                    <td>2020-01-15</td>
-                                    <td>2025-01-15</td>
-                                    <td>EMP001</td>
-                                    <td>Ravi Kumar</td>
+                                    <td>15-01-2020</td>
+                                    <td>15-01-2025</td>
+                                    <td>Ravi Kumar (EMP001)</td> <!-- Merged data -->
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
@@ -98,14 +97,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Shanti Laboratories</td>
+                                    <td>2</td>
                                     <td>DIV002</td>
+                                    <td>Shanti Laboratories</td>
                                     <td>Medical Devices</td>
-                                    <td>Shanti Laboratories - MES</td>
-                                    <td>2018-03-20</td>
-                                    <td>2024-12-31</td>
-                                    <td>EMP002</td>
-                                    <td>Priya Sharma</td>
+                                    <td>20-03-2018</td>
+                                    <td>31-12-2024</td>
+                                    <td>Priya Sharma (EMP002)</td> <!-- Merged data -->
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch2" (change)="checkValue($event)" unchecked />
@@ -126,14 +124,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Vikram Biotech</td>
+                                    <td>3</td>
                                     <td>DIV003</td>
+                                    <td>Vikram Biotech</td>
                                     <td>R&D</td>
-                                    <td>Vikram Biotech - MES</td>
-                                    <td>2017-06-10</td>
-                                    <td>2026-06-10</td>
-                                    <td>EMP003</td>
-                                    <td>Ajay Verma</td>
+                                    <td>10-06-2017</td>
+                                    <td>10-06-2026</td>
+                                    <td>Ajay Verma (EMP003)</td> <!-- Merged data -->
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
@@ -154,14 +151,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Surya Global</td>
+                                    <td>4</td>
                                     <td>DIV004</td>
+                                    <td>Surya Global</td>
                                     <td>Marketing</td>
-                                    <td>Surya Global - MES</td>
-                                    <td>2021-08-25</td>
-                                    <td>2023-08-25</td>
-                                    <td>EMP004</td>
-                                    <td>Meera Joshi</td>
+                                    <td>25-08-2021</td>
+                                    <td>25-08-2023</td>
+                                    <td>Meera Joshi (EMP004)</td> <!-- Merged data -->
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch4" (change)="checkValue($event)" unchecked />
@@ -178,151 +174,13 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <a href="javascript: void(0);" routerLink="/admin/geography" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Shree Health</td>
-                                    <td>DIV005</td>
-                                    <td>Healthcare</td>
-                                    <td>Shree Health - MES</td>
-                                    <td>2022-11-01</td>
-                                    <td>2025-11-01</td>
-                                    <td>EMP005</td>
-                                    <td>Vikram Patel</td>
-                                    <td>
-                                        <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch5" (change)="checkValue($event)" checked />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled hstack gap-1 mb-0">
-                                            <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                            </li>
-                                            <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <a href="javascript:void(0);"  class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Raghav Pvt Ltd</td>
-                                    <td>DIV006</td>
-                                    <td>Manufacturing</td>
-                                    <td>Raghav Pvt Ltd - MES</td>
-                                    <td>2019-09-12</td>
-                                    <td>2024-09-12</td>
-                                    <td>EMP006</td>
-                                    <td>Anjali Reddy</td>
-                                    <td>
-                                        <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch6" (change)="checkValue($event)" checked />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled hstack gap-1 mb-0">
-                                            <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                            </li>
-                                            <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <a href="javascript: void(0);" routerLink="/admin/geography" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sarvesh Lab</td>
-                                    <td>DIV007</td>
-                                    <td>Laboratory</td>
-                                    <td>Sarvesh Lab - MES</td>
-                                    <td>2016-02-28</td>
-                                    <td>2026-02-28</td>
-                                    <td>EMP007</td>
-                                    <td>Neha Gupta</td>
-                                    <td>
-                                        <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch7" (change)="checkValue($event)" unchecked />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled hstack gap-1 mb-0">
-                                            <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                            </li>
-                                            <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <a href="javascript: void(0);" routerLink="/admin/geography" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Bharti Scientific</td>
-                                    <td>DIV008</td>
-                                    <td>Scientific Research</td>
-                                    <td>Bharti Scientific - MES</td>
-                                    <td>2015-07-20</td>
-                                    <td>2025-07-20</td>
-                                    <td>EMP008</td>
-                                    <td>Sunil Agarwal</td>
-                                    <td>
-                                        <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch8" (change)="checkValue($event)" checked />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled hstack gap-1 mb-0">
-                                            <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                            </li>
-                                            <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <a href="javascript: void(0);" routerLink="/admin/geography" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ravi Enterprises</td>
-                                    <td>DIV009</td>
-                                    <td>International Sales</td>
-                                    <td>Ravi Enterprises - MES</td>
-                                    <td>2014-11-10</td>
-                                    <td>2026-11-10</td>
-                                    <td>EMP009</td>
-                                    <td>Rohit Singh</td>
-                                    <td>
-                                        <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch9" (change)="checkValue($event)" unchecked />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled hstack gap-1 mb-0">
-                                            <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalView(contentview)" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                            </li>
-                                            <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript: void(0);" data-bs-target="#myModal" (click)="openModalEdit(contentedit)" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <a href="javascript: void(0);" routerLink="/admin/geography" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
-                                    </td>
-                                </tr>
+                                <!-- Repeat similar changes for the remaining rows -->
                             </tbody>
                         </table>
+                        
                         
                     </div>
                     <div class="row justify-content-between align-items-center g-3">
@@ -338,7 +196,7 @@
                             </label>
                         </div>
                         <div class="col-auto me-auto">
-                            <p class="text-muted mb-0">Showing <b>10</b> of <b>10</b> results</p>
+                            <p class="text-muted mb-0">Showing <b>4</b> of <b>4</b> results</p>
                         </div>
                         <div class="col-auto">
                             <div class="text-md-right float-md-end pagination-rounded">
@@ -350,10 +208,7 @@
                                     </li>
                                     <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript: void(0);">5</a></li>
+                                    
                                     <li class="page-item">
                                         <a class="page-link" href="javascript: void(0);" aria-label="Next">
                                             <i class="mdi mdi-chevron-right"></i>
@@ -379,14 +234,13 @@
                         <div class="row p-1 card-neo-drop">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="company-name" class="form-label">Company Name <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" placeholder="Enter company name" id="company-name" required />
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="division-code" class="form-label">Division Code</label>
-                                    <input class="form-control" type="text" placeholder="Enter division code" id="division-code" />
+                                    <label class="form-label">Client <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                      <option>Select Client</option>
+                                      <option>Veda Pvt Ltd</option>
+                                      <option>Shanti Laboratories</option>
+                                      <option>Vikram Biotech</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -395,12 +249,7 @@
                                     <input class="form-control" type="text" placeholder="Enter division name" id="division-name" required />
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="display-company" class="form-label">Display Company Name - MES</label>
-                                    <input class="form-control" type="text" placeholder="Enter display company name" id="display-company" />
-                                </div>
-                            </div>
+                           
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formation-date" class="form-label">Date Of Formation</label>
@@ -445,14 +294,19 @@
                         <div class="row p-1 card-neo-drop">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="company-name" class="form-label">Company Name <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" value="Veda Pvt Ltd" required />
+                                    <label class="form-label">Client <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                      <option>Select Client</option>
+                                      <option selected>Veda Pvt Ltd</option>
+                                      <option>Shanti Laboratories</option>
+                                      <option>Vikram Biotech</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="division-code" class="form-label">Division Code</label>
-                                    <input class="form-control" type="text" value="DIV001" id="division-code" />
+                                    <input class="form-control" type="text" value="DIV001" id="division-code" disabled />
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -461,22 +315,17 @@
                                     <input class="form-control" type="text" value="Pharmaceuticals" id="division-name" required />
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="display-company" class="form-label">Display Company Name - MES</label>
-                                    <input class="form-control" type="text" value="Veda Pvt Ltd - MES" id="display-company" />
-                                </div>
-                            </div>
+                            
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formation-date" class="form-label">Date Of Formation</label>
-                                    <input class="form-control" id="formation-date" value="2020-01-15" name="formation-date">
+                                    <input type="date" class="form-control" id="formation-date" value="15-01-2020" name="formation-date">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="discontinuation-date" class="form-label">Date Of Discontinuation</label>
-                                    <input class="form-control" id="discontinuation-date" value="2025-01-15" name="discontinuation-date">
+                                    <input type="date" class="form-control" id="discontinuation-date" value="15-01-2025" name="discontinuation-date">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -511,8 +360,8 @@
                         <table class="table table-nowrap mb-0">
                             <tbody>
                                 <tr>
-                                    <th scope="row">Company Name</th>
-                                    <td>Full Veda Pvt Ltd</td>
+                                    <th scope="row">Client</th>
+                                    <td>Veda Pvt Ltd</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Divison Code</th>
@@ -521,10 +370,6 @@
                                 <tr>
                                     <th scope="row">Divison Name</th>
                                     <td>Pharmaceuticals</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Display Company Name - MES</th>
-                                    <td>Veda Pvt Led - MES</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Date of formation</th>

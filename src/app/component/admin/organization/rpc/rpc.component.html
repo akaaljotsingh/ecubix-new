@@ -1,0 +1,158 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Add Roles and Permission</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);" routerLink="/admin/employees">Manage Employees</a></li>
+                        <li class="breadcrumb-item active">Add Roles and Permission</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form>
+        <div class="row">
+            <div class="col-12">
+                <!-- Vacancy Information -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label class="mb-0 me-3">Select Role:</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="newRole" name="roleSelection" value="new">
+                                    <label class="form-check-label" for="newRole">New Role</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="existingRole" name="roleSelection" value="existing">
+                                    <label class="form-check-label" for="existingRole">Existing Role</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Role Type Dropdown -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Role Type</label>
+                                    <select class="form-select">
+                                        <option value="new">New</option>
+                                        <option value="rejoining">Rejoining</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Type Dropdown -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Action Type</label>
+                                    <select class="form-select">
+                                        <option value="transfer">Transfer</option>
+                                        <option value="promotion">Promotion</option>
+                                        <option value="demotion">Demotion</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vacancy Creation Type -->
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label class="mb-0 me-3">Vacancy Creation Type:</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="createNewVacancy" name="vacancyCreation" value="new">
+                                    <label class="form-check-label" for="createNewVacancy">Create New Vacancy</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="againstExistingVacancy" name="vacancyCreation" value="existing">
+                                    <label class="form-check-label" for="againstExistingVacancy">Against Existing Vacancy</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vacancy Code -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="vacancyCode" class="form-label">Vacancy Code</label>
+                                    <input class="form-control" type="text" placeholder="Enter Vacancy Code" id="vacancyCode" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location Details -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="designation" class="form-label">Designation</label>
+                                    <input class="form-control" type="text" placeholder="Enter Designation" id="designation" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="division" class="form-label">Division</label>
+                                    <input class="form-control" type="text" placeholder="Enter Division" id="division" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="headquarter" class="form-label">Headquarter</label>
+                                    <input class="form-control" type="text" placeholder="Enter Headquarter" id="headquarter" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="regionalOffice" class="form-label">Regional Office</label>
+                                    <input class="form-control" type="text" placeholder="Enter Regional Office" id="regionalOffice" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Zone and Region -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="zone" class="form-label">Zone</label>
+                                    <input class="form-control" type="text" placeholder="Enter Zone" id="zone" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="region" class="form-label">Region</label>
+                                    <input class="form-control" type="text" placeholder="Enter Region" id="region" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="regionHeadquarter" class="form-label">Region Headquarter</label>
+                                    <input class="form-control" type="text" placeholder="Enter Region Headquarter" id="regionHeadquarter" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Details -->
+                <div class="card card-custom-alternate">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" onclick="window.location='/admin/vacancies'">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

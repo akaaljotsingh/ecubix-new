@@ -24,10 +24,16 @@
                             <i class="mdi mdi-account me-2"></i>Personal Information
                         </h4>
                         <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Clients</label>
-                                <ng-select [items]="selectValue1" [(ngModel)]="selectValue" [multiple]="true" appendTo="body"
-                                [placeholder]="'Select Clients'"></ng-select>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Client</label>
+                                    <select class="form-select">
+                                      <option>Select Client</option>
+                                      <option>Loreum Pharma Pvt Ltd.</option>
+                                      <option>Loreum Pharma</option>
+                                      <option>Loreum Pharma Co.</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Employee Code</label>
@@ -125,39 +131,18 @@
                                 <input type="text" class="form-control form-control-custom" placeholder="Communication Address 2">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication Country</label>
-                                <ng-select 
-                                    [items]="countries" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select Country">
-                                </ng-select>
+                                <label>Communication Pin Code</label>
+                                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Communication State</label>
-                                <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select>
+                                <input type="text" class="form-control form-control-custom" placeholder="State">
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Communication City</label>
-                                <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select>
+                                <input type="text" class="form-control form-control-custom" placeholder="City">
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <hr class="dashed" />
-                            </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-md-6"></div>
                             <div class="col-md-3 mb-3">
                                 <label>Permanent Address</label>
                                 <input type="text" class="form-control form-control-custom" placeholder="Permanent Address">
@@ -175,31 +160,12 @@
                                 <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Permanent Country</label>
-                                <ng-select 
-                                    [items]="countries" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select Country">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
                                 <label>Permanent State</label>
-                                <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select>
+                                <input type="text" class="form-control form-control-custom" placeholder="State">
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Permanent City</label>
-                                <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select>
+                                <input type="text" class="form-control form-control-custom" placeholder="City">
                             </div>
                         </div>
                     </div>
@@ -398,7 +364,7 @@
                         </div>
                         <div class="d-flex flex-wrap gap-2 mt-2">
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="button" class="btn btn-secondary" routerLink="/admin/employees">Cancel</button>
+                            <button type="button" class="btn btn-secondary" [routerLink]="'/admin/employees'">Cancel</button>
                         </div>
                     </div>
                 </div>
