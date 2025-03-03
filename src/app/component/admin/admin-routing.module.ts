@@ -74,6 +74,10 @@ import { StpTourViewComponent } from './organization/stp-tour-view/stp-tour-view
 import { TourPlanComponent } from './organization/tour-plan/tour-plan.component';
 import { ViewCompanyComponent } from './organization/view-company/view-company.component';
 import { ViewEmployeeComponent } from './organization/view-employee/view-employee.component';
+import { PageListBroadcastComponent } from './master/page-list-broadcast/page-list-broadcast.component';
+import { PageViewBroadcastComponent } from './master/page-view-broadcast/page-view-broadcast.component';
+import { RpcComponent } from './organization/rpc/rpc.component';
+import { UserActivityComponent } from './master/user-activity/user-activity.component';
 
 
 const routes: Routes = [
@@ -84,15 +88,14 @@ const routes: Routes = [
   },
   { path: 'dashboard', component: DefaultComponent },
   { path: 'geography', component: GeographyComponent },
-  { path: 'clients', component: CompanyComponent },
+  { path: 'company', component: CompanyComponent },
   { path: 'division', component: DivisionComponent },
   { path: 'companyrole', component: CompanyroleComponent },
-  { path: 'employee-onboard', component: EmployeeOnboardComponent },
   { path: 'employees', component: EmployeesComponent },
   { path: 'empdivisonmap', component: EmpDivisonMapComponent },
-  { path: 'add-client', component: AddCompanyComponent },
-  { path: 'view-client', component: ViewCompanyComponent },
-  { path: 'edit-client', component: EditCompanyComponent },
+  { path: 'add-company', component: AddCompanyComponent },
+  { path: 'view-company', component: ViewCompanyComponent },
+  { path: 'edit-company', component: EditCompanyComponent },
   { path: 'leave1', component: Leave1Component },
   { path: 'leave2', component: Leave2Component },
   { path: 'companylevelconfig', component: CompanyLevelConfigComponent},
@@ -136,6 +139,10 @@ const routes: Routes = [
   { path: 'view-broadcast', component: ViewBroadcastComponent},
   { path: 'user-profile', component: UserProfileComponent},
   { path: 'user-password', component: UserPasswordComponent},
+  { path: 'page-list-broadcast', component: PageListBroadcastComponent},
+  { path: 'page-view-broadcast', component: PageViewBroadcastComponent},
+  { path: 'rpc', component:RpcComponent},
+  { path: 'user-activity', component: UserActivityComponent},
   { path: 'dashboards', loadChildren: () => import('../../pages/dashboards/dashboards.module').then(m => m.DashboardsModule) },
   { path: 'ecommerce', loadChildren: () => import('../../pages/ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
   { path: 'crypto', loadChildren: () => import('../../pages/crypto/crypto.module').then(m => m.CryptoModule) },

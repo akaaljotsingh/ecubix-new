@@ -85,7 +85,8 @@
       "SETTINGS": "Settings",
       "LOCK_SCREEN": "Lock screen",
       "LOGOUT": "Logout",
-      "PASSWORD": "Change Password"
+      "PASSWORD": "Change Password",
+      "ACTIVITY": "Today's Activity"
     }
   },
   "MENUITEMS": {
