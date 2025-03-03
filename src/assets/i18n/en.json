@@ -119,7 +119,7 @@
 
     },
     "ONBOARDING": {
-      "TEXT": "Onboarding",
+      "TEXT": "Client Onboarding",
       "LIST": {
         "CLIENT": "Client",
         "DIVISON": "Divison",
@@ -138,7 +138,7 @@
     },
      
     "Client": {
-      "TEXT": "Client Onboard",
+      "TEXT": "Customer Onboarding",
       "LIST": {
         "CFA": "CFA",
         "Doctor" : "Doctor",

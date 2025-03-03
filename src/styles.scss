@@ -325,3 +325,46 @@ dropzone>.dropzone.dz-wrapper {
     }
   }
 }
+
+.badge_primary {
+  background: #556ee6;
+  padding: 9px 10px;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.badge_success {
+  background: #34c38f;
+  padding: 9px 10px;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  color: #fff;
+  border-radius: 50px;
+}
+.badge_pending{
+  background: #f1b44c;
+  padding: 9px 10px;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  color: #fff;
+  border-radius: 50px;
+}
+.approve_btn {
+  padding: 12px 10px;
+  border: 0;
+  background: #34c38f;
+  color: #fff;
+  border-radius: 4px;
+  line-height: 1;
+}
