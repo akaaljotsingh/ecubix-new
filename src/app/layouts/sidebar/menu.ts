@@ -24,6 +24,7 @@ export const MENU: MenuItem[] = [
                 link: '/admin/permissioncategory',
                 parentId: 5
             },
+            
             {
                 id: 2,
                 label: 'MENUITEMS.USERMANAGEMENT.LIST.CREATEPERMISSIONS',
@@ -128,7 +129,7 @@ export const MENU: MenuItem[] = [
     {
         id: 6,
         label: 'MENUITEMS.Client.TEXT',
-        icon: 'bx bxs-grid',
+        icon: 'bx bx-list-plus',
         subItems: [
             
             {

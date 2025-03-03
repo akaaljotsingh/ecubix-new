@@ -129,6 +129,8 @@ import { RpcComponent } from './organization/rpc/rpc.component';
 import { UserActivityComponent } from './master/user-activity/user-activity.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { NgStepperModule } from 'angular-ng-stepper';
+import { EmailComponent } from './organization/email/email.component';
+import { EmailReadComponent } from './organization/email-read/email-read.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         // Change this to your upload POST address:
@@ -169,6 +171,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
                         CfaComponent,
                         ViewCfaComponent,
                         AddCfaComponent,
+                        EmailComponent,
+                        EmailReadComponent,
                         
                 ],
                 imports: [
