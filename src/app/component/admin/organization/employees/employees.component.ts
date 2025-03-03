@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 export class EmployeesComponent {
 
   hidden: boolean;
-  selectedCompany: string | null = null; // Track the selected company
+  
   showSecondCard: boolean = false; // Control visibility of the second card
 
   selectValue: string[];
@@ -22,18 +22,12 @@ export class EmployeesComponent {
   }
 
   ngOnInit() {
-    this.selectValue = ['Company Name', 'Phone No.', 'State', 'City', 'Type'];
+    this.selectValue = ['Employee Code', 'Phone No.', 'State', 'City', 'Type'];
     this.selectValue1 = ['Loreum Pharma Pvt Ltd.', 'Loreum Pharma', 'Loreum Pharma Co.'];
   }
 
   // Method to handle the "Apply" button click
-  onApply() {
-    if (this.selectedCompany) {
-      this.showSecondCard = true; // Show the second card
-    } else {
-      Swal.fire('Error', 'Please select a company first.', 'error');
-    }
-  }
+  
 
   // Method to handle checkbox toggle event
   checkValue(event: any) {
