@@ -20,8 +20,49 @@
     <div class="col-md-10"></div>
     <div class="col-md-2">
       <form>
-        <ng-select [items]="selectValue" [multiple]="false" appendTo="body"
-              [placeholder]="'All Clients'"></ng-select>
+        <div class="">
+          <!-- <label class="form-label">Select State</label> -->
+          <select class="form-control select2">
+            <option>All States</option>
+            <option value="AP">Andhra Pradesh</option>
+            <option value="AR">Arunachal Pradesh</option>
+            <option value="AS">Assam</option>
+            <option value="BR">Bihar</option>
+            <option value="CT">Chhattisgarh</option>
+            <option value="GA">Gujarat</option>
+            <option value="HR">Haryana</option>
+            <option value="HP">Himachal Pradesh</option>
+            <option value="JK">Jammu and Kashmir</option>
+            <option value="GA">Goa</option>
+            <option value="JH">Jharkhand</option>
+            <option value="KA">Karnataka</option>
+            <option value="KL">Kerala</option>
+            <option value="MP">Madhya Pradesh</option>
+            <option value="MH">Maharashtra</option>
+            <option value="MN">Manipur</option>
+            <option value="ML">Meghalaya</option>
+            <option value="MZ">Mizoram</option>
+            <option value="NL">Nagaland</option>
+            <option value="OR">Odisha</option>
+            <option value="PB">Punjab</option>
+            <option value="RJ">Rajasthan</option>
+            <option value="SK">Sikkim</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="TG">Telangana</option>
+            <option value="TR">Tripura</option>
+            <option value="UT">Uttarakhand</option>
+            <option value="UP">Uttar Pradesh</option>
+            <option value="WB">West Bengal</option>
+            <option value="AN">Andaman and Nicobar Islands</option>
+            <option value="CH">Chandigarh</option>
+            <option value="DN">Dadra and Nagar Haveli</option>
+            <option value="DD">Daman and Diu</option>
+            <option value="DL">Delhi</option>
+            <option value="LD">Lakshadweep</option>
+            <option value="PY">Puducherry</option>
+          </select>
+
+      </div>
       </form>
     </div>
   </div>
@@ -100,19 +141,22 @@
         <div class="card">
             <div class="card-body job-filter">
                 <div class="row g-3">
-                    
                     <div class="col-xxl-2 col-lg-6">
-                        <input type="search" class="form-control" id="searchInput" placeholder="Search geography">
+                        <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
+                            [placeholder]="'Search Details'"></ng-select>
+                    </div>
+                    <div class="col-xxl-2 col-lg-6">
+                        <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
                     </div>
                     <div class="col-xxl-3 col-lg-6">
                         <div class="position-relative hstack gap-3">
-                            <button type="submit" class="btn btn-primary"><i
+                            <button type="submit" class="btn btn-primary w-100"><i
                                     class="bx bx-search-alt align-middle"></i> Search</button>
-                            <!-- <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
-                                    class="mdi mdi-download"></i> Download</button> -->
+                            <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
+                                    class="mdi mdi-download"></i> Download</button>
                         </div>
                     </div>
-                    <div class="col-xxl-7 col-lg-6">
+                    <div class="col-xxl-5 col-lg-6">
                         <div class="text-sm-end">
                             <button type="button" class="btn btn-success mb-2 me-2" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-plus mr-1"></i>
                                 Add
@@ -126,18 +170,6 @@
                               <div class="modal-body">
                                     <form>
                                         <div class="row p-1 card-neo-drop">
-                                            <div class="col-md-12">
-                                              <div class="mb-3">
-                                                <label class="form-label">Client</label>
-                                                <select class="form-select" formControlName="client">
-                                                  <option>Select client</option>
-                                                  <option>Loreum Pharma Pvt Ltd.</option>
-                                                  <option>Loreum Pharma</option>
-                                                  <option>Loreum Pharma Co.</option>
-                                                </select>
-                                              </div>
-                                             </div>
-                                        
                                             <div class="col-md-6">
                                               <div class="mb-3">
                                                 <label class="form-label">Division</label>
@@ -348,17 +380,6 @@
               <div class="modal-body">
                     <form>
                       <div class="row p-1 card-neo-drop">
-                        <div class="col-md-12">
-                          <div class="mb-3">
-                            <label class="form-label">Client</label>
-                            <select class="form-select" formControlName="client">
-                              <option>Select client</option>
-                              <option selected>Loreum Pharma Pvt Ltd.</option>
-                              <option>Loreum Pharma</option>
-                              <option>Loreum Pharma Co.</option>
-                            </select>
-                          </div>
-                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Division</label>
@@ -440,10 +461,6 @@
                   <table class="table table-nowrap mb-0">
                       <tbody>
                           <!-- Division -->
-                          <tr>
-                            <th scope="row">Client:</th>
-                            <td>Loreum Pharma Pvt Ltd.</td>
-                          </tr>
                           <tr>
                               <th scope="row">Division:</th>
                               <td>North</td>

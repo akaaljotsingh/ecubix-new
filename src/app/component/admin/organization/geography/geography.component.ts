@@ -69,7 +69,7 @@ export class GeographyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectValue = ['Loreum Pharma Pvt Ltd.', 'Loreum Pharma', 'Loreum Pharma Co.'];
+    this.selectValue = ['Client Name', 'Headquarter', 'City', 'Parent Company'];
     this.geoForm = this.fb.group({
       geoType: [''],
       code: [''],

@@ -6,7 +6,7 @@
             <h4 class="mb-0 font-size-18">Manage Employee</h4>
             <div class="page-title-right">
               <ol class="breadcrumb m-0">
-                <li class="breadcrumb-item"><a routerLink="/admin/dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item active">Manage Employee</li>
               </ol>
             </div>
@@ -18,38 +18,65 @@
     <!-- First Card -->
     <div class="row">
       <div class="col-12">
+        <!-- <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-xxl-2 col-lg-6">
+                <ng-select [items]="selectValue1" [(ngModel)]="selectedCompany" [multiple]="false" appendTo="body"
+                  [placeholder]="'Select Company'"></ng-select>
+              </div>
+              <div class="col-xxl-1 col-lg-6">
+                <div class="position-relative hstack gap-3">
+                  <button type="submit" class="btn btn-primary w-100" (click)="onApply()">
+                    <i class="bx bx-check-double align-middle"></i> Apply
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+  
         <!-- Second Card (Conditional Rendering) -->
+        <!-- <div class="card" *ngIf="showSecondCard"> -->
         <div class="card">
           <div class="card-body job-filter">
             <div class="row g-3">
-                <div class="col-xxl-2 col-lg-2">
-                    <ng-select [items]="selectValue1" [multiple]="false" appendTo="body"
-                      [placeholder]="'Select Client'"></ng-select>
-                  </div>
-                <div class="col-xxl-2 col-lg-2">
-                    <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
-                    [placeholder]="'Search Details'"></ng-select>
-                </div>
-                <div class="col-xxl-2 col-lg-2">
-                    <input type="search" class="form-control" id="searchInput" placeholder="Search employee">
-                </div>
-                <div class="col-xxl-3 col-lg-4">
-                    <div class="position-relative hstack gap-3">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bx bx-search-alt align-middle"></i> Search
-                    </button>
-                    <!-- <button type="button" class="btn btn-warning waves-effect waves-light w-100">
-                        <i class="mdi mdi-download"></i> Download
-                    </button> -->
-                    </div>
-                </div>
-                <div class="col-xxl-3 col-lg-2">
-                    <div class="text-sm-end">
+              <div class="col-xxl-2 col-lg-3">
+                <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
+                  [placeholder]="'Search Details'"></ng-select>
+              </div>
+              <div class="col-xxl-2 col-lg-3">
+                <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+              </div>
+              <div class="col-xxl-3 col-lg-3">
+                <button type="submit" class="btn btn-primary w-50 ">
+                    <i class="bx bx-search-alt align-middle"></i> Search
+                  </button>
+              </div>
+              <div class="col-xxl-5 col-lg-3 ">
+                <div class="text-sm-end">
                     <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
                         <i class="mdi mdi-plus mr-1"></i> Add Employee
-                    </button>
-                    </div>
+                      </button>
                 </div>
+              </div>
+              <!-- <div class="col-xxl-3 col-lg-6">
+                <div class="position-relative hstack gap-3">
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="bx bx-search-alt align-middle"></i> Search
+                  </button>
+                  <button type="button" class="btn btn-warning waves-effect waves-light w-100">
+                    <i class="mdi mdi-download"></i> Download
+                  </button>
+                </div>
+              </div> 
+              <div class="col-xxl-5 col-lg-6">
+                <div class="text-sm-end">
+                  <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
+                    <i class="mdi mdi-plus mr-1"></i> Add Employee
+                  </button>
+                </div>
+              </div>-->
             </div>
           </div>
   
@@ -93,10 +120,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -125,10 +148,6 @@
                                 <li data-bs-toggle="tooltip" title="Edit">
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
                                 </li>
                             </ul>
                         </td>
@@ -159,10 +178,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -192,10 +207,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -224,10 +235,6 @@
                                 <li data-bs-toggle="tooltip" title="Edit">
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
                                 </li>
                             </ul>
                         </td>
@@ -259,10 +266,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -291,10 +294,6 @@
                                 <li data-bs-toggle="tooltip" title="Edit">
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
                                 </li>
                             </ul>
                         </td>
@@ -325,10 +324,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -358,10 +353,6 @@
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
-                                </li>
                             </ul>
                         </td>
                         <td>
@@ -390,10 +381,6 @@
                                 <li data-bs-toggle="tooltip" title="Edit">
                                     <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Create Role">
-                                    <a href="javascript:void(0);" routerLink="/admin/rpc" class="btn btn-sm btn-soft-danger"><i
-                                            class="mdi mdi-account-group"></i></a>
                                 </li>
                             </ul>
                         </td>

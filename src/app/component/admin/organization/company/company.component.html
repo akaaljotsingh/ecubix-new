@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-0 font-size-18">Manage Companies</h4>
+                    <h4 class="mb-0 font-size-18">Manage Clients</h4>
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Manage Company</li>
+                            <li class="breadcrumb-item active">Manage Clients</li>
                         </ol>
                     </div>
                 </div>
@@ -26,21 +26,21 @@
                                 [placeholder]="'Search Details'"></ng-select>
                         </div>
                         <div class="col-xxl-2 col-lg-6">
-                            <input type="search" class="form-control" id="searchInput" placeholder="Search company" />
+                            <input type="search" class="form-control" id="searchInput" placeholder="Search clients" />
                         </div>
                         <div class="col-xxl-3 col-lg-6">
                             <div class="position-relative hstack gap-3">
-                                <button type="submit" class="btn btn-primary w-100"><i
+                                <button type="submit" class="btn btn-primary w-50"><i
                                         class="bx bx-search-alt align-middle"></i> Search</button>
-                                <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
-                                        class="mdi mdi-download"></i> Download</button>
+                                <!-- <button type="button" class="btn btn-warning waves-effect waves-light w-100"><i
+                                        class="mdi mdi-download"></i> Download</button> -->
                             </div>
                         </div>
                         <div class="col-xxl-5 col-lg-6">
                             <div class="text-sm-end">
                                 <button type="button" class="btn btn-success mb-2 me-2"
-                                    [routerLink]="'/admin/add-company'"><i class="mdi mdi-plus mr-1"></i>
-                                    Add Company</button>
+                                    [routerLink]="'/admin/add-client'"><i class="mdi mdi-plus mr-1"></i>
+                                    Add Client</button>
                             </div>
                         </div><!-- end col-->
                     </div>
@@ -74,20 +74,26 @@
                                     <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
                                             checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript:void(0);" routerLink="/admin/view-company"
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
                                                     class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" routerLink="/admin/edit-company" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Connect Clients">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-primary">
+                                                    <i class="mdi mdi-vector-difference"></i>
+                                                </a>
+
                                             </li>
                                         </ul>
                                     </td>
@@ -96,53 +102,64 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">2</th>
+                                    <th scope="row">1</th>
                                     <td>PH002</td>
-                                    <td>Dr. Loreum's Laboratories</td>
-                                    <td>Hyderabad</td>
-                                    <td>Telangana</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a href="javascript:void(0);" routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Primary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-success"><i
+                                                        class="mdi mdi-circle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
                                     <td>
-                                        <a href="javascript:void(0);" routerLink="/admin/add-division"  class="btn btn-sm btn-soft-success"><i
-                                                class="mdi mdi-link-variant"></i></a>
+                                        <a href="javascript: void(0);" routerLink="/admin/add-division" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">3</th>
+                                    <th scope="row">1</th>
                                     <td>PH003</td>
-                                    <td>Loreum</td>
+                                    <td>Loreum Pharmaceutical</td>
                                     <td>Mumbai</td>
                                     <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -151,25 +168,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">4</th>
+                                    <th scope="row">1</th>
                                     <td>PH004</td>
-                                    <td>Loreum Pharma</td>
-                                    <td>Hyderabad</td>
-                                    <td>Telangana</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" unchecked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                              />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -178,25 +201,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">5</th>
+                                    <th scope="row">1</th>
                                     <td>PH005</td>
-                                    <td>Loreum</td>
-                                    <td>Bengaluru</td>
-                                    <td>Karnataka</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -204,27 +233,32 @@
                                         <a href="javascript: void(0);" routerLink="/admin/add-division" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
                                     </td>
                                 </tr>
-                                <!-- Additional rows -->
                                 <tr>
-                                    <th scope="row">6</th>
+                                    <th scope="row">1</th>
                                     <td>PH006</td>
-                                    <td>Loreum Cadila</td>
-                                    <td>Ahmedabad</td>
-                                    <td>Gujarat</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                              />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Connect Clients">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-primary"><i
+                                                        class="mdi mdi-vector-difference"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -233,25 +267,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">7</th>
+                                    <th scope="row">1</th>
                                     <td>PH007</td>
-                                    <td>Loreum</td>
+                                    <td>Loreum Pharmaceutical</td>
                                     <td>Mumbai</td>
                                     <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Connect Clients">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-primary"><i
+                                                        class="mdi mdi-vector-difference"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -260,25 +300,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">8</th>
+                                    <th scope="row">1</th>
                                     <td>PH008</td>
-                                    <td>Loreum Pharmaceuticals</td>
+                                    <td>Loreum Pharmaceutical</td>
                                     <td>Mumbai</td>
                                     <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Primary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-success"><i
+                                                        class="mdi mdi-circle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -287,25 +333,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">9</th>
+                                    <th scope="row">1</th>
                                     <td>PH009</td>
-                                    <td>Loreum Laboratories</td>
+                                    <td>Loreum Pharmaceutical</td>
                                     <td>Mumbai</td>
                                     <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" unchecked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                              />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -314,25 +366,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">10</th>
-                                    <td>PH010</td>
-                                    <td>Loreum Pharmaceuticals</td>
-                                    <td>Ahmedabad</td>
-                                    <td>Gujarat</td>
+                                    <th scope="row">1</th>
+                                    <td>PH0010</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
-                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked/>
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
                                         </div>
                                     </td>
                                     <td>
                                         <ul class="list-unstyled hstack gap-1 mb-0">
                                             <li data-bs-toggle="tooltip" title="View">
-                                                <a routerLink="/jobs/details" class="btn btn-sm btn-soft-primary"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
                                                         class="mdi mdi-eye-outline"></i></a>
                                             </li>
                                             <li data-bs-toggle="tooltip" title="Edit">
-                                                <a href="javascript:void(0);" class="btn btn-sm btn-soft-info"><i
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
                                                         class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -340,6 +398,73 @@
                                         <a href="javascript: void(0);" routerLink="/admin/add-division" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>PH0011</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                              />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
+                                                        class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Secondary Client">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection, 'child')" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-triangle"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/add-division" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>PH0012</td>
+                                    <td>Loreum Pharmaceutical</td>
+                                    <td>Mumbai</td>
+                                    <td>Maharashtra</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                            checked  />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript:void(0);" routerLink="/admin/view-client"
+                                                    class="btn btn-sm btn-soft-primary"><i
+                                                        class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript:void(0);" routerLink="/admin/edit-client" class="btn btn-sm btn-soft-info"><i
+                                                        class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Connect Clients">
+                                                <a href="javascript:void(0);" (click)="openCompanyConnectionModal(companyConnection)" class="btn btn-sm btn-soft-primary"><i
+                                                        class="mdi mdi-vector-difference"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/add-division" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -388,3 +513,86 @@
         </div>
     </div>
 </div>
+
+<!-- Company connections -->
+<ng-template #companyConnection let-modal>
+    <div class="modal-header border-bottom-0 pb-0">
+        <h3 class="fw-bold mb-0">Connect Client to Other Clients</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+    </div>
+
+    <div class="modal-body">
+        <!-- <p class="text-secondary">Select a Primary client and associate it with multiple child clients.</p> -->
+        <p class="text-secondary">Select one primary client and connect it to multiple other clients. This will establish a primary-secondary relationship, enabling data sharing.</p>
+
+        <div class="row">
+
+            <div class="col-4">
+                <label class="fw-bold">Primary Client</label>
+                <ng-select
+                    [items]="clients"
+                    bindLabel="name"
+                    bindValue="id"
+                    placeholder="Select Primary Client"
+                    [disabled]="true"
+                    [(ngModel)]="selectedParent">
+                </ng-select>
+            </div>
+
+            <div class="col-8">
+              @if(!selectedChildView) {
+
+
+                <label class="fw-bold">Secondary Clients</label>
+                <ng-select
+                    [items]="clients"
+                    bindLabel="name"
+                    bindValue="id"
+                    [multiple]="true"
+                    placeholder="Select Secondary Clients"
+                    [(ngModel)]="selectedChildren">
+                </ng-select>
+
+                <div class="mt-4">
+                    @if(selectedChildren.length > 0) {
+                        <h6 class="fw-bold">Selected Secondary Clients:</h6>
+                        <div class="row">
+                            <div class="col-4" *ngFor="let childId of selectedChildren">
+                                <div class="card text-center border shadow-sm p-2">
+                                    <p class="mb-1 fw-bold">{{ getClientName(childId) }}</p>
+                                    <button class="btn btn-sm btn-danger" (click)="removeChild(childId)">
+                                        <i class="bi bi-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                } @else {
+ <label class="fw-bold">Secondary Clients</label>
+<div class="row">
+                            <div class="col-4" >
+                                <div class="card text-center border shadow-sm p-2">
+                                    <p class="mb-1 fw-bold">Client A</p>
+                                    <button [disabled]='true' class="btn btn-sm btn-danger" (click)="removeChild(childId)">
+                                        <i class="bi bi-trash"></i> Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                }
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="modal-footer ">
+        <button type="button" class="btn btn-danger me-auto" (click)="closeModal()" title="Clicking this button will remove all Primary-child relationships, making every client independent.">Remove All Connections</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        <button type="button" class="btn btn-success" (click)="saveConnections()">Save</button>
+    </div>
+</ng-template>
+
