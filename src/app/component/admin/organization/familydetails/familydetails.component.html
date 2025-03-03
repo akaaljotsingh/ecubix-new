@@ -18,50 +18,31 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-xxl-2 col-lg-6">
-                        <select id="companySelect" class="form-select" (change)="onCompanySelect($event.target.value)">
-                          <option value="" selected disabled>Select Client</option>
-                          <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
-                        </select>
-                    </div>
-                    <div class="col-xxl-2 col-lg-6">
-                        <select id="employeeSelect" class="form-select" (change)="onEmployeeSelect($event.target.value)">
-                            <option value="" selected disabled>Select an employee</option>
-                            <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
-                        </select>
-                    </div>
-                    <div class="col-xxl-1 col-lg-6">
-                      <div class="position-relative hstack gap-3">
-                        <button type="submit" class="btn btn-primary w-100" (click)="onApply()">
-                          <i class="bx bx-check-double align-middle"></i> Apply
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
+            
 
-            <div class="card" *ngIf="showCard">
+            <div class="card">
                 <div class="card-body job-filter">
                     <div class="row g-3">
                         <div class="col-xxl-2 col-lg-6">
                             <select id="companySelect" class="form-select" >
-                              <option value="" selected disabled>Select Client</option>
-                              <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+                              <option>Select client</option>
+                              <option>Loreum Ipsum</option>
+                              <option>Loreum Ipsum</option>
+                              <option>Loreum Ipsum</option>
                             </select>
                         </div>
                         <div class="col-xxl-2 col-lg-6">
                             <select id="employeeSelect" class="form-select">
                                 <option value="" selected disabled>Select an employee</option>
-                                <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
+                                <option>Select client</option>
+                                <option>Employee One</option>
+                                <option>Employee Two</option>
+                                <option>Employee Three</option>
                             </select>
                         </div>
                         <div class="col-xxl-2 col-lg-6">
                             <select class="form-select" id="address-type">
-                                <option>Select Relation</option>
+                                <option>Select relation</option>
                                 <option>Father</option>
                                 <option>Mother</option>
                                 <option>Wife</option>
