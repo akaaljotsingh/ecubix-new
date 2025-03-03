@@ -55,6 +55,7 @@
                             <thead class="table-primary">
                                 <tr>
                                     <th scope="col">Sl No</th>
+                                    <th scope="col">Client Name</th>
                                     <th scope="col">Role Name</th>
                                     <th scope="col">Role Type</th>
                                     <th scope="col">Status</th>
@@ -64,8 +65,10 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Role 1</td>
-                                    <td>Client Admin</td>
+                                    <td>Loreum Pharma Pvt Ltd.</td>
+                                    <td>ABM</td>
+                                    
+                                    <td>Managers</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
@@ -85,8 +88,9 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Role 2</td>
-                                    <td>Manager</td>
+                                    <td>Loreum Pharma Pvt Ltd.</td>
+                                    <td>MR</td>
+                                    <td>Field Employee</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch2" (change)="checkValue($event)" unchecked />
@@ -106,8 +110,31 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Role 3</td>
-                                    <td>Field Employee</td>
+                                    <td>Loreum Pharma Pvt Ltd.</td>
+                                    <td>Admin</td>
+                                    <td>Client Admin</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" routerLink="/admin/view-roles" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" routerLink="/admin/edit-roles" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>-</td>
+                                    <td>Admin</td>
+                                    <td>Product Admin</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />

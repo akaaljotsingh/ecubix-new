@@ -52,6 +52,10 @@
                                 <tr>
                                     <th scope="col">Sl No</th>
                                     <th scope="col">Menu Name</th>
+                                    <th scope="col">Menu Order</th>
+                                    <th scope="col">Sub Menu Name</th>
+                                    <th scope="col">Sub Menu Order</th>
+                                    <th scope="col">Is SubMenu</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                     <th scope="col">Next Steps</th>
@@ -60,7 +64,11 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Menu 1</td>
+                                    <td>Dashboards</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                                                    <td>-</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
@@ -82,7 +90,12 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Menu 2</td>
+                                    <td>User Management</td>
+                                    <td>2</td>
+                                    <td>-</td>
+                                 
+                                    <td>-</td>
+                                    <td>-</td>
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch2" (change)="checkValue($event)" unchecked />
@@ -104,7 +117,12 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Menu 3</td>
+                                    <td>User Management</td>
+                                    <td>2</td>
+                                    <td>Permission Category</td>
+                                    <td>1</td>
+                                    <td>Yes</td>
+                   
                                     <td>
                                         <div class="form-check form-switch form-switch-md">
                                             <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
@@ -124,7 +142,59 @@
                                         <a href="javascript: void(0);" routerLink="/admin/roles" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
                                     </td>
                                 </tr>
-                               
+                                <tr>
+                                    <td>4</td>
+                                    <td>User Management</td>
+                                    <td>2</td>
+                                    <td>Permissions</td>
+                                    <td>2</td>
+                                    <td>Yes</td>
+                   
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch3" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" routerLink="/admin/view-menu" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" routerLink="/admin/edit-menu" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/roles" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Client Onboarding</td>
+                                    <td>3</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                                                    <td>-</td>
+                                    <td>
+                                        <div class="form-check form-switch form-switch-md">
+                                            <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" checked />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled hstack gap-1 mb-0">
+                                            <li data-bs-toggle="tooltip" title="View">
+                                                <a href="javascript: void(0);" routerLink="/admin/view-menu" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
+                                            </li>
+                                            <li data-bs-toggle="tooltip" title="Edit">
+                                                <a href="javascript: void(0);" routerLink="/admin/edit-menu" class="btn btn-sm btn-soft-info"><i class="mdi mdi-pencil-outline"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="javascript: void(0);" routerLink="/admin/roles" class="btn btn-sm btn-soft-success"><i class="mdi mdi-link-variant"></i></a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         

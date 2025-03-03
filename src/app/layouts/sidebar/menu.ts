@@ -24,6 +24,7 @@ export const MENU: MenuItem[] = [
                 link: '/admin/permissioncategory',
                 parentId: 5
             },
+            
             {
                 id: 2,
                 label: 'MENUITEMS.USERMANAGEMENT.LIST.CREATEPERMISSIONS',
