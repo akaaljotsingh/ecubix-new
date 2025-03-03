@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                <h4 class="mb-0 font-size-18">Read Email</h4>
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);" routerLink="/admin/email">Inbox</a></li>
+                        <li class="breadcrumb-item active">Read Email</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Left sidebar -->
+            <div class="email-leftbar card">
+                <button type="button" class="btn btn-danger btn-block waves-effect waves-light" data-bs-target="#myModal" (click)="openModal(content)">
+                    Compose
+                </button>
+                <div class="mail-list mt-4">
+                    <a href="javascript: void(0);" routerLink="/admin/email" class="active"><i class="mdi mdi-email-outline me-2"></i> Inbox <span class="ms-1 float-end">(18)</span></a>
+                    <a href="javascript: void(0);"><i class="mdi mdi-email-check-outline me-2"></i>Sent Mail</a>
+                    <a href="javascript: void(0);"><i class="mdi mdi-trash-can-outline me-2"></i>Trash</a>
+                </div>
+            </div>
+            <!-- End Left sidebar -->
+
+
+            <!-- Right Sidebar -->
+            <div class="email-rightbar mb-3">
+                
+                <div class="card">
+                    <div class="btn-toolbar p-3" role="toolbar">
+                        <div class="btn-group me-2 mb-2 mb-sm-0">
+                            <button type="button" class="btn btn-primary waves-light waves-effect"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="d-flex mb-4">
+                            <div class="flex-shrink-0 me-3">
+                                <img class="rounded-circle avatar-sm" src="assets/images/users/profile.png" alt="Generic placeholder image">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h5 class="font-size-14 mt-1">Humberto D. Champion</h5>
+                                <small class="text-muted">support&#64;bioconindia.com</small>
+                            </div>
+                        </div>
+                    
+                        <h4 class="font-size-16">Biocon Pharmaceuticals Weekly Update</h4>
+                    
+                        <p>Dear Lorem Ipsum,</p>
+                        <p>We at Biocon Pharmaceuticals are excited to share the latest updates and insights for this week. With ongoing advancements in biopharmaceuticals, we are proud to present you with the recent developments in our research and production.</p>
+                    
+                        <p>This week, Biocon has launched several new initiatives targeting breakthrough treatments for various chronic conditions, including cancer and diabetes. Our scientists have been working tirelessly on innovative therapies that aim to change the way we approach treatment.</p>
+                        
+                        <p>In other news, our collaboration with global healthcare providers has strengthened, and we are pleased to announce new partnerships that will extend our reach to new markets.</p>
+                    
+                        <p>We thank you for your continued support, and we remain committed to delivering high-quality solutions for all of our stakeholders.</p>
+                    
+                        <p>Sincerely,</p>
+                        <p>The Biocon Pharmaceuticals Team</p>
+                        <hr/>
+                    
+                        <a href="javascript: void(0);" class="btn btn-secondary waves-effect mt-4" data-bs-target="#myModal" (click)="openModal(content)"><i class="mdi mdi-reply"></i> Reply</a>
+                    </div>
+                    
+                    
+                    
+
+                </div><!-- card -->
+
+                
+
+            </div> <!-- end Col-9 -->
+
+        </div>
+
+    </div><!-- End row -->
+
+    <ng-template #content role="document" let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel">New Message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalRef.hide()"></button>
+        </div>
+        <div class="modal-body">
+            <div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="To">
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                    <form method="post">
+                        <textarea rows=8 name="area" class="form-control"></textarea>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal" (click)="modalRef.hide()">Close</button>
+            <button type="button" class="btn btn-primary">Send <i class="fab fa-telegram-plane ms-1"></i></button>
+        </div>
+    </ng-template><!-- /.modal -->
+</div>

@@ -261,7 +261,7 @@
       </div>
 
       <div class="dropdown d-inline-block" dropdown>
-        <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown" dropdownToggle>
+        <button type="button" class="btn header-item noti-icon" title="Notification" id="page-header-notifications-dropdown" dropdownToggle>
           <i class="bx bx-bell bx-tada"></i>
           <span class="badge bg-danger rounded-pill">3</span>
         </button>
@@ -348,7 +348,7 @@
       </div>
 
       <div class="dropdown d-inline-block" dropdown>
-        <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown" dropdownToggle>
+        <button type="button" class="btn header-item noti-icon" title="Announcement" id="page-header-notifications-dropdown" dropdownToggle>
           <i class="bx bxs-megaphone bx-flashing"></i>
           <span class="badge bg-danger rounded-pill">2</span>
         </button>
@@ -423,6 +423,13 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <div class="dropdown d-inline-block">
+        <button type="button" class="btn header-item noti-icon" title="Email" (click)="drouplink('/admin/email')">
+          <i class="bx bx-mail-send"></i>
+          <span class="badge bg-danger rounded-pill">1</span>
+        </button>
       </div>
 
       <div class="dropdown d-inline-block" dropdown>
