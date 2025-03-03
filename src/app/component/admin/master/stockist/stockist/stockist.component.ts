@@ -10,6 +10,9 @@ export class StockistComponent {
   hidden: boolean;
   selectedCompany: string | null = null; // Track the selected company
   showSecondCard: boolean = false; // Control visibility of the second card
+  countries: string[] = ['India', 'USA', 'UK', 'Canada'];;
+  states: string[] =  ['California', 'Texas', 'Florida', 'New York'];
+  cities: string[] = ['New York City', 'Los Angeles', 'Chicago', 'Houston'];
 
   selectValue: string[];
   selectValue1: string[];

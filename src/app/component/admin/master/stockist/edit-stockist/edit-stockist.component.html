@@ -2,99 +2,47 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-0 font-size-18">Edit Employee Information</h4>
+                <h4 class="mb-0 font-size-18">Edit Stockist</h4>
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="/admin/employees">Manage Employees</a></li>
-                        <li class="breadcrumb-item active">Edit Employee</li>
+                        <li class="breadcrumb-item"><a href="/admin/stockist">Stockist</a></li>
+                        <li class="breadcrumb-item active">Edit Stockist</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <form class="needs-validation">
         <div class="row">
             <div class="col-12">
-                <!-- Personal Information -->
+                <!-- Stockist Information -->
                 <div class="card card-custom">
                     <div class="card-body">
                         <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-account me-2"></i>Personal Information
+                            <i class="mdi mdi-account me-2"></i>Stockist Information
                         </h4>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label>Employee Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="E12345" value="E12345" disabled>
+                                <label>Stockist Code <span class="text-danger">*</span></label>
+                                <input maxlength="50" type="text" class="form-control form-control-custom" placeholder="Stockist Code">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>First Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Krishan" value="Krishan">
+                                <label>Stockist Name <span class="text-danger">*</span></label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Stockist Name">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Middle Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Kumar" value="Kumar">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Sharma" value="Sharma">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Gender</label>
+                                <label>Stockist Type <span class="text-danger">*</span></label>
                                 <select class="form-control form-control-custom">
-                                    <option selected>Male</option>
-                                    <option>Female</option>
-                                    <option >Other</option>
+                                    <option>Type 1</option>
+                                    <option>Type 2</option>
+                                    <option>Type 3</option>
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Birth Date</label>
-                                <input type="date" class="form-control form-control-custom" value="1990-01-01">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Religion</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Hindu" value="Hindu">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Blood Group</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="O+" value="O+">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Marital Status</label>
-                                <select class="form-control form-control-custom">
-                                    <option>Single</option>
-                                    <option selected>Married</option>
-                                    <option>Divorced</option>
-                                    <option >Widowed</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="card card-custom-alternate">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <i class="mdi mdi-phone me-2"></i>Contact Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Mobile No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="9876543210" value="9876543210">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Phone No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="011-12345678" value="011-12345678">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Email</label>
-                                <input type="email" class="form-control form-control-custom" placeholder="krishan.sharma@example.com" value="john.doe@example.com">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>IMEI No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="123456789012345" value="123456789012345">
+                                <label>Place <span class="text-danger">*</span></label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Place">
                             </div>
                         </div>
                     </div>
@@ -108,292 +56,88 @@
                         </h4>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label>Communication Address</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="123 Street, City" value="123 Street, City">
+                                <label>Address 1</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 1">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication Address 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Block A, Floor 3" value="Block A, Floor 3">
+                                <label>Address 2</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 2">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication Address 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Near Park" value="Near Park">
+                                <label>Address 3</label>
+                                <input maxlength="500" type="text" class="form-control form-control-custom" placeholder="Address 3">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication Pin Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="110001" value="110001">
+                                <label>Pin Code</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Pin Code">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication Country</label>
-                                <!-- <ng-select 
-                                    [items]="countries" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select Country">
-                                </ng-select> -->
+                                <label>State</label>
+                                <ng-select [items]="states" bindLabel="name" bindValue="id" placeholder="Select State"></ng-select>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Communication State</label>
-                                <!-- <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select> -->
+                                <label>City</label>
+                                <ng-select [items]="cities" bindLabel="name" bindValue="id" placeholder="Select City"></ng-select>
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Communication City</label>
-                                <!-- <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select> -->
-                            </div>
-                        </div>
-                        <hr class="dashed">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent Address</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="456 Avenue, Town" value="456 Avenue, Town">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent Address 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Block B, Floor 2" value="Block B, Floor 2">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent Address 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Near Hospital" value="Near Hospital">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent Pin Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="110002" value="110002">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent Country</label>
-                                <!-- <ng-select 
-                                    [items]="countries" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select Country">
-                                </ng-select> -->
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent State</label>
-                                <!-- <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select> -->
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Permanent City</label>
-                                <!-- <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select> -->
-                            </div>
-
                         </div>
                     </div>
                 </div>
 
-                <!-- Employment Details -->
+                <!-- Contact Person Details -->
                 <div class="card card-custom-alternate">
                     <div class="card-body">
                         <h4 class="card-title">
-                            <i class="mdi mdi-briefcase me-2"></i>Employment Details
+                            <i class="mdi mdi-briefcase me-2"></i>Contact Person Details
                         </h4>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label>Emp - Company Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Loreum Pharma Ltd" value="Loreum Pharma Ltd">
+                                <label>Contact Person</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Contact Person">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>HO Designation</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Manager" value="Manager">
+                                <label>Phone No</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Phone No">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Main Department</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="R&D" value="R&D">
+                                <label>Mobile No</label>
+                                <input maxlength="150" type="text" class="form-control form-control-custom" placeholder="Mobile No">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Internal Department</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Research" value="Research">
+                                <label>Email</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Email">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Employee Type</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Full-Time" value="Full-Time">
+                                <label>DL No 1</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="DL No 1">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Level</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Senior" value="Senior">
+                                <label>Tin No</label>
+                                <input maxlength="150" type="text" class="form-control form-control-custom" placeholder="Tin No">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Grade</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="A" value="A">
+                                <label>Fl No</label>
+                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Fl No">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Metro</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Delhi" value="Delhi">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Work Experience & Qualification -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-school me-2"></i>Work Experience & Qualification
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Highest Academic Qualification</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="M.Sc in Biotech" value="M.Sc in Biotech">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Previous Experience (In Months)</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="24" value="24">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Employment Dates -->
-                <div class="card card-custom-alternate">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <i class="mdi mdi-calendar me-2"></i>Employment Dates
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Joining Date</label>
-                                <input type="date" class="form-control form-control-custom" value="2019-02-01">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Confirmation Date</label>
-                                <input type="date" class="form-control form-control-custom" value="2020-02-01">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Promotion Date</label>
-                                <input type="date" class="form-control form-control-custom" value="2022-05-01">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Demotion Date</label>
+                                <label>Creation Date</label>
                                 <input type="date" class="form-control form-control-custom">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Resign Date</label>
+                                <label>GST No.</label>
+                                <input maxlength="15" type="text" class="form-control form-control-custom" placeholder="GST No.">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label>Updation Date</label>
                                 <input type="date" class="form-control form-control-custom">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label>Hold Date</label>
+                                <label>Closure Date</label>
                                 <input type="date" class="form-control form-control-custom">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Last Working Date</label>
-                                <input type="date" class="form-control form-control-custom">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Anniversary Date</label>
-                                <input type="date" class="form-control form-control-custom" value="2023-02-01">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Financial Details -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-cash me-2"></i>Financial Details
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Salary Bank Account No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="987654321098" value="987654321098">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Expense Bank Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="HDFC Bank" value="HDFC Bank">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Expense Bank A/c No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="9876543210" value="9876543210">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Salary Bank Name</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="ICICI Bank" value="ICICI Bank">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Bank IFSC Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="ICIC0001234" value="ICIC0001234">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>PAN No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="ABCPQ1234R" value="ABCPQ1234R">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>UAN No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="123456789123" value="123456789123">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>PF No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="1234 5678 9012" value="1234 5678 9012">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-custom-alternate">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <i class="mdi mdi-id-card me-2"></i>Identification Documents
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Aadhar Card No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="1234 5678 9012" value="1234 5678 9012">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Passport No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="IN786542A" value="IN786542A">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Driving License No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="2521" value="2521">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Reference & Miscellaneous -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-book-open me-2"></i>Reference & Miscellaneous
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Code Ref 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="1234" value="1234">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Code Ref 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="3456" value="3456">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Reference ID</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="6754" value="6754">
                             </div>
                         </div>
                         <div class="d-flex flex-wrap gap-2 mt-2">
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                            <button type="submit" class="btn btn-secondary">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="cancel" class="btn btn-secondary" routerLink="/admin/stockist">Cancel</button>
                         </div>
                     </div>
                 </div>

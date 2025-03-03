@@ -25,6 +25,8 @@ import { EditMenuComponent } from './master/edit-menu/edit-menu.component';
 import { EditProductUserComponent } from './master/edit-product-user/edit-product-user.component';
 import { EditRolesComponent } from './master/edit-roles/edit-roles.component';
 import { EditTasksComponent } from './master/edit-tasks/edit-tasks.component';
+import { PageListBroadcastComponent } from './master/page-list-broadcast/page-list-broadcast.component';
+import { PageViewBroadcastComponent } from './master/page-view-broadcast/page-view-broadcast.component';
 import { PermissionComponent } from './master/permission/permission.component';
 import { PermissioncategoryComponent } from './master/permissioncategory/permissioncategory.component';
 import { ProductUserComponent } from './master/product-user/product-user.component';
@@ -38,6 +40,7 @@ import { EditStockistComponent } from './master/stockist/edit-stockist/edit-stoc
 import { StockistComponent } from './master/stockist/stockist/stockist.component';
 import { ViewStockistComponent } from './master/stockist/view-stockist/view-stockist.component';
 import { TasksComponent } from './master/tasks/tasks.component';
+import { UserActivityComponent } from './master/user-activity/user-activity.component';
 import { UserPasswordComponent } from './master/user-password/user-password.component';
 import { UserProfileComponent } from './master/user-profile/user-profile.component';
 import { ViewBroadcastComponent } from './master/view-broadcast/view-broadcast.component';
@@ -68,16 +71,13 @@ import { MtpTourLockUnlockComponent } from './organization/mtp-tour-lock-unlock/
 import { MtpTourPlanUpdateComponent } from './organization/mtp-tour-plan-update/mtp-tour-plan-update.component';
 import { MtpTourPlanViewComponent } from './organization/mtp-tour-plan-view/mtp-tour-plan-view.component';
 import { MtpTourPlanComponent } from './organization/mtp-tour-plan/mtp-tour-plan.component';
+import { RpcComponent } from './organization/rpc/rpc.component';
 import { StpTourPlanComponent } from './organization/stp-tour-plan/stp-tour-plan.component';
 import { StpTourUpdateComponent } from './organization/stp-tour-update/stp-tour-update.component';
 import { StpTourViewComponent } from './organization/stp-tour-view/stp-tour-view.component';
 import { TourPlanComponent } from './organization/tour-plan/tour-plan.component';
 import { ViewCompanyComponent } from './organization/view-company/view-company.component';
 import { ViewEmployeeComponent } from './organization/view-employee/view-employee.component';
-import { PageListBroadcastComponent } from './master/page-list-broadcast/page-list-broadcast.component';
-import { PageViewBroadcastComponent } from './master/page-view-broadcast/page-view-broadcast.component';
-import { RpcComponent } from './organization/rpc/rpc.component';
-import { UserActivityComponent } from './master/user-activity/user-activity.component';
 
 
 const routes: Routes = [
@@ -192,11 +192,8 @@ const routes: Routes = [
   { path: 'add-retailer', component: AddRetailerComponent },
   { path: 'view-retailer', component: ViewRetailerComponent },
 
+  {path: 'employee-onboard', component: EmployeeOnboardComponent}
 
-  { path: 'cfa', component: CfaComponent },
-  { path: 'edit-cfa', component: EditCfaComponent },
-  { path: 'add-cfa', component: AddCfaComponent },
-  { path: 'view-cfa', component: ViewCfaComponent },
 
 
 ];
