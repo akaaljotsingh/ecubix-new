@@ -88,6 +88,7 @@
                   <tr>
                     <th scope="col">Sl No</th>
                     <th scope="col">Employee Code</th>
+                    <th scope="col">Client Name</th>
                     <th scope="col">Employee Name</th>
                     <th scope="col">City</th>
                     <th scope="col">State</th>
@@ -98,307 +99,348 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>-</td>
+                    <td>Loreum Pharmaceutical</td>
+                    <td>Ram Naresh</td>
+                    <td>Mumbai</td>
+                    <td>Maharashtra</td>
+                    <td>
+                      <div class="form-check form-switch form-switch-md">
+                        <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                               checked />
+                      </div>
+                    </td>
+                    <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                    <td>
+                      <ul class="list-unstyled hstack gap-1 mb-0">
+                        <li data-bs-toggle="tooltip" title="View">
+                          <a href="javascript:void(0);" routerLink="/admin/view-employee"
+                             class="btn btn-sm btn-soft-primary">
+                            <i class="mdi mdi-eye-outline"></i>
+                          </a>
+                        </li>
+                        <li data-bs-toggle="tooltip" title="Edit">
+                          <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                            <i class="mdi mdi-pencil-outline"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                        <i class="mdi mdi-link-variant"></i>
+                      </a>
+                    </td>
+                  </tr>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>-</td>
-                        <td>Ram Naresh</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee"
-                                        class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">2</th>
+                      <td>PH002</td>
+                      <td>Loreum Pharmaceutical</td>
+                      
+                      <td>DAvinder Bisht</td>
+                      <td>Hyderabad</td>
+                      <td>Telangana</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_success"><i class="fas fa-eye"></i> Onboarded</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>PH002</td>
-                        <td>DAvinder Bisht</td>
-                        <td>Hyderabad</td>
-                        <td>Telangana</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_success"><i class="fas fa-eye"></i> Onboarded</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">3</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Rekha Kumari</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>-</td>
-                        <td>Rekha Kumari</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">4</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Reena Sharma</td>
+                      <td>Hyderabad</td>
+                      <td>Telangana</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">4</th>
-                        <td>-</td>
-                        <td>Reena Sharma</td>
-                        <td>Hyderabad</td>
-                        <td>Telangana</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>-</td>
-                        <td>Madhu Bhagat</td>
-                        <td>Bengaluru</td>
-                        <td>Karnataka</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">5</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Madhu Bhagat</td>
+                      <td>Bengaluru</td>
+                      <td>Karnataka</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <!-- Additional rows -->
                     <tr>
-                        <th scope="row">6</th>
-                        <td>-</td>
-                        <td>Shahid Khan</td>
-                        <td>Ahmedabad</td>
-                        <td>Gujarat</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">6</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Shahid Khan</td>
+                      <td>Ahmedabad</td>
+                      <td>Gujarat</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">7</th>
-                        <td>-</td>
-                        <td>Krishna Kumar</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">7</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Krishna Kumar</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">8</th>
-                        <td>-</td>
-                        <td>Sushma Verma</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">8</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Sushma Verma</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">9</th>
-                        <td>-</td>
-                        <td>Gurpreet Singh</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">9</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Gurpreet Singh</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">10</th>
-                        <td>-</td>
-                        <td>Mandy Kumar</td>
-                        <td>Ahmedabad</td>
-                        <td>Gujarat</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">10</th>
+                      <td>-</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Mandy Kumar</td>
+                      <td>Ahmedabad</td>
+                      <td>Gujarat</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td><span routerLink="/admin/employee-onboard" class="badge_primary"><i class="fas fa-plus-circle"></i> Pending</span></td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                 </tbody>
               </table>

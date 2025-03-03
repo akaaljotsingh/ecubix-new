@@ -1,274 +1,286 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-0 font-size-18">Edit Doctor</h4>
-                <div class="page-title-right">
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="/admin/doctor">Doctor</a></li>
-                        <li class="breadcrumb-item active">Edit Doctor</li>
-                    </ol>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">Edit Doctor</h4>
+        <div class="page-title-right">
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/doctor">Doctor</a></li>
+            <li class="breadcrumb-item active">Edit Doctor</li>
+          </ol>
         </div>
+      </div>
     </div>
+  </div>
 
-    <form class="needs-validation">
-        <div class="row">
-            <div class="col-12">
-                <!-- Doctor Information -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-account me-2"></i>Doctor Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Doctor Code <span class="text-danger">*</span></label>
-                                <input maxlength="10" type="text" class="form-control form-control-custom" placeholder="Doctor Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Doctor First Name <span class="text-danger">*</span></label>
-                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="First Name">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Doctor Last Name <span class="text-danger">*</span></label>
-                                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Last Name">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Category <span class="text-danger">*</span></label>
-                                <select class="form-control form-control-custom">
-                                    <option>Category 1</option>
-                                    <option>Category 2</option>
-                                    <option>Category 3</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Speciality</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Speciality">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Qualification</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Qualification">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Dr Category 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Dr Category 1">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Doctor Type</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Doctor Type">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>No of Patients</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="No of Patients">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Primary Clinic Information -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-hospital me-2"></i>Primary Clinic Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic Address 1</label>
-                                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 1">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic Address 2</label>
-                                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 2">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic Address 3</label>
-                                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 3">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic State</label>
-                                <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic City</label>
-                                <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic Pin Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Phone No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Phone No">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Primary - Clinic Patch</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Clinic Patch">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secondary Clinic Information -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-hospital me-2"></i>Secondary Clinic Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic Address 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 1">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic Address 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 2">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic Address 3</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 3">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic State</label>
-                                <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic City</label>
-                                <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Clinic Pin Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Secondary - Residence No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Residence No">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Residential Information -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-home me-2"></i>Residential Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Address 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 1">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Address 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 2">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Address 3</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 3">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Clinic State</label>
-                                <ng-select 
-                                    [items]="states" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select State">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Clinic City</label>
-                                <ng-select 
-                                    [items]="cities" 
-                                    bindLabel="name" 
-                                    bindValue="id" 
-                                    placeholder="Select City">
-                                </ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Clinic Pin Code</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Resi - Residence No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Residence No">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-home me-2"></i>Doctor's Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Mobile No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Mobile No">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Email ID</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Email ID">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Registration No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Registration No">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>PAN No</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="PAN No">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Preferred Day</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Preferred Day">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Preferred Time</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Preferred Time">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Gender</label>
-                                <select class="form-select form-select-sm">
-                                    <option value="male" selected>Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Email ID</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Email ID">
-                            </div>
-                        </div>
-                        <div class="gap-2 d-flex">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="button" class="btn btn-secondary">Cancel</button>
-                        </div>
-                    </div>
-                </div>
+  <form class="needs-validation">
+    <div class="row">
+      <div class="col-12">
+        <!-- Doctor Information -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-account me-2"></i>Doctor Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Client<span class="text-danger">*</span></label>
+                <select class="form-select">
+                  <option>Select Client</option>
+                  <option>Loreum Pharma Pvt Ltd.</option>
+                  <option>Loreum Pharma</option>
+                  <option>Loreum Pharma Co.</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Employee<span class="text-danger">*</span></label>
+                <select class="form-select">
+                  <option>Select Employee</option>
+                  <option>Employee 1</option>
+                  <option>Employee 2</option>
+                  <option>Employee 3</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Doctor Code <span class="text-danger">*</span></label>
+                <input maxlength="10" type="text" class="form-control form-control-custom" placeholder="Doctor Code">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Doctor First Name <span class="text-danger">*</span></label>
+                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="First Name">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Doctor Last Name <span class="text-danger">*</span></label>
+                <input maxlength="100" type="text" class="form-control form-control-custom" placeholder="Last Name">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Category <span class="text-danger">*</span></label>
+                <select class="form-control form-control-custom">
+                  <option>Category 1</option>
+                  <option>Category 2</option>
+                  <option>Category 3</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Speciality</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Speciality">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Qualification</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Qualification">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Dr Category 1</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Dr Category 1">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Doctor Type</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Doctor Type">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>No of Patients</label>
+                <input type="text" class="form-control form-control-custom" placeholder="No of Patients">
+              </div>
             </div>
+          </div>
         </div>
-    </form>
+
+        <!-- Primary Clinic Information -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-hospital me-2"></i>Primary Clinic Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic Address 1</label>
+                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 1">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic Address 2</label>
+                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 2">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic Address 3</label>
+                <input maxlength="255" type="text" class="form-control form-control-custom" placeholder="Clinic Address 3">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic State</label>
+                <ng-select [items]="states"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select State">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic City</label>
+                <ng-select [items]="cities"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select City">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic Pin Code</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Phone No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Phone No">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Primary - Clinic Patch</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Clinic Patch">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Clinic Information -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-hospital me-2"></i>Secondary Clinic Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic Address 1</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 1">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic Address 2</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 2">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic Address 3</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 3">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic State</label>
+                <ng-select [items]="states"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select State">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic City</label>
+                <ng-select [items]="cities"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select City">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Clinic Pin Code</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Secondary - Residence No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Residence No">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Residential Information -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-home me-2"></i>Residential Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Resi - Address 1</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 1">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Address 2</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 2">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Address 3</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 3">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Clinic State</label>
+                <ng-select [items]="states"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select State">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Clinic City</label>
+                <ng-select [items]="cities"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select City">
+                </ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Clinic Pin Code</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Pin Code">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Resi - Residence No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Residence No">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-home me-2"></i>Doctor's Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Mobile No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Mobile No">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Email ID</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Email ID">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Registration No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Registration No">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>PAN No</label>
+                <input type="text" class="form-control form-control-custom" placeholder="PAN No">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Preferred Day</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Preferred Day">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Preferred Time</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Preferred Time">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Gender</label>
+                <select class="form-select form-select-sm">
+                  <option value="male" selected>Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Email ID</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Email ID">
+              </div>
+            </div>
+            <div class="gap-2 d-flex">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary"  routerLink="/admin/doctor">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
