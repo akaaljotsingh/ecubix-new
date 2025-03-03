@@ -127,6 +127,8 @@ import { PageListBroadcastComponent } from './master/page-list-broadcast/page-li
 import { PageViewBroadcastComponent } from './master/page-view-broadcast/page-view-broadcast.component';
 import { RpcComponent } from './organization/rpc/rpc.component';
 import { UserActivityComponent } from './master/user-activity/user-activity.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { NgStepperModule } from 'angular-ng-stepper';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         // Change this to your upload POST address:
@@ -185,6 +187,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
                         SimplebarAngularModule,
                         LightboxModule,
                         PickerModule,
+                        CdkStepperModule,NgStepperModule,
                         TabsModule.forRoot(),
                         ModalModule.forRoot(),
                         FormsModule,
