@@ -18,7 +18,7 @@ export class EmployeeOnboardComponent {
   hideReportingHQ = true;  // Initially hidden
   showVacancyDetails = false;
   showVacancyType = false;
-
+  cities: string[] = ['New York City', 'Los Angeles', 'Chicago', 'Houston'];
   zones = [
     { id: 'zone1', name: 'Zone 1' },
     { id: 'zone2', name: 'Zone 2' },
@@ -37,6 +37,8 @@ export class EmployeeOnboardComponent {
     { id: 'hq2', name: 'Headquarters 2' },
     { id: 'hq3', name: 'Headquarters 3' }
   ];
+  showBottomCard: boolean = false;
+  reportingOfficerFlag: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.employeeForm = this.fb.group({
@@ -60,9 +62,9 @@ export class EmployeeOnboardComponent {
     
     this.showJoiningThrough = employeeType === 'existingEmployee';
     this.showCreateVacancy = employeeType === 'existingEmployee';
-    this.showVacancyType = !!employeeType;
+    // this.showVacancyType = !!employeeType;
 
-    this.showDesignationSection = false;
+    this.showDesignationSection = true;
     this.showVacancyDetails = false;
     this.employeeForm.patchValue({ vacancyType: '', vacancyDetails: '' });
   }
@@ -72,16 +74,20 @@ export class EmployeeOnboardComponent {
 
     this.showDesignationSection = vacancyType === 'newVacancy' || vacancyType === 'existingVacancy';
     this.showVacancyDetails = vacancyType === 'existingVacancy';
+    // if (designation) {
+      this.showBottomCard = true;
+    // }
   }
 
   onDesignationChange(): void {
+    this.showVacancyType = true;
+    this.reportingOfficerFlag = true
     const designation = this.employeeForm.get('designation')?.value;
+    // this.hideHeadquarters = !designation; // Show only when a designation is selected
+    // this.hideReportingHQ = !designation; // Show only when a designation is selected
 
-    this.hideHeadquarters = !designation; // Show only when a designation is selected
-    this.hideReportingHQ = !designation; // Show only when a designation is selected
-
-    this.hideReportingOfficer = designation === 'RBM' || designation === 'MR';
-    this.hideZones = designation === 'RBM' || designation === 'MR';
-    this.hideRegions = designation === 'MR';
+    // this.hideReportingOfficer = designation === 'RBM' || designation === 'MR';
+    // this.hideZones = designation === 'RBM' || designation === 'MR';
+    // this.hideRegions = designation === 'MR';
   }
 }

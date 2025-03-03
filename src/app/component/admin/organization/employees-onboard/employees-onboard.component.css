@@ -1,0 +1,48 @@
+
+.nbt-page-tabs svg{
+    width: 18px;
+    }
+    
+    .nbt-page-tabs .split-arrows-icon svg path{
+    fill: #aaa;
+    }
+    
+    .nbt-page-tabs .nav-pills-custom .nav-link {
+    color: #aaa;
+    background: #fff;
+    position: relative;
+    }
+    
+    .nbt-page-tabs .nav-pills-custom .nav-link.active{
+    color: #ef8b22;
+    background: #fff;
+    }
+    
+    /* Add indicator arrow for the active tab */
+    @media (min-width: 992px) {
+    .nbt-page-tabs .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    }
+    
+    .nbt-page-tabs .nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+    }
+    
+    
+    
+    .nbt-page-tabs  {
+    background: linear-gradient(to left, #dce35b, #45b649);
+    padding: 50px;
+    }
+    
+    
