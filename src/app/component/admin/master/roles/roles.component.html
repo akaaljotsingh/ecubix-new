@@ -19,27 +19,12 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-xxl-2 col-lg-6">
-                      <ng-select [items]="selectValue1" [(ngModel)]="selectedCompany" [multiple]="false" appendTo="body"
-                        [placeholder]="'Select Company'"></ng-select>
-                    </div>
-                    <div class="col-xxl-1 col-lg-6">
-                      <div class="position-relative hstack gap-3">
-                        <button type="submit" class="btn btn-primary w-100" (click)="onApply()">
-                          <i class="bx bx-check-double align-middle"></i> Apply
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card" *ngIf="showSecondCard">
                 <div class="card-body job-filter">
                     <div class="row g-3">
-                        
+                        <div class="col-xxl-2 col-lg-6">
+                            <ng-select [items]="selectValue1" [multiple]="false" appendTo="body"
+                              [placeholder]="'Select Client'"></ng-select>
+                        </div>
                         <div class="col-xxl-2 col-lg-6">
                             <input type="search" class="form-control" id="searchInput" placeholder="Search role">
                         </div>
@@ -50,7 +35,7 @@
                                 
                             </div>
                         </div>
-                        <div class="col-xxl-7 col-lg-6">
+                        <div class="col-xxl-5 col-lg-6">
                             <div class="text-sm-end">
                                 <button type="button" class="btn btn-success mb-2 me-2"
                                 [routerLink]="'/admin/add-roles'"><i class="mdi mdi-plus mr-1"></i>

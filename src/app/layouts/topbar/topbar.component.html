@@ -272,12 +272,12 @@
                 <h6 class="m-0">{{ 'HEADER.NOTIFICATIONS.TITLE' | translate}} </h6>
               </div>
               <div class="col-auto">
-                <a href="javascript: void(0);" class="small">{{ 'HEADER.NOTIFICATIONS.VIEW_ALL' | translate}}</a>
+                <a href="javascript: void(0);" (click)="drouplink('/admin/page-list-broadcast')"  class="small">{{ 'HEADER.NOTIFICATIONS.VIEW_ALL' | translate}}</a>
               </div>
             </div>
           </div>
           <ngx-simplebar style="position: relative; height: 230px;">
-            <a href="javascript: void(0);" class="text-reset notification-item">
+            <a href="javascript: void(0);" (click)="drouplink('/admin/page-view-broadcast')" class="text-reset notification-item">
               <div class="d-flex">
                 <div class="avatar-xs me-3">
                   <span class="avatar-title bg-primary rounded-circle font-size-16">
@@ -339,7 +339,7 @@
             </a>
           </ngx-simplebar>
           <div class="p-2 border-top d-grid">
-            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)" (click)="drouplink('/admin/page-list-broadcast')">
               <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">{{
                 'HEADER.NOTIFICATIONS.LOAD_MORE' | translate}}</span>
             </a>
@@ -434,15 +434,16 @@
 
         <div class="dropdown-menu dropdown-menu-end" *dropdownMenu>
           <!-- item-->
-          <a class="dropdown-item" (click)="drouplink('/admin/user-profile')"><i
+          <a class="dropdown-item" (click)="drouplink('/admin/user-profile')" href="javascript: void(0);"><i
               class="bx bx-user font-size-16 align-middle me-1 custom-hover"></i>
             {{ 'HEADER.LOGIN.PROFILE' | translate}}</a>
           <a class="dropdown-item" (click)="drouplink('/admin/user-password')" href="javascript: void(0);"><i
               class="bx bx-shield-quarter font-size-16 align-middle me-1"></i>{{ 'HEADER.LOGIN.PASSWORD' |
             translate}}</a>
-          <a class="dropdown-item" (click)="drouplink('/pages/lock-screen-1')"><i
-              class="bx bx-lock-open font-size-16 align-middle me-1"></i>
-            {{ 'HEADER.LOGIN.LOCK_SCREEN' | translate}}</a>
+            <a class="dropdown-item" (click)="drouplink('/admin/user-activity')" href="javascript: void(0);"><i
+              class="bx bx-history font-size-16 align-middle me-1"></i>{{ 'HEADER.LOGIN.ACTIVITY' |
+            translate}}</a>
+          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item text-danger" href="javascript: void(0);" (click)="logout()"><i
               class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>

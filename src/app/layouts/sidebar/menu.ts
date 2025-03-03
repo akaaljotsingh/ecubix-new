@@ -68,7 +68,7 @@ export const MENU: MenuItem[] = [
             {
                 id: 4,
                 label: 'MENUITEMS.ONBOARDING.LIST.CLIENT',
-                link: '/admin/clients',
+                link: '/admin/company',
                 parentId: 3
             },
             {
