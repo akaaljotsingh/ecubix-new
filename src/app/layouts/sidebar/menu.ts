@@ -128,7 +128,7 @@ export const MENU: MenuItem[] = [
     {
         id: 6,
         label: 'MENUITEMS.Client.TEXT',
-        icon: 'bx bxs-grid',
+        icon: 'bx bx-list-plus',
         subItems: [
             
             {

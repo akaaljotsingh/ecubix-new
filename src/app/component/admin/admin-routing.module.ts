@@ -78,6 +78,8 @@ import { StpTourViewComponent } from './organization/stp-tour-view/stp-tour-view
 import { TourPlanComponent } from './organization/tour-plan/tour-plan.component';
 import { ViewCompanyComponent } from './organization/view-company/view-company.component';
 import { ViewEmployeeComponent } from './organization/view-employee/view-employee.component';
+import { EmailComponent } from './organization/email/email.component';
+import { EmailReadComponent } from './organization/email-read/email-read.component';
 
 
 const routes: Routes = [
@@ -143,6 +145,8 @@ const routes: Routes = [
   { path: 'page-view-broadcast', component: PageViewBroadcastComponent},
   { path: 'rpc', component:RpcComponent},
   { path: 'user-activity', component: UserActivityComponent},
+  { path: 'email', component: EmailComponent},
+  { path: 'email-read', component: EmailReadComponent},
   { path: 'dashboards', loadChildren: () => import('../../pages/dashboards/dashboards.module').then(m => m.DashboardsModule) },
   { path: 'ecommerce', loadChildren: () => import('../../pages/ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
   { path: 'crypto', loadChildren: () => import('../../pages/crypto/crypto.module').then(m => m.CryptoModule) },
