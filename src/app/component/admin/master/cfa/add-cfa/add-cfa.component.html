@@ -1,165 +1,180 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-0 font-size-18">Add CFA</h4>
-                <div class="page-title-right">
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="/admin/cfa">Manage CFA</a></li>
-                        <li class="breadcrumb-item active">Add CFA</li>
-                    </ol>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <h4 class="mb-0 font-size-18">Add CFA</h4>
+        <div class="page-title-right">
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/admin/cfa">Manage CFA</a></li>
+            <li class="breadcrumb-item active">Add CFA</li>
+          </ol>
         </div>
+      </div>
     </div>
+  </div>
 
-    <form class="needs-validation">
-        <div class="row">
-            <div class="col-12">
-                <!-- Personal Information -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-account me-2"></i>CFA  Information
-                        </h4>
-                        <div class="row">
-                            <!-- <div class="col-md-3 mb-3">
-                                <label>Clients</label>
-                                <ng-select [items]="selectValue1" [(ngModel)]="selectValue" [multiple]="true" appendTo="body"
-                                [placeholder]="'Select Clients'"></ng-select>
-                            </div> -->
-                            <div class="col-md-3 mb-3">
-                                <label>CFA Code</label>
-                                <input type="text" class="form-control form-control-custom" maxlength="5" placeholder="Cfa Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>CFA Name</label>
-                                <input type="text" class="form-control form-control-custom" maxlength="100" placeholder="CFA Name">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="card card-custom-alternate">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <i class="mdi mdi-phone me-2"></i>Contact Information
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Mobile No</label>
-                                <input type="tel" class="form-control form-control-custom" placeholder="Mobile No" maxlength="10">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Phone No</label>
-                                <input type="tel" class="form-control form-control-custom" placeholder="Phone No" maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Fax No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Fax No." maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Email</label>
-                                <input type="email" class="form-control form-control-custom" placeholder="Email">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Address Details -->
-                <div class="card card-custom">
-                    <div class="card-body">
-                        <h4 class="card-title card-header-custom">
-                            <i class="mdi mdi-map-marker me-2"></i>Address Details
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>State</label>
-                                <ng-select [items]="states" [multiple]="true" appendTo="body"
-                                [placeholder]="'States'"></ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Place</label>
-                                <input type="text" placeholder="Place" maxlength="100" class="form-control form-control-custom">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>City</label>
-                                <ng-select [items]="states" [multiple]="true" appendTo="body"
-                                [placeholder]="'Cities'"></ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Address 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 1" maxlength="500">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Address 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 2" maxlength="500">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Address 3</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Address 3" maxlength="500">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Pincode</label>
-                                <input type="number" class="form-control form-control-custom" placeholder="Pincode" maxlength="15">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Employment Details -->
-                <div class="card card-custom-alternate">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <i class="mdi mdi-briefcase me-2"></i>Employment Details
-                        </h4>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>DL No. 1</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="DL No. 1" maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>DL No. 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="DL No. 2" maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>FL No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="FL No."  maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Tin No.</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="Tin No."  maxlength="15">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>CFA Class</label>
-                                <ng-select [items]="states" [multiple]="true" appendTo="body"
-                                [placeholder]="'States'"></ng-select>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Creation Date</label>
-                                <input type="date" class="form-control form-control-custom" placeholder="Creation Date">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Updation Date</label>
-                                <input type="date" class="form-control form-control-custom" placeholder="Updation Date">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Closure Date</label>
-                                <input type="date" class="form-control form-control-custom" placeholder="Closure Date">
-                            </div>
-                        </div>
-                        <div class="d-flex flex-wrap gap-2 mt-2">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="button" class="btn btn-secondary" routerLink="/admin/employees">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                
+  <form class="needs-validation">
+    <div class="row">
+      <div class="col-12">
+        <!-- Personal Information -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-account me-2"></i>CFA  Information
+            </h4>
+            <div class="row">
+              <!-- <div class="col-md-3 mb-3">
+                  <label>Clients</label>
+                  <ng-select [items]="selectValue1" [(ngModel)]="selectValue" [multiple]="true" appendTo="body"
+                  [placeholder]="'Select Clients'"></ng-select>
+              </div> -->
+              <div class="col-md-3 mb-3">
+                <label>Client<span class="text-danger">*</span></label>
+                <select class="form-select">
+                  <option>Select Client</option>
+                  <option>Loreum Pharma Pvt Ltd.</option>
+                  <option>Loreum Pharma</option>
+                  <option>Loreum Pharma Co.</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Employee<span class="text-danger">*</span></label>
+                <select class="form-select">
+                  <option>Select Employee</option>
+                  <option>Employee 1</option>
+                  <option>Employee 2</option>
+                  <option>Employee 3</option>
+                </select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>CFA Code</label>
+                <input type="text" class="form-control form-control-custom" maxlength="5" placeholder="Cfa Code">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>CFA Name</label>
+                <input type="text" class="form-control form-control-custom" maxlength="100" placeholder="CFA Name">
+              </div>
             </div>
+          </div>
         </div>
-    </form>
+
+        <!-- Contact Information -->
+        <div class="card card-custom-alternate">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="mdi mdi-phone me-2"></i>Contact Information
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Mobile No</label>
+                <input type="tel" class="form-control form-control-custom" placeholder="Mobile No" maxlength="10">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Phone No</label>
+                <input type="tel" class="form-control form-control-custom" placeholder="Phone No" maxlength="15">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Fax No.</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Fax No." maxlength="15">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Email</label>
+                <input type="email" class="form-control form-control-custom" placeholder="Email">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Details -->
+        <div class="card card-custom">
+          <div class="card-body">
+            <h4 class="card-title card-header-custom">
+              <i class="mdi mdi-map-marker me-2"></i>Address Details
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>State</label>
+                <ng-select [items]="states" [multiple]="true" appendTo="body"
+                           [placeholder]="'States'"></ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Place</label>
+                <input type="text" placeholder="Place" maxlength="100" class="form-control form-control-custom">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>City</label>
+                <ng-select [items]="states" [multiple]="true" appendTo="body"
+                           [placeholder]="'Cities'"></ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Address 1</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 1" maxlength="500">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Address 2</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 2" maxlength="500">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Address 3</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Address 3" maxlength="500">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Pincode</label>
+                <input type="number" class="form-control form-control-custom" placeholder="Pincode" maxlength="15">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Employment Details -->
+        <div class="card card-custom-alternate">
+          <div class="card-body">
+            <h4 class="card-title">
+              <i class="mdi mdi-briefcase me-2"></i>Employment Details
+            </h4>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>DL No.</label>
+                <input type="text" class="form-control form-control-custom" placeholder="DL No. 1" maxlength="15">
+              </div>
+            
+              <div class="col-md-3 mb-3">
+                <label>FL No.</label>
+                <input type="text" class="form-control form-control-custom" placeholder="FL No." maxlength="15">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Tin No.</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Tin No." maxlength="15">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>CFA Class</label>
+                <ng-select [items]="states" [multiple]="true" appendTo="body"
+                           [placeholder]="'States'"></ng-select>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Creation Date</label>
+                <input type="date" class="form-control form-control-custom" placeholder="Creation Date">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Updation Date</label>
+                <input type="date" class="form-control form-control-custom" placeholder="Updation Date">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Closure Date</label>
+                <input type="date" class="form-control form-control-custom" placeholder="Closure Date">
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" routerLink="/admin/cfa">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </form>
 </div>
