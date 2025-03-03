@@ -16,7 +16,7 @@
     <div class="row">
         <!-- Notification Card -->
         <div class="col-md-4">
-          <div class="card mini-stats-wid bg-success-subtle active custom-hover">
+            <div class="card mini-stats-wid bg-success-subtle active custom-hover" (click)="changeCategory('Notification')">
               <div class="card-body">
                     <div class="d-flex">
                         <div class="flex-grow-1">
@@ -37,7 +37,8 @@
     
         <!-- Announcement Card -->
         <div class="col-md-4">
-          <div class="card mini-stats-wid bg-info-subtle custom-hover">
+            <div class="card mini-stats-wid bg-info-subtle custom-hover" (click)="changeCategory('Announcement')">
+
                 <div class="card-body">
                     <div class="d-flex">
                         <div class="flex-grow-1">
@@ -58,7 +59,8 @@
     
         <!-- News Feed Card -->
         <div class="col-md-4">
-          <div class="card mini-stats-wid bg-warning-subtle custom-hover">
+            <div class="card mini-stats-wid bg-warning-subtle custom-hover" (click)="changeCategory('NewsFeed')">
+
                 <div class="card-body">
                     <div class="d-flex">
                         <div class="flex-grow-1">
@@ -88,31 +90,30 @@
                         <div class="">
                             <div class="table-responsive">
                                 <table class="table project-list-table table-nowrap align-middle table-borderless">
-                                    <thead>
+                                    <thead [ngClass]="getTableHeaderClass()">
                                         <tr>
-                                            <th scope="col" style="width: 100px">#</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Publishing Date</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">View</th>
+                                          <th scope="col" style="width: 100px">#</th>
+                                          <th scope="col">Title</th>
+                                          <th scope="col">Publishing Date</th>
+                                          <th scope="col">Status</th>
+                                          <th scope="col">View</th>
                                         </tr>
-                                    </thead>
+                                      </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr *ngFor="let item of displayedData">
                                             <td>
                                                 <div class="avatar-sm">
                                                     <span class="avatar-title rounded-circle bg-primary font-size-22">
-                                                        <i class="bx bx-edit"></i>
+                                                        <i [class]="item.icon"></i> <!-- Dynamically bind the icon class -->
                                                     </span>
                                                 </div>
-                                                <!-- <img src="assets/images/companies/img-1.png" alt="" class="avatar-sm"> -->
                                             </td>
                                             <td>
-                                                <h5 class="text-truncate font-size-14"><a href="javascript: void(0);" class="text-dark">Record Update</a></h5>
-                                                <p class="text-muted mb-0">Company division update</p>
+                                                <h5 class="text-truncate font-size-14"><a href="javascript: void(0);" class="text-dark">{{ item.title }}</a></h5>
+                                                <p class="text-muted mb-0">{{ item.description }}</p>
                                             </td>
-                                            <td>01-03-2025</td>
-                                            <td><span class="badge badge-soft-danger">Unread</span></td>
+                                            <td>{{ item.date }}</td>
+                                            <td><span class="badge" [ngClass]="{'badge-soft-danger': item.status === 'Unread', 'badge-soft-success': item.status === 'Read'}">{{ item.status }}</span></td>
                                             <td>
                                                 <ul class="list-unstyled hstack gap-1 mb-0">
                                                     <li data-bs-toggle="tooltip" title="View">
@@ -121,74 +122,8 @@
                                                 </ul>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="avatar-sm">
-                                                    <span class="avatar-title rounded-circle bg-primary font-size-22">
-                                                        <i class="bx bx-user"></i>
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <h5 class="text-truncate font-size-14"><a href="javascript: void(0);" class="text-dark">Navdeep Singh</a></h5>
-                                                <p class="text-muted mb-0">New user registered</p>
-                                            </td>
-                                            <td>28-02-2025</td>
-                                            <td><span class="badge badge-soft-danger">Unread</span></td>
-                                            <td>
-                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                    <li data-bs-toggle="tooltip" title="View">
-                                                        <a href="javascript: void(0);" routerLink="/admin/page-view-broadcast" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="avatar-sm">
-                                                    <span class="avatar-title rounded-circle bg-primary font-size-22">
-                                                        <i class="bx bx-edit"></i>
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <h5 class="text-truncate font-size-14"><a href="javascript: void(0);" class="text-dark">Tour Update</a></h5>
-                                                <p class="text-muted mb-0">New tour updated by company</p>
-                                            </td>
-                                            <td>26-02-2025</td>
-                                            <td><span class="badge badge-soft-danger">Unread</span></td>
-                                            <td>
-                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                    <li data-bs-toggle="tooltip" title="View">
-                                                        <a href="javascript: void(0);" routerLink="/admin/page-view-broadcast" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="avatar-sm">
-                                                    <span class="avatar-title rounded-circle bg-primary font-size-22">
-                                                        <i class="bx bx-edit"></i>
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <h5 class="text-truncate font-size-14"><a href="javascript: void(0);" class="text-dark">Harshika Sharma</a></h5>
-                                                <p class="text-muted mb-0">Medical representative assigned to company</p>
-                                            </td>
-                                            <td>24-02-2025</td>
-                                            <td><span class="badge badge-soft-success">Read</span></td>
-                                            <td>
-                                                <ul class="list-unstyled hstack gap-1 mb-0">
-                                                    <li data-bs-toggle="tooltip" title="View">
-                                                        <a href="javascript: void(0);" routerLink="/admin/page-view-broadcast" class="btn btn-sm btn-soft-primary"><i class="mdi mdi-eye-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                       
                                     </tbody>
+                                    
                                 </table>
                                 
                             </div>

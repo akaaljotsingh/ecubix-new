@@ -146,8 +146,8 @@ export class TopbarComponent implements OnInit {
   }
 
 
-  drouplink(link: any) {
-    this.router.navigate([link]);
+  drouplink(link: string, queryParams: { [key: string]: string } = {}) {
+    this.router.navigate([link], { queryParams: queryParams });
   }
   
   changeLayout(layoutMode: string) {

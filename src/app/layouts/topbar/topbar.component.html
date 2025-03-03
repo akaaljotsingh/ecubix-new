@@ -272,7 +272,7 @@
                 <h6 class="m-0">{{ 'HEADER.NOTIFICATIONS.TITLE' | translate}} </h6>
               </div>
               <div class="col-auto">
-                <a href="javascript: void(0);" (click)="drouplink('/admin/page-list-broadcast')"  class="small">{{ 'HEADER.NOTIFICATIONS.VIEW_ALL' | translate}}</a>
+                <a href="javascript: void(0);" (click)="drouplink('/admin/page-list-broadcast', { category: 'Notification' })"  class="small">{{ 'HEADER.NOTIFICATIONS.VIEW_ALL' | translate}}</a>
               </div>
             </div>
           </div>
@@ -339,7 +339,7 @@
             </a>
           </ngx-simplebar>
           <div class="p-2 border-top d-grid">
-            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)" (click)="drouplink('/admin/page-list-broadcast')">
+            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)" (click)="drouplink('/admin/page-list-broadcast', { category: 'Notification' })">
               <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">{{
                 'HEADER.NOTIFICATIONS.LOAD_MORE' | translate}}</span>
             </a>
@@ -359,12 +359,12 @@
                 <h6 class="m-0">{{ 'HEADER.ANNOUNCEMENTS.TITLE' | translate}} </h6>
               </div>
               <div class="col-auto">
-                <a href="javascript: void(0);" class="small">{{ 'HEADER.ANNOUNCEMENTS.VIEW_ALL' | translate}}</a>
+                <a href="javascript: void(0);" (click)="drouplink('/admin/page-list-broadcast', { category: 'Announcement' })" class="small">{{ 'HEADER.ANNOUNCEMENTS.VIEW_ALL' | translate}}</a>
               </div>
             </div>
           </div>
           <ngx-simplebar style="position: relative; height: 230px;">
-            <a href="javascript: void(0);" class="text-reset notification-item">
+            <a href="javascript: void(0);" (click)="drouplink('/admin/page-view-broadcast')" class="text-reset notification-item">
               <div class="d-flex">
                 <div class="avatar-xs me-3">
                   <span class="avatar-title bg-primary rounded-circle font-size-16">
@@ -417,7 +417,7 @@
             </a>
           </ngx-simplebar>
           <div class="p-2 border-top d-grid">
-            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)" (click)="drouplink('/admin/page-list-broadcast', { category: 'Announcement' })">
               <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">{{
                 'HEADER.ANNOUNCEMENTS.LOAD_MORE' | translate}}</span>
             </a>
