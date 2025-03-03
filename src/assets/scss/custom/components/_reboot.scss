@@ -49,3 +49,10 @@ label {
       position: relative;
   }
 }
+
+hr {
+  border: 1px solid #d1d5eb;
+  &.dashed {
+    border-style: dashed;
+  }
+}
