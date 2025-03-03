@@ -55,6 +55,7 @@ export class EmployeeOnboardComponent {
       headquarters: [[]],
       reportingHQ: ['']
     });
+    
   }
 
   onEmployeeTypeChange(): void {
@@ -90,4 +91,6 @@ export class EmployeeOnboardComponent {
     // this.hideZones = designation === 'RBM' || designation === 'MR';
     // this.hideRegions = designation === 'MR';
   }
+
+  
 }
