@@ -127,38 +127,38 @@ export const MENU: MenuItem[] = [
     
     {
         id: 6,
-        label: 'MENUITEMS.MASTERS.TEXT',
+        label: 'MENUITEMS.Client.TEXT',
         icon: 'bx bxs-grid',
         subItems: [
             
             {
                 id: 1,
-                label: 'MENUITEMS.MASTERS.LIST.CFA',
-                link: '/admin/broadcast',
+                label: 'MENUITEMS.Client.LIST.CFA',
+                link: '/admin/cfa',
                 parentId: 6
             },
             {
                 id: 1,
-                label: 'MENUITEMS.MASTERS.LIST.Doctor',
-                link: '/admin/broadcast',
+                label: 'MENUITEMS.Client.LIST.Doctor',
+                link: '/admin/doctor',
                 parentId: 6
             },
             {
                 id: 1,
-                label: 'MENUITEMS.MASTERS.LIST.Chemist',
-                link: '/admin/broadcast',
+                label: 'MENUITEMS.Client.LIST.Chemist',
+                link: '/admin/chemist',
                 parentId: 6
             },
             {
                 id: 1,
-                label: 'MENUITEMS.MASTERS.LIST.Stokist',
-                link: '/admin/broadcast',
+                label: 'MENUITEMS.Client.LIST.Stokist',
+                link: '/admin/stockist',
                 parentId: 6
             },
             {
                 id: 1,
-                label: 'MENUITEMS.MASTERS.LIST.Retailer',
-                link: '/admin/broadcast',
+                label: 'MENUITEMS.Client.LIST.Retailer',
+                link: '/admin/retailer',
                 parentId: 6
             }
             

@@ -136,13 +136,13 @@
 
     },
      
-    "MASTERS": {
-      "TEXT": "Masters",
+    "Client": {
+      "TEXT": "Client Onboard",
       "LIST": {
         "CFA": "CFA",
         "Doctor" : "Doctor",
         "Chemist": "Chemist",
-        "Stokist": "Stokist",
+        "Stokist": "Stockist",
         "Retailer": "Retailer"
       }
 

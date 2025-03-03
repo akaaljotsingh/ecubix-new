@@ -186,11 +186,6 @@ const routes: Routes = [
   { path: 'view-retailer', component: ViewRetailerComponent },
 
 
-  { path: 'cfa', component: CfaComponent },
-  { path: 'edit-cfa', component: EditCfaComponent },
-  { path: 'add-cfa', component: AddCfaComponent },
-  { path: 'view-cfa', component: ViewCfaComponent },
-
 
 ];
 

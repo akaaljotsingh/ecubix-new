@@ -172,11 +172,14 @@ dropzone>.dropzone.dz-wrapper {
 .custom-hover {
   cursor: pointer;
 }
+
 .sortable-column:hover {
-  background-color: #f8f9fa; /* Optional: Highlight effect on hover */
+  background-color: #f8f9fa;
+  /* Optional: Highlight effect on hover */
 }
 
-.mdi-16px.mdi-set, .mdi-16px.mdi:before {
+.mdi-16px.mdi-set,
+.mdi-16px.mdi:before {
   font-size: 16px;
 }
 
@@ -203,67 +206,122 @@ dropzone>.dropzone.dz-wrapper {
 }
 
 .card-custom {
-  background-color: #F7F8FC; /* Updated background color */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border: none; /* Remove default border */
+  background-color: #F7F8FC;
+  /* Updated background color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
+  border: none;
+  /* Remove default border */
 }
 
 .card-custom .card-title {
-  color: #2C3E50; /* Darker shade for better contrast */
+  color: #2C3E50;
+  /* Darker shade for better contrast */
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #D1D5EB; /* Slightly darker shade for underline */
+  border-bottom: 2px solid #D1D5EB;
+  /* Slightly darker shade for underline */
 }
 
 .card-custom .card-title i {
-  color: #2C3E50; /* Icon color to match the text */
+  color: #2C3E50;
+  /* Icon color to match the text */
 }
 
 .card-custom .form-control:focus {
-  border-color: #A1B4D6; /* Updated border color, darker shade for better focus visibility */
-  box-shadow: 0 0 5px rgba(161, 180, 214, 0.3); /* Light shadow to match focus color */
+  border-color: #A1B4D6;
+  /* Updated border color, darker shade for better focus visibility */
+  box-shadow: 0 0 5px rgba(161, 180, 214, 0.3);
+  /* Light shadow to match focus color */
 }
 
 
 
 .card-custom-alternate {
-  background-color: #FCFBF7; /* Very light cream background */
-  
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-  border: none; /* No default border */
+  background-color: #FCFBF7;
+  /* Very light cream background */
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow effect */
+  border: none;
+  /* No default border */
 }
 
 /* Card title styling */
 .card-custom-alternate .card-title {
-  color: #2C3E50; /* Darker shade for contrast */
+  color: #2C3E50;
+  /* Darker shade for contrast */
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #E7D8A5; /* Soft cream-yellow underline matching background */
+  border-bottom: 2px solid #E7D8A5;
+  /* Soft cream-yellow underline matching background */
 }
 
 /* Card icon styling */
 .card-custom-alternate .card-title i {
-  color: #2C3E50; /* Consistent dark color for icons */
+  color: #2C3E50;
+  /* Consistent dark color for icons */
 }
 
 /* Form field focus effect */
 .card-custom-alternate .form-control:focus {
-  border-color: #E7D8A5; /* Softer cream-yellow tone for focus */
-  box-shadow: 0 0 5px rgba(231, 216, 165, 0.4); /* Smooth glowing effect */
+  border-color: #E7D8A5;
+  /* Softer cream-yellow tone for focus */
+  box-shadow: 0 0 5px rgba(231, 216, 165, 0.4);
+  /* Smooth glowing effect */
   outline: none;
 }
 
 .card-custom-edit {
-  background-color: #edf6fe; /* Very light cream background */
-  
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-  border: none; /* No default border */
+  background-color: #edf6fe;
+  /* Very light cream background */
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow effect */
+  border: none;
+  /* No default border */
 }
 
 /*-----login screen ------*/
 
 .login-background {
- background-color: #EAF8FC;
+  background-color: #EAF8FC;
+}
+
+
+/*-----Tab content ------*/
+.tabMain {
+  .tab-content {
+    width: 700px;
+    margin-left: 20px;
+  }
+
+  .nav-item {
+    background: #fff;
+    .nav-link{
+      display: flex;
+      align-items: center;
+      gap: 5px ;
+      .iconArea {
+        width: 34px;
+        height: 34px;
+        aspect-ratio: 1 / 1;
+        background: #0087ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 50px;
+        margin-right: 5px;
+    }
+    
+    }
+    &.active {
+      a {
+        background: #c9e4fc !important;
+      }
+    }
+  }
 }

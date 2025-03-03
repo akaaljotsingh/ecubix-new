@@ -3,11 +3,11 @@
       <div class="row">
         <div class="col-12">
           <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-            <h4 class="mb-0 font-size-18">Manage Employee</h4>
+            <h4 class="mb-0 font-size-18">Manage Stockist</h4>
             <div class="page-title-right">
               <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
-                <li class="breadcrumb-item active">Manage Employee</li>
+                <li class="breadcrumb-item active">Manage Stockist</li>
               </ol>
             </div>
           </div>
@@ -41,43 +41,22 @@
         <div class="card">
           <div class="card-body job-filter">
             <div class="row g-3">
-              <div class="col-xxl-2 col-lg-3">
-                <!-- <ng-select [items]="selectValue" [multiple]="true" appendTo="body"
-                  [placeholder]="'Search Details'"></ng-select> -->
-              </div>
-              <div class="col-xxl-2 col-lg-3">
-                <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
-              </div>
-              <div class="col-xxl-3 col-lg-3">
-                <button type="submit" class="btn btn-primary w-50 ">
-                    <i class="bx bx-search-alt align-middle"></i> Search
-                  </button>
-              </div>
-              <div class="col-xxl-5 col-lg-3 ">
-                <div class="text-sm-end">
-                    <!-- <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
-                        <i class="mdi mdi-plus mr-1"></i> Add Employee
-                      </button> -->
+                <div class="col-xxl-2 col-lg-3">
+                  <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
+                </div>
+                <div class="col-xxl-3 col-lg-3">
+                  <button type="submit" class="btn btn-primary w-50 ">
+                      <i class="bx bx-search-alt align-middle"></i> Search
+                    </button>
+                </div>
+                <div class="col-xxl-7 col-lg-3 ">
+                  <div class="text-end">
+                      <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-stockist'">
+                          <i class="mdi mdi-plus mr-1"></i> Add Stockist
+                        </button>
+                  </div>
                 </div>
               </div>
-              <!-- <div class="col-xxl-3 col-lg-6">
-                <div class="position-relative hstack gap-3">
-                  <button type="submit" class="btn btn-primary w-100">
-                    <i class="bx bx-search-alt align-middle"></i> Search
-                  </button>
-                  <button type="button" class="btn btn-warning waves-effect waves-light w-100">
-                    <i class="mdi mdi-download"></i> Download
-                  </button>
-                </div>
-              </div> 
-              <div class="col-xxl-5 col-lg-6">
-                <div class="text-sm-end">
-                  <button type="button" class="btn btn-success mb-2 me-2" [routerLink]="'/admin/add-employee'">
-                    <i class="mdi mdi-plus mr-1"></i> Add Employee
-                  </button>
-                </div>
-              </div>-->
-            </div>
           </div>
   
           <!-- Table Data -->
@@ -87,8 +66,8 @@
                 <thead class="table-primary">
                   <tr>
                     <th scope="col">Sl No</th>
-                    <th scope="col">Employee Code</th>
-                    <th scope="col">Employee Name</th>
+                    <th scope="col">Stockist Code</th>
+                    <th scope="col">Stockist Name</th>
                     <th scope="col">City</th>
                     <th scope="col">State</th>
                     <th scope="col">Active</th>
@@ -112,12 +91,12 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee"
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist"
                                         class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -142,11 +121,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -171,11 +150,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -200,11 +179,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -229,11 +208,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -259,11 +238,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -288,11 +267,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -317,11 +296,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -346,11 +325,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>
@@ -375,11 +354,11 @@
                         <td>
                             <ul class="list-unstyled hstack gap-1 mb-0">
                                 <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-employee" class="btn btn-sm btn-soft-primary"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/view-stockist" class="btn btn-sm btn-soft-primary"><i
                                             class="mdi mdi-eye-outline"></i></a>
                                 </li>
                                 <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-employee" class="btn btn-sm btn-soft-info"><i
+                                    <a href="javascript:void(0);" routerLink="/admin/edit-stockist" class="btn btn-sm btn-soft-info"><i
                                             class="mdi mdi-pencil-outline"></i></a>
                                 </li>
                             </ul>

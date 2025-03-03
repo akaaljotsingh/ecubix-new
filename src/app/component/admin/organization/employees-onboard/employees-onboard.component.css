@@ -17,7 +17,6 @@
     color: #ef8b22;
     background: #fff;
     }
-    
     /* Add indicator arrow for the active tab */
     @media (min-width: 992px) {
     .nbt-page-tabs .nav-pills-custom .nav-link::before {

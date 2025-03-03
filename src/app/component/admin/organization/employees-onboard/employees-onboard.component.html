@@ -17,7 +17,7 @@
     </div>
 
     
-    <form [formGroup]="employeeForm" class="container mt-4 p-4 border rounded" style="max-width: 500px">
+    <!-- <form [formGroup]="employeeForm" class="container mt-4 p-4 border rounded" style="max-width: 500px">
         
         <div class="card mb-3">
             <div class="card-header fw-bold">Employee Selection</div>
@@ -189,28 +189,15 @@
             <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Save</button>
             <button type="button" class="btn btn-secondary ms-2">Cancel</button>
         </div>
-    </form>
+    </form> -->
 </div>
 
 
-<!-- <div class="d-flex align-items-start">
-    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-      <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-      <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-      <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
-    </div>
-    <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">..sdf.</div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">..dfg.</div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">..reytu.</div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">..thj.</div>
-    </div>
-  </div>
 
 
 
-  <div class="nbt-page-tabs">
+
+  <!-- <div class="nbt-page-tabs">
 
 
     <div class="row">
@@ -431,15 +418,243 @@ OFF PEAK rates between 12AM to 3PM year-round a little higher than EV2 rate plan
             </div>
         </div>
     </div>
-</div> 
- -->
+</div>  -->
 
-<!-- 
- <div >
+
+ <form [formGroup]="employeeForm" class="container mt-4 p-4 border rounded">
+ <div class="tabMain">
     <tabset [vertical]="true" class="d-flex align-items-start">
-      <tab heading="Basic title" id="tab1">Basic content</tab>
-      <tab heading="Basic Title 1">Basic content 1</tab>
-      <tab heading="Basic Title 2">Basic content 2</tab>
+      <tab id="tab1">
+        <ng-template tabHeading>
+            <div class="iconArea">1</div>Employee Selection
+          </ng-template>
+        <div class="card mb-3">
+            <div class="card-header fw-bold">Employee Selection</div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Employee Type:</label>
+                    <div class="form-check">
+                        <input type="radio" formControlName="employeeType" value="newEmployee" class="form-check-input" (change)="onEmployeeTypeChange()">
+                        <label class="form-check-label">New Joining</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" formControlName="employeeType" value="existingEmployee" class="form-check-input" (change)="onEmployeeTypeChange()">
+                        <label class="form-check-label">Existing Employee</label>
+                    </div>
+                </div>
+                <div class="text-end mt-3">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                    <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                </div>
+            </div>
+        </div>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">2</div>Joining Details
+          </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Joining Details</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Joining through:</label>
+                        <select formControlName="joiningThrough" class="form-select">
+                            <option value="transfer">Transfer</option>
+                            <option value="promotion">Promotion</option>
+                            <option value="demotion">Demotion</option>
+                        </select>
+                        <div class="form-check mt-2">
+                            <input type="checkbox" formControlName="createVacancy" class="form-check-input">
+                            <label class="form-check-label">Create Vacancy in case of Existing Employee</label>
+                        </div>
+                    </div>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">3</div>Division and Designatio
+          </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Division and Designation</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">New Division:</label>
+                            <select formControlName="division" class="form-select">
+                                <option value="division1">Division 1</option>
+                                <option value="division2">Division 2</option>
+                                <option value="division3">Division 3</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">New Designation:</label>
+                            <select formControlName="designation" class="form-select" (change)="onDesignationChange()">
+                                <option value="ABM">ABM</option>
+                                <option value="ZBM">ZBM</option>
+                                <option value="RBM">RBM</option>
+                                <option value="MR">MR</option>
+                            </select>
+                        </div>
+                        <div class="text-end mt-3">
+                            <button type="submit" class="btn btn-primary">Next</button>
+                            <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">4</div>Reporting Officer
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Reporting Officer</div>
+                <div class="card-body">
+                    <label>Select Reporting Officer:</label>
+                    <select formControlName="reportingOfficer" class="form-select">
+                        <option value="1">Officer 1</option>
+                        <option value="2">Officer 2</option>
+                        <option value="3">Officer 3</option>
+                        <option value="4">Officer 4</option>
+                    </select>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">5</div>Joining Against
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Joining Against</div>
+                <div class="card-body">
+                    <div class="form-check">
+                        <input type="radio" formControlName="vacancyType" value="newVacancy" class="form-check-input" (change)="onVacancyTypeChange()">
+                        <label class="form-check-label">New Vacancy</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" formControlName="vacancyType" value="existingVacancy" class="form-check-input" (change)="onVacancyTypeChange()">
+                        <label class="form-check-label">Existing Vacancy</label>
+                    </div>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">6</div>Vacancy Details
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Vacancy Details</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label>Enter Vacancy Code:</label>
+                        <input type="text" formControlName="vacancyDetails" class="form-control form-control-custom" placeholder="Enter Vacancy Code">
+                    </div>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">7</div>Working Area
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Working Area</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label>Select Zones:</label>
+                        <ng-select  bindLabel="name" 
+                                    bindValue="id"  [items]="zones" formControlName="zone" [multiple]="true"></ng-select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Select Regions:</label>
+                        <ng-select  bindLabel="name" 
+                                    bindValue="id"  [items]="regions" formControlName="region" [multiple]="true"></ng-select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Select Headquarters:</label>
+                        <ng-select  bindLabel="name" 
+                                    bindValue="id"  [items]="headquarters" formControlName="headquarters" [multiple]="true"></ng-select>
+                    </div>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">8</div>Reporting Station
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Reporting Station</div>
+                <div class="card-body">
+                    <label>Select Reporting Headquarter:</label>
+                    <ng-select  bindLabel="name" 
+                    bindValue="id"  [items]="headquarters" formControlName="reportingHQ" [multiple]="true"></ng-select>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary">Next</button>
+                        <button type="button" class="btn btn-secondary ms-2">Previous</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
+      <tab>
+        <ng-template tabHeading>
+            <div class="iconArea">9</div>Joining Details
+        </ng-template>
+        <ng-container>
+            <div class="card mb-3">
+                <div class="card-header fw-bold">Joining Details</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label>Joining Date</label>
+                        <input type="date" class="form-control form-control-custom">
+                    </div>
+                    <div class="mb-3">
+                        <label>Reporting City:</label>
+                        <ng-select  bindLabel="name" 
+                        bindValue="id"  [items]="cities" formControlName="reportingHQ" [multiple]="false"></ng-select>
+                    </div>
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Save</button>
+                        <button type="button" class="btn btn-secondary ms-2">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+      </tab>
     </tabset>
   </div>
-    -->
+  </form>
+   
