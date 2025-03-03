@@ -45,3 +45,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Ignore node_modules
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore Angular specific files
+.angular/
+
+# Optional: Ignore IDE specific files (VSCode example)
+.vscode/
+/.vs
