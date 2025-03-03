@@ -35,6 +35,74 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title mb-2"><i class="mdi mdi-account me-2"></i>Onboard Details</h4>
+                        <button class="approve_btn" (click)="openCompanyConnectionModal(companyConnection)">Approve Onboarding</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Employee Selection:</th>
+                                    <td>New Joining</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Joining through:</th>
+                                    <td>Transfer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">New Division :</th>
+                                    <td>Division 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">New Designation :</th>
+                                    <td>ABM</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Select Reporting Officer :</th>
+                                    <td>Officer 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Joining Against :</th>
+                                    <td>New Vacancy</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Vacancy Code :</th>
+                                    <td>43231</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Zones :</th>
+                                    <td>Zones 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Select Regions :</th>
+                                    <td>Regions 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Select Headquarters :</th>
+                                    <td>Headquarters 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Reporting Headquarter :</th>
+                                    <td>Headquarters 1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Joining Date :</th>
+                                    <td>01/01/2024</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Reporting City :</th>
+                                    <td>City 1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
                     <h4 class="card-title mb-2"><i class="mdi mdi-account me-2"></i>Personal Information</h4>
                     <div class="table-responsive">
                         <table class="table table-nowrap mb-0">
@@ -421,3 +489,25 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Company connections -->
+<ng-template #companyConnection let-modal>
+    <div class="modal-header border-bottom-0 pb-0">
+        <h4 class="fw-bold mb-0">Confirmation</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+    </div>
+
+    <div class="modal-body">
+        <p >
+            Are you sure you want to confirm Oboarding!
+        </p>
+    </div>
+
+    <div class="modal-footer ">
+        
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        <button type="button" class="btn btn-success" (click)="closeModal()">Aprove Onboarding</button>
+    </div>
+</ng-template>
