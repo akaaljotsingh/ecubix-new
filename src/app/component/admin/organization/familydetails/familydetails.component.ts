@@ -10,66 +10,30 @@ import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 })
 export class FamilydetailsComponent {
 
-  companies = [
-    { id: 1, name: 'Company A' },
-    { id: 2, name: 'Company B' }
-  ];
-
-  employees: any[] = [];
-  allEmployees = {
-    1: [
-      { id: 101, name: 'Employee A1' },
-      { id: 102, name: 'Employee A2' }
-    ],
-    2: [
-      { id: 201, name: 'Employee B1' },
-      { id: 202, name: 'Employee B2' }
-    ]
-  };
-
-  selectedCompany: number | null = null;
-  selectedEmployee: number | null = null;
   showCard: boolean = false;
 
-  onCompanySelect(companyId: string) {
-    this.selectedCompany = Number(companyId);
-    this.selectedEmployee = null; // Reset employee selection
-    this.employees = this.allEmployees[this.selectedCompany] || [];
-  }
+  isChecked: boolean = true; // initial state based on the checkbox being checked or not
 
-  onEmployeeSelect(employeeId: string) {
-    this.selectedEmployee = Number(employeeId);
-  }
-
-  onApply() {
-    if (this.selectedCompany && this.selectedEmployee) {
-      this.showCard = true;
-    } else {
-      alert("Please select both company and employee before applying.");
-    }
-  }
-  
-    isChecked: boolean = true; // initial state based on the checkbox being checked or not
-  
-    checkValue(event: any) {
-        this.isChecked = event.target.checked;
-        Swal.fire({
-          title: 'Are you sure to?',
-          text: 'In-active this',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#34c38f',
-          cancelButtonColor: '#f46a6a',
-          confirmButtonText: 'Yes, In-active it!'
-        }).then(result => {
-          if (result.value) {
-            Swal.fire('In-active!', 'Your client has been In-active.', 'success');
-          }
-        });
+  checkValue(event: any) {
+    this.isChecked = event.target.checked;
+    Swal.fire({
+      title: 'Are you sure to?',
+      text: 'In-active this',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#34c38f',
+      cancelButtonColor: '#f46a6a',
+      confirmButtonText: 'Yes, In-active it!'
+    }).then(result => {
+      if (result.value) {
+        Swal.fire('In-active!', 'Your client has been In-active.', 'success');
       }
+    });
+  }
 
   constructor(private modalService: BsModalService) { }
   modalRef?: BsModalRef;
+  
   openModal(content: any) {
     const modalConfig: ModalOptions = {
       backdrop: 'static',  // Prevents closing on backdrop (click outside modal)
