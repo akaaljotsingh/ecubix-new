@@ -39,26 +39,45 @@
         <!-- Second Card (Conditional Rendering) -->
         <!-- <div class="card" *ngIf="showSecondCard"> -->
         <div class="card">
-          <div class="card-body job-filter">
-            <div class="row g-3">
-                <div class="col-xxl-2 col-lg-3">
-                    <input type="search" class="form-control" id="searchInput" placeholder="Search for ...">
-                </div>
-                <div class="col-xxl-3 col-lg-3">
-                    <button type="submit" class="btn btn-primary w-50 ">
-                        <i class="bx bx-search-alt align-middle"></i> Search
-                    </button>
-                </div>
-                <div class="col-xxl-7 col-lg-3 ">
-                    <div class="text-end">
-                        <button type="button" class="btn btn-success mb-2 me-2"
-                            [routerLink]="'/admin/add-chemist'">
-                            <i class="mdi mdi-plus mr-1"></i> Add Chemist
+            <div class="card-body job-filter">
+                <div class="row g-3">
+                    <div class="col-xxl-2 col-lg-6">
+                      
+                        <select class="form-select">
+                          <option>Select Client</option>
+                          <option selected>Loreum Pharma Pvt Ltd.</option>
+                          <option>Loreum Pharma</option>
+                          <option>Loreum Pharma Co.</option>
+                        </select>
+                      </div>
+                      <div class="col-xxl-2 col-lg-6">
+                          <select class="form-select">
+                          <option>Select Employee</option>
+                          <option>Employee 1</option>
+                          <option>Employee 2</option>
+                          <option>Employee 3</option>
+                        </select>
+                      </div>
+                      <div class="col-xxl-2 col-lg-6">
+                        <input type="search" class="form-control" id="searchInput" placeholder="Search Chemist">
+                    </div>
+    
+                    
+                    <div class="col-xxl-2 col-lg-6">
+                        <button type="submit" class="btn btn-primary w-50 ">
+                            <i class="bx bx-search-alt align-middle"></i> Search
                         </button>
                     </div>
+                    <div class="col-xxl-4 col-lg-6">
+                        <div class="text-end">
+                            <button type="button" class="btn btn-success mb-2 me-2"
+                                [routerLink]="'/admin/add-chemist'">
+                                <i class="mdi mdi-plus mr-1"></i> Add Chemist
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-          </div>
+              </div>
   
           <!-- Table Data -->
           <div class="card-body">
@@ -68,6 +87,8 @@
                   <tr>
                     <th scope="col">Sl No</th>
                     <th scope="col">Chemist Code</th>
+                    <th scope="col">Client Name</th>
+                    <th scope="col">Employee Name</th>
                     <th scope="col">Chemist Name</th>
                     <th scope="col">City</th>
                     <th scope="col">State</th>
@@ -77,297 +98,347 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>PH001</td>
+                    <td>Loreum Pharmaceutical</td>
+                    <td>Employee 1</td>
+                    <td>Ram Naresh</td>
+                    <td>Mumbai</td>
+                    <td>Maharashtra</td>
+                    <td>
+                      <div class="form-check form-switch form-switch-md">
+                        <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                               checked />
+                      </div>
+                    </td>
+                    <td>
+                      <ul class="list-unstyled hstack gap-1 mb-0">
+                        <li data-bs-toggle="tooltip" title="View">
+                          <a href="javascript:void(0);" routerLink="/admin/view-chemist"
+                             class="btn btn-sm btn-soft-primary">
+                            <i class="mdi mdi-eye-outline"></i>
+                          </a>
+                        </li>
+                        <li data-bs-toggle="tooltip" title="Edit">
+                          <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                            <i class="mdi mdi-pencil-outline"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                        <i class="mdi mdi-link-variant"></i>
+                      </a>
+                    </td>
+                  </tr>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>PH001</td>
-                        <td>Ram Naresh</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist"
-                                        class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">2</th>
+                      <td>PH002</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>DAvinder Bisht</td>
+                      <td>Hyderabad</td>
+                      <td>Telangana</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>PH002</td>
-                        <td>DAvinder Bisht</td>
-                        <td>Hyderabad</td>
-                        <td>Telangana</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">3</th>
+                      <td>PH003</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Rekha Kumari</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>PH003</td>
-                        <td>Rekha Kumari</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">4</th>
+                      <td>PH004</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Reena Sharma</td>
+                      <td>Hyderabad</td>
+                      <td>Telangana</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">4</th>
-                        <td>PH004</td>
-                        <td>Reena Sharma</td>
-                        <td>Hyderabad</td>
-                        <td>Telangana</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>PH005</td>
-                        <td>Madhu Bhagat</td>
-                        <td>Bengaluru</td>
-                        <td>Karnataka</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">5</th>
+                      <td>PH005</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Madhu Bhagat</td>
+                      <td>Bengaluru</td>
+                      <td>Karnataka</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <!-- Additional rows -->
                     <tr>
-                        <th scope="row">6</th>
-                        <td>PH006</td>
-                        <td>Shahid Khan</td>
-                        <td>Ahmedabad</td>
-                        <td>Gujarat</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">6</th>
+                      <td>PH006</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Shahid Khan</td>
+                      <td>Ahmedabad</td>
+                      <td>Gujarat</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">7</th>
-                        <td>PH007</td>
-                        <td>Krishna Kumar</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">7</th>
+                      <td>PH007</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Krishna Kumar</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">8</th>
-                        <td>PH008</td>
-                        <td>Sushma Verma</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">8</th>
+                      <td>PH008</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Sushma Verma</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" routerLink="/admin/familydetails" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">9</th>
-                        <td>PH009</td>
-                        <td>Gurpreet Singh</td>
-                        <td>Mumbai</td>
-                        <td>Maharashtra</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                unchecked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">9</th>
+                      <td>PH009</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Gurpreet Singh</td>
+                      <td>Mumbai</td>
+                      <td>Maharashtra</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 unchecked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                     <tr>
-                        <th scope="row">10</th>
-                        <td>PH010</td>
-                        <td>Mandy Kumar</td>
-                        <td>Ahmedabad</td>
-                        <td>Gujarat</td>
-                        <td>
-                            <div class="form-check form-switch form-switch-md">
-                                <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)" 
-                                checked />
-                            </div>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled hstack gap-1 mb-0">
-                                <li data-bs-toggle="tooltip" title="View">
-                                    <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary"><i
-                                            class="mdi mdi-eye-outline"></i></a>
-                                </li>
-                                <li data-bs-toggle="tooltip" title="Edit">
-                                    <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info"><i
-                                            class="mdi mdi-pencil-outline"></i></a>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-soft-success"><i
-                                    class="mdi mdi-link-variant"></i></a>
-                        </td>
+                      <th scope="row">10</th>
+                      <td>PH010</td>
+                      <td>Loreum Pharmaceutical</td>
+                      <td>Employee 1</td>
+                      <td>Mandy Kumar</td>
+                      <td>Ahmedabad</td>
+                      <td>Gujarat</td>
+                      <td>
+                        <div class="form-check form-switch form-switch-md">
+                          <input class="form-check-input" type="checkbox" id="switch1" (change)="checkValue($event)"
+                                 checked />
+                        </div>
+                      </td>
+                      <td>
+                        <ul class="list-unstyled hstack gap-1 mb-0">
+                          <li data-bs-toggle="tooltip" title="View">
+                            <a href="javascript:void(0);" routerLink="/admin/view-chemist" class="btn btn-sm btn-soft-primary">
+                              <i class="mdi mdi-eye-outline"></i>
+                            </a>
+                          </li>
+                          <li data-bs-toggle="tooltip" title="Edit">
+                            <a href="javascript:void(0);" routerLink="/admin/edit-chemist" class="btn btn-sm btn-soft-info">
+                              <i class="mdi mdi-pencil-outline"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </td>
+                      <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-success">
+                          <i class="mdi mdi-link-variant"></i>
+                        </a>
+                      </td>
                     </tr>
                 </tbody>
               </table>
