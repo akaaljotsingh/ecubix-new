@@ -24,19 +24,38 @@
                             <i class="mdi mdi-account me-2"></i>CFA  Information
                         </h4>
                         <div class="row">
-                            <!-- <div class="col-md-3 mb-3">
-                                <label>Clients</label>
-                                <ng-select [items]="selectValue1" [(ngModel)]="selectValue" [multiple]="true" appendTo="body"
-                                [placeholder]="'Select Clients'"></ng-select>
-                            </div> -->
-                            <div class="col-md-3 mb-3">
-                                <label>CFA Code</label>
-                                <input type="text" class="form-control form-control-custom" maxlength="5" placeholder="Cfa Code">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>CFA Name</label>
-                                <input type="text" class="form-control form-control-custom" maxlength="100" placeholder="CFA Name">
-                            </div>
+                          <!-- <div class="col-md-3 mb-3">
+      <label>Clients</label>
+      <ng-select [items]="selectValue1" [(ngModel)]="selectValue" [multiple]="true" appendTo="body"
+      [placeholder]="'Select Clients'"></ng-select>
+  </div> -->
+
+                          <div class="col-md-3 mb-3">
+                            <label>Client<span class="text-danger">*</span></label>
+                            <select class="form-select">
+                              <option>Select Client</option>
+                              <option>Loreum Pharma Pvt Ltd.</option>
+                              <option>Loreum Pharma</option>
+                              <option>Loreum Pharma Co.</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label>Employee<span class="text-danger">*</span></label>
+                            <select class="form-select">
+                              <option>Select Employee</option>
+                              <option>Employee 1</option>
+                              <option>Employee 2</option>
+                              <option>Employee 3</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label>CFA Code</label>
+                            <input type="text" class="form-control form-control-custom" maxlength="5" placeholder="Cfa Code">
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label>CFA Name</label>
+                            <input type="text" class="form-control form-control-custom" maxlength="100" placeholder="CFA Name">
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -117,13 +136,10 @@
                         </h4>
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label>DL No. 1</label>
+                                <label>DL No. </label>
                                 <input type="text" class="form-control form-control-custom" placeholder="DL No. 1" maxlength="15">
                             </div>
-                            <div class="col-md-3 mb-3">
-                                <label>DL No. 2</label>
-                                <input type="text" class="form-control form-control-custom" placeholder="DL No. 2" maxlength="15">
-                            </div>
+                        
                             <div class="col-md-3 mb-3">
                                 <label>FL No.</label>
                                 <input type="text" class="form-control form-control-custom" placeholder="FL No."  maxlength="15">
@@ -152,7 +168,7 @@
                         </div>
                         <div class="d-flex flex-wrap gap-2 mt-2">
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="button" class="btn btn-secondary" routerLink="/admin/employees">Cancel</button>
+                            <button type="button" class="btn btn-secondary" routerLink="/admin/cfa">Cancel</button>
                         </div>
                     </div>
                 </div>
